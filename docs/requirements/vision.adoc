@@ -25,7 +25,19 @@ Siehe <<#glossary, Glossar>>.
 == Positionierung
 
 === Fachliche Motivation
-Das StartUp SpeechMind ermöglicht eine schriftliche Meetingdokumentation auf Tonaufnahmen. Nun ist von SpeechMind der Auftrag eine Kalenderintegration als Webanwendung zu programmieren. Diese soll es ermöglichen auf den Google, Outlook o.Ä. Kalender des Nutzers zuzugreifen und den Link zu der Dokumentation durch einen einfachen Klick den Verweis zu der Dokumentation hinzuzufügen. 
+Der Kalender spielt in der Arbeitswelt eine enorm große Rolle, da darüber Termine, Meetings und
+die gesamte Organisation des Arbeits- und Privatlebens stattfindet. Die Zielgruppe des SpeechMind
+Studios sind Product Owner in Unternehmen, die Software entwickeln.
+In Kalendern sind Telefonnummern und Links zu Onlinemeetings, die Agenda des nächsten Termins
+oder Terminpriorisierungen vermerkt. Diese Informationen haben einen hohen Mehrwert in
+einem automatisierten System, da über die zusätzlichen Informationen Funktionen gestartet werden
+können oder im nachhinein erneut wichtige Punkte/Informationen entnommen werden können.
+Mit SpeechMind wollen wir diese Kalendereinträge sowohl auslesen, damit nach dem Ende eines
+Meetings automatisch die Audioaufnahme durch uns ausgewertet werden kann. Darüber hinaus ist
+jedoch auch geplant diese Einträge als Dokumentationselement zu nutzen und mit den generierten
+Daten anzureichern. Somit muss der Product Owner nicht erst die verschiedenen Systeme öffnen,
+um schnell an aktuelle oder vergangene Dokumentation zu kommen, sondern hat all diese Informationen
+kurz und prägnant in einem Kalendereintrag verknüpft.
 
 
 === Problem Statement

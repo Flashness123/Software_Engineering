@@ -11,10 +11,14 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Identifizierte Use Cases
 // Liste aller identifizierten Use Cases (priorisiert)
-* *UC01*: ...
-* *UC02*: ...
+* *UC01*: Login
+* *UC02*: Kalendereintrag öffnen
+* *UC03*: Kalendereintrag bearbeiten
+* *UC04*: Kalendereintrag erstellen
+* *UC05*: Kalendereintrag löschen
 
-
+//Kalender integrieren und authentifizieren
+//Kalendereintrag öffnen/Meetingsinfos abrufen
 == Use Case Diagramm
 // ...
 
