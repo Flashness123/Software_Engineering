@@ -1,18 +1,18 @@
 = Vision: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+Marc-Oliver Tittel <s82452@htw-dresden.de>; Manuel Hartmann <s83688@htw-dresden.de>; Charlotte Geißler <s82397@htw-dresden.de>; Jan Trodler <s83832@htw-dresden.de>; Lukas Kouba <s00000@htw-dresden.de>; Luc Sowodniok <s83864@htw-dresden.de>; Luc Sowodniok <s00000@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
 == Einführung
-Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des <Projektname-Systems> zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die  Details, wie das <Projektname-System> diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
+Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten der {project-name} zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die  Details, wie die {project-name} diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
 
 === Zweck
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf das <Projektthema-System>, das von <Team> entwickelt wird. Das System wird es <Zielkunde/Auftraggeber> erlauben, <Hauptfunktionen> zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
+Dieses Visions-Dokument bezieht sich auf die {project-name}, das von Gruppe E1 entwickelt wird. Das System wird es SpeechMind erlauben, die Meetingdokumentation in den passenden Kalender automatisch einzutragen, um auf vergangene Meetings, samt Dokumentation, besser zugreifen zu können.
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -25,17 +25,18 @@ Siehe <<#glossary, Glossar>>.
 == Positionierung
 
 === Fachliche Motivation
-//Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
+Das StartUp SpeechMind ermöglicht eine schriftliche Meetingdokumentation auf Tonaufnahmen. Nun ist von SpeechMind der Auftrag eine Kalenderintegration als Webanwendung zu programmieren. Diese soll es ermöglichen auf den Google, Outlook o.Ä. Kalender des Nutzers zuzugreifen und den Link zu der Dokumentation durch einen einfachen Klick den Verweis zu der Dokumentation hinzuzufügen. 
+
 
 === Problem Statement
 //Stellen Sie zusammenfassend das Problem dar, das mit diesem Projekt gelöst werden soll. Das folgende Format kann dazu verwendet werden:
 
 [cols="1,3"]
 |===
-| Das Problem | [beschreiben Sie das Problem]
-| betrifft | [die Stakeholder, die vom Problem betroffen sind]
-| die Auswirkung davon ist | [welche Auswirkungen hat das Problem?]
-| eine erfolgreiche Lösung wäre | Führen Sie einige wesentliche Vorteile einer erfolgreichen Lösung auf]
+| Das Problem | Meetingdokumentation (zu erstellen und) in den Kalender zu integrieren
+| betrifft | Auftraggeber, Kunden, Gesetzgeber, Projektteam, Django Server
+| die Auswirkung davon ist | hoher Zeitaufwand, Fehleranfälligkeit, kein zeitlicher Kontext bei Meetingnachbereitung
+| eine erfolgreiche Lösung wäre |  effiziente und schnelle Auswertung des Meetings und Zugriff via Kalender
 |===
 
 ////
@@ -56,12 +57,12 @@ Beispiel:
 
 [cols="1,3"]
 |===
-| Für | [Zielkunde / Nutzer]
-| der / die | [Angabe des Bedarfs oder Chance]
-| Das Produkt / die Lösung ist ein | [Produktkategorie]
-| Die / Das | [Aussage zum Hauptvorteil / Alleinstellungsmerkmal]
-| Im Gegensatz zu | [wesentliche Lösungsalternative]
-| Unser Produkt | [Aussage zum Hauptunterschied]
+| Für | Softwareentwickler
+| der / die | effizienter auf Meetingdokumentationen zugreifen wollen
+| Das Produkt / die Lösung ist ein | Webanwendung
+| Die / Das | alle Informationen von einem Meeting mit einem Kalendereintrag verknüpft
+| Im Gegensatz zu | manueller Eingabe
+| Unser Produkt | ermöglicht eine einfache Integration Ihrer Meetingdokumentation in einen Kalender Ihrer Wahl über die SpeechMind Seite
 |===
 
 ////
@@ -85,9 +86,25 @@ Beispiel Produkt:
 |===
 | Name | Beschreibung | Verantwortlichkeiten
 
-| [Benennung des Stakeholder-Typs.]
-| [Kurze Beschreibung des Stakeholders.]
-| [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
+| Auftraggeber
+| SpeechMind
+| Ansprechpartner für das Projekt der die Anforderungen an das Tool festlegt, Instandhaltung
+
+| Kunden
+| Nutzer des SpeechMind Systems
+| Arbeiten mit dem Tool
+
+| Gesetzgeber
+| 
+| Gibt Vorschriften für Datenschutz u.ä.
+
+| Projektteam
+| Studenten der HTW Dresden
+| Entwicklung des Tools
+
+| Plattform
+| Django Server
+| Speicherung der Daten
 |===
 
 === Benutzerumgebung
@@ -97,6 +114,7 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 . Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
 . Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
 . Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
+. Internetverbindung muss gewährleistet sein
 . Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
 . Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
 
@@ -109,24 +127,30 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 //Vermeiden Sie Angaben zum Entwurf. Nennen wesentliche Features (Produktmerkmale) auf allgemeiner Ebene. Fokussieren Sie sich auf die benötigten Fähigkeiten des Systems und warum (nicht wie!) diese realisiert werden sollen. Geben Sie die von den Stakeholdern vorgegebenen Prioritäten und das geplante Release für die Veröffentlichung der Features an.
 
 [%header, cols="4,1,4,1"]
-|===
+|===    
 | Bedarf | Priorität | Features | Geplantes Release
-| xx | xx | xx | xx
+| Authentifizierung des Nutzenden in der entsprechenden Kalendersoftware | hoch | Ermöglicht den Zugriff auf den selbstgewählten Kalender | mit Veröffentlichung
+| DB-Modell für Kalenderintegration  | hoch | universell | xx
+| Sync der Kalendereinträge in das SpeechMind Studio | hoch | Abruf des Kalenders in SpeechMind Studio | mit Veröffentlichung
+| Erstellen der Kalendereinträge | hoch | Nach Meeting (Kalendereintrag für Meetingdokumentation) | mit Veröffentlichung
+| Nachbearbeiten der Kalendereinträge | mittel | nachträgliche Ergänzung von Informationen | xx
 |===
 
 
 == Zusätzliche Produktanforderungen
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
+. Backend: Django Server
+.. Endpunkt zum Entwicklungsserver wird gestellt
+. GraphQL Endpunkt
+. Frontend: Vuejs Framework
+
 Hinweise:
 
-. Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
+. Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen 
+
 . Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
 . Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
 . Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
 . Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
 
-[%header, cols="4,1,1"]
-|===
-| Anforderung | Priorität | Geplantes Release
-| xx | xx | xx
-|===
+

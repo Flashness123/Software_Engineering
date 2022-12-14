@@ -1,5 +1,5 @@
 // Meta
-:project-name: Kalenderintegration
+:project-name: E1 Kalenderintegration
 // Settings:
 :toc:
 :toc-title: Inhaltsverzeichnis
