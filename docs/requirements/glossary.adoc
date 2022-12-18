@@ -1,5 +1,5 @@
 = Glossar: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+Marc-Oliver Tittel <s82452@htw-dresden.de>; Manuel Hartmann <s83688@htw-dresden.de>; Charlotte Geißler <s82397@htw-dresden.de>; Jan Trodler <s83832@htw-dresden.de>; Lukas Kouba <s00000@htw-dresden.de>; Luc Sowodniok <s83864@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
@@ -13,6 +13,44 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Begriff | Definition und Erläuterung | Synonyme
 //| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
+
+| Login 
+| Benutzername und Passwort, die man für die Anmeldung an einem IT-System oder Dienst benötigt 
+| Anmeldung
+
+| Authentifizierung
+| Der Prozess der Überprüfung der Identität eines registrierten Benutzers, bevor der Zugriff auf die geschützte Ressource erlaubt wird 
+| xx
+
+| Webanwendung 
+| ein Anwendungsprogramm, das in einem Webbrowser angezeigt und bedient wird 
+| xx
+
+| Meeting 
+| zu dt.: die Sitzung +
+ein formelles Treffen von mindestens zwei Projektbeteiligten zum Zweck des Informationsaustauschs und ggf. der Beschlussfassung 
+| Besprechung, Sitzung, Treffen
+
+| Tool 
+| Hilfsprogramme, die den Nutzer unterstützen 
+| xx
+
+| Format 
+| Format beschreibt zum einen eine genormte Abmessung von Materialien, zum anderen eine bestimmte Form der Speicherung von Daten
+| xx
+
+| Synchronisation 
+| zeitliche Abgleichen von Vorgängen 
+| xx
+
+| Kunde 
+| Auftraggeber des Projekts,
+vorrangiger Stakeholder +
+Betreiber des Verwaltungssystem + 
+Herr Titus Hartmann 
+| Themensteller
+
+| xx | xx | xx
 | xx | xx | xx
 |===
 
@@ -22,7 +60,8 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Abkürzung | Bedeutung | Erläuterung
 //| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
-| xx | xx | xx
+| API | Application Programming Interface | Programmteil, der von einem Softwaresystem anderen Programmen zur Anbindung an das System zur Verfügung gestellt wird
+| Sync | Synchronisation | siehe "Begriffe"
 |===
 
 == Verzeichnis der Datenstrukturen

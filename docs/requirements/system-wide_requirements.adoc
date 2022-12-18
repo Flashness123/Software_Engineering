@@ -1,12 +1,12 @@
 = System-Wide Requirements: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+Marc-Oliver Tittel <s82452@htw-dresden.de>; Manuel Hartmann <s83688@htw-dresden.de>; Charlotte Geißler <s82397@htw-dresden.de>; Jan Trodler <s83832@htw-dresden.de>; Lukas Kouba <s00000@htw-dresden.de>; Luc Sowodniok <s83864@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
 == Einführung
-In diesem Dokument werden die systemweiten Anforderungen für das Projekt <Thema> spezifiziert. Die Gliederung erfolgt nach der FURPS+ Anforderungsklassifikation:
+In diesem Dokument werden die systemweiten Anforderungen für das Projekt E1 Kalenderintegration spezifiziert. Die Gliederung erfolgt nach der FURPS+ Anforderungsklassifikation:
 
 * Systemweite funktionale Anforderungen (F),
 * Qualitätsanforderungen für Benutzbarkeit, Zuverlässigkeit, Effizienz und Wartbarkeit (URPS) sowie
@@ -16,6 +16,12 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 
 == Systemweite funktionale Anforderungen
+
+* *SWFA-1:* Authentifizierung
+* *SWFA-2:* Hervorhebung der Tage mit Terminen
+* *SWFA-3:* Zugangsdaten der Anwender vor Diebstahl schützen
+* *SWFA-4:* Zugangsdaten dauerhaft speichern
+* *SWFA-5:* Daten auf geeignete Weise exportieren
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
 
 
@@ -23,15 +29,27 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
 
 === Benutzbarkeit (Usability)
+* *NFAU-1:* Das Tool soll in deutscher Sprache verfügbar sein
+* *NFAU-2:* Der im Tool dargestellte Kalender muss gut erkennbar und leicht bedienbar sein
+* *NFAU-3:* Die kompatiblen Kalenderanbieter sollen im Tool einfach auswählbar sein
+* *NFAU-4:* Das Design des Tools soll leicht verständlich sein
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
 
 === Zuverlässigkeit (Reliability)
+* *NFAR-1:* Das Tool soll robust gegen Abstürze sein
+* *NFAR-2:* Die Formatvorlagen der kombatiblen Kalendersysteme müssen durch das Tool eingehalten werden
+* *NFAR-3:* Die Sicherheit und der Schutz vor Verlust der Daten soll das Tool sicherstellen
+* *NFAR-4:* Die Erreichbarkeit des Tools soll nahezu zu jederzeit gewährleistet werden
 // Zuverlässigkeit beinhaltet die Fähigkeit des Produkts und/oder des Systems unter Stress und ungünstigen Bedingungen am laufen zu bleiben. Spezifizieren Sie Anforderungen für zuverlässige Akzeptanzstufen, und wie diese gemessen und evaluiert werden. Vorgeschlagene Themen sind Verfügbarkeit, Häufigkeit und Schwere von Fehlern und Wiederherstellbarkeit.
 
 === Effizienz (Performance)
+* *NFAP-1:* Das Tool muss robust gegen einen Ausfall bei einer hohen Anzahl gleichzeitiger Nutzer
+* *NFAP-2:* Das Tool soll eine sofortige Synchronisation der zugehörigen Systeme ermöglichen
 // Die Performanz Charakteristiken des Systems sollten in diesem Bereich ausgeführt werden. Beispiele sind Antwortzeit, Durchsatz, Kapazität und Zeiten zum Starten oder Beenden.
 
 === Wartbarkeit (Supportability)
+* *NFAS-1:* Verständliche Dokumentation für einen Administrator
+* *NFAS-2:* Das Tool soll für folgende Browser verfügbar sein: Safari, Chrome, Edge, Firefox, Opera
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
 
 
@@ -39,11 +57,19 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 === Einschränkungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
-* Ressourcenbegrenzungen
-* zu nutzende Komponenten / Bibliotheken / Frameworks
-* Vorgaben für die Programmiersprache
-* zu unterstützende Plattformen / Betriebssysteme
-* Physische Begrenzungen für Hardware, auf der das System betrieben werden soll
+* Die Verwaltung des Sourcecodes und der Dokumentation muss mittels GitHub erfolgen
+* Folgende Programmiersprachen sind vorgegeben:
+* Python (Django Server)
+* HTML
+* GraphQL Endpunkt
+* Frontend: Vue.js Framework
+* Unterstützte Kalendersysteme:
+* Google/Microsoft
+//* Ressourcenbegrenzungen
+//* zu nutzende Komponenten / Bibliotheken / Frameworks
+//* Vorgaben für die Programmiersprache
+//* zu unterstützende Plattformen / Betriebssysteme
+//* Physische Begrenzungen für Hardware, auf der das System betrieben werden soll
 
 === Organisatorische Randbedingungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
@@ -51,6 +77,9 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 * zu beachtende Standards, Normen und Regeln
 
 === Rechtliche Anforderungen
+* Der Kunde muss über eine mögliche Speicherung von Nutzungsdaten informiert werden
+* Eine etwaige Datenschutzerklärung muss beim Login vorliegen und vor der Nutzung durch
+Kunden anerkannt werden. Der Verantwortliche hierbei sollte der Admin sein
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
-* Lizensierung der Anwendung
-* Datenschutz
+//* Lizensierung der Anwendung
+//* Datenschutz
