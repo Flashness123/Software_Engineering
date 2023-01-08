@@ -32,8 +32,8 @@ In Kalendern sind Telefonnummern und Links zu Onlinemeetings, die Agenda des nä
 oder Terminpriorisierungen vermerkt. Diese Informationen haben einen hohen Mehrwert in
 einem automatisierten System, da über die zusätzlichen Informationen Funktionen gestartet werden
 können oder im nachhinein erneut wichtige Punkte/Informationen entnommen werden können.
-Mit SpeechMind wollen wir diese Kalendereinträge sowohl auslesen, damit nach dem Ende eines
-Meetings automatisch die Audioaufnahme durch uns ausgewertet werden kann. Darüber hinaus ist
+Mit SpeechMind sollen diese Kalendereinträge sowohl auslesen, damit nach dem Ende eines
+Meetings automatisch die Audioaufnahme durch Speechmind ausgewertet werden kann. Darüber hinaus ist
 jedoch auch geplant diese Einträge als Dokumentationselement zu nutzen und mit den generierten
 Daten anzureichern. Somit muss der Product Owner nicht erst die verschiedenen Systeme öffnen,
 um schnell an aktuelle oder vergangene Dokumentation zu kommen, sondern hat all diese Informationen
@@ -45,10 +45,10 @@ kurz und prägnant in einem Kalendereintrag verknüpft.
 
 [cols="1,3"]
 |===
-| Das Problem | Meetingdokumentation (zu erstellen und) in den Kalender zu integrieren
+| Das Problem | Meetingdokumentation in den Kalender zu integrieren
 | betrifft | Auftraggeber, Kunden, Gesetzgeber, Projektteam, Django Server
 | die Auswirkung davon ist | hoher Zeitaufwand, Fehleranfälligkeit, kein zeitlicher Kontext bei Meetingnachbereitung
-| eine erfolgreiche Lösung wäre |  effiziente und schnelle Auswertung des Meetings und Zugriff via Kalender
+| eine erfolgreiche Lösung wäre |  effiziente und schnelle Auswertung des Meetings und Zugriff via Kalender, womit der Kalender zum zentralen Speichermedium wird
 |===
 
 ////

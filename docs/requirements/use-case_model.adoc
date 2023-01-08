@@ -13,9 +13,8 @@ include::../_includes/default-attributes.inc.adoc[]
 // Liste aller identifizierten Use Cases (priorisiert)
 * *UC01*: Login
 * *UC02*: Kalendereintrag öffnen
-* *UC03*: Kalendereintrag bearbeiten
-* *UC04*: Kalendereintrag erstellen
-* *UC05*: Kalendereintrag löschen
+* *UC03*: Notiz-/Textfeld des Kalendereintrag bearbeiten
+* *UC04*: Kalendereintrag suchen
 
 //Kalender integrieren und authentifizieren
 //Kalendereintrag öffnen/Meetingsinfos abrufen
@@ -37,11 +36,11 @@ include::use_case_01.inc.adoc[]
 <<<
 include::use_case_02.inc.adoc[]
 
-//<<<
-//include::use_case_03.inc.adoc[]
+<<<
+include::use_case_03.inc.adoc[]
 
-//<<<
-//include::use_case_04.inc.adoc[]
+<<<
+include::use_case_04.inc.adoc[]
 
 //<<<
 //include::use_case_05.inc.adoc[]
