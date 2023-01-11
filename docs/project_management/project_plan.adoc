@@ -7,10 +7,62 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Einführung
 //Briefly describe the content of the project plan.
+In dem Projektplan sind Organisation, Arbeitsweise und Ziele...
+
 
 
 == Projektorganisation
 //Introduce the project team, team members, and roles that they play during this project. If applicable, introduce work areas, domains, or technical work packages that are assigned to team members. Introduce neighboring projects, relationships, and communication channels. If the project is introduced somewhere else, reference that location with a link.
+...
+
+=== Teammitglieder
+
+[%header,cols=4*] 
+|===
+|Name
+|Alter
+|Informationen
+|Rolle
+
+|Charlotte Geißler
+|24
+|
+* WING
+* Werkstudent bei Sunfire (Projektmanagement)
+|Analyse
+
+|Marc-Oliver Tittel
+|21
+|
+* WING
+* Team-/Projektmanagement im Motorsport
+|Projektleitung, 
+
+|Jan Trodler
+|
+|
+|
+
+|Luc Sowodniok
+|
+|
+|
+
+|Lukas Kouba
+|
+|
+|
+
+|Manuel Hartmann
+|
+|
+|
+
+|Phoung Anh Nguyen
+|
+|
+|
+|=== 
 
 
 == Praktiken und Bewertung
@@ -30,17 +82,25 @@ include::../_includes/default-attributes.inc.adoc[]
 
 | I1
 |
-* Mitigate Risk1
-* Develop Use Case 3, Scenario 2
-| Date from/Date to
+* Organisation im Team
+* Verstehen des Problems der Auftraggeber
+* Erführung in technische Grundlagen durch den Auftraggeber
+ 
+| Date from 10.11.22 / Date to 23.11.22 
 | 15
 
 | I2
 |
-* Mitigate Risk 2
-* Develop Use Case 1, Scenario 2
-| Date from/Date to
+* Erarbeitung der ersten Use-Cases 
+| Date from 24.11.22 / Date to 06.12.22
 | 16
+
+| I3
+|
+* Erarbeitung der technischen Spezifikationen
+| Date from 07.12.22 / Date to 21.12.22
+| 17
+
 |===
 
 
