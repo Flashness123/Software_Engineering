@@ -1,4 +1,11 @@
-ï»¿ID;Datum;Name;Beschreibung;Typ;IMP;PRB;MAG;Owner;GegenmaÃŸnahme
-1;01.12.2019;Teammitglied fÃ¤llt aus;Mitglied des Teams kann (dauerhaft oder zeitweise) nicht mehr am Projekt teilnehmen; z.B. wegen Krankheit oder Studiengangswechsel;4;20%;0,8;Max MÃ¼ller;Backup-Rollen nutzen und Know-How zwischen diesen Personen kontinuierlich teilen
-2;-;-;-;-;-;-;-;-;-
-3;-;-;-;-;-;-;-;-;-
+ID	Datum	Name	Beschreibung	Typ	IMP	PRB	MAG	Owner	Gegenmaßnahme
+1	01.12.2022	Teammitglied fällt aus	Mitglied des Teams kann (dauerhaft oder zeitweise) nicht mehr am Projekt teilnehmen	Ressourcen	4	60%	2,4	Projektmanagement	"Backup-Rollen nutzen und Know-How zwischen diesen Personen kontinuierlich teilen; Bescheid geben"
+2	07.12.2022	Kommunikation	"Missverständnisse oder fehlende Absprachen/Feedback; fehlende Kommunikation"	Geschäftlich	4	70%	2,8	Team, Projektmanagement	"Bei Kommunikation zwischen zwei Teammitgliedern: hinzuziehen eines weiteren Teammitgliedes; Bei Kommunikation im gesamten Team: zuerst anderen Weg versuchen, sonst externe Unterstützung suchen, Daten/Informationen für alle zugänglich machen"
+3	03.01.2023	Anforderungen	Änderung oder Missverständnisse bei der Anforderungsanalyse	Geschäftlich	5	50%	2,5	Team, Analyse	Rücksprache mit dem Auftraggeber/Coach, Teammitglieder informieren, Thema im Team diskutieren
+4	21.12.2022	Einsatz unbekannter Tools	Nutzung von Tools (GitHub, Visual Studio Code…)	Geschäftlich, Technisch	3	20%	0,6	Team	"Gegenseitige Unterstützung innerhalb des Teams; selbstständige Einarbeitung; Technische Unterstützung durch Ruben-David Kraus"
+5	11.01.2023	Aufgabenbearbeitung	Ungenaue od. zu aufwendige Bearbeitung der Aufgaben	Geschäftlich	4	50%	2	Team, Projektmanagement	Aufgabeninhalt möglichst genau festhalten in den Iterationsbesprechungen
+6	17.11.2022	Wegfall PM und Analyst im 2.Semester	Ab dem 2. Semester entfallen die Rollen der WINGs	Geschäftlich, Ressourcen	5	100%	5	Team	"Ernennung eines Stellverteters; "
+7	11.01.2023	Zeit für die Bearbeitung reicht nicht aus	"Unterschätzung des Arbeitsaufwandes; rechtzeitige Fertigstellung gefährdet"	Zeitlich	4	30%	1,2	Team, Projektmanagement	Deadlines festsetzten, Timeboxing
+									
+									
+									

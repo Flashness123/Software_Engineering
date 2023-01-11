@@ -101,12 +101,25 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele...
 | Date from 07.12.22 / Date to 21.12.22
 | 17
 
+| I4
+|
+* ...
+| Date from 04.01.23 / Date to 15.01.23
+| 18
+
+|I5
+|
+| Date from 16.01.23 / Date to 27.01.23
+| 19
+
+
 |===
 
 
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
-
+Das System wird über einem Nodejs Server aufgesetzt und somit dem Auftraggeber (SpeechMind) zur Verfügung gestellt.
 
 == Erkenntnisse (Lessons learned)
 //List lessons learned from the retrospective, with special emphasis on actions to be taken to improve, for example: the development environment, the process, or team collaboration.
+...
