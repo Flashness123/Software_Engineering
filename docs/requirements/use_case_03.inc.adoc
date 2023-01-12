@@ -5,6 +5,7 @@
 === Kurzbeschreibung
 //<Kurze Beschreibung des Use Case>
 
+
 === Kurzbeschreibung der Akteure
 
 ==== <Akteur 1 Name>
