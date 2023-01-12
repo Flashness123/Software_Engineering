@@ -4,55 +4,63 @@
 
 === Kurzbeschreibung
 //<Kurze Beschreibung des Use Case>
+Der Benutzer möchte einen bestimmten Kalendereintrag aus seinem verknüpften Kalender suchen
 
 === Kurzbeschreibung der Akteure
 
-==== <Akteur 1 Name>
+//==== <Akteur 1 Name>
+* Benutzer
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
+* der Benutzer muss im System eingeloggt sein
+* der Kalender muss in das System integriert sein
 
-<Vorbedingung 1>
+//<Vorbedingung 1>
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn <akteur> <macht>…
-. <Standardablauf Schritt 1>
-. …
-. <Standardablauf Schritt n>
-. Der Use Case ist abgeschlossen.
+. Der Use Case beginnt, wenn der Benutzer einen bestimmten Kalendereintrag suchen möchte
+. In der Suchleiste wird der Suchbegriff eingegeben
+. Mit betätigen der Entertaste werden alle übereinstimmenden Kalendereinträge angezeigt
+. Der Use Case endet mit der Darstellung einer Liste aller übereinstimmenden Einträge
+//. Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
+---keine alternativen Abläufe---
 
-==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
+//==== <Alternativer Ablauf 1>
+//Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
+//. <Ablauf beschreiben>
+//. Der Use Case wird im Schritt <y> fortgesetzt.
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
 
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+==== Filtern
+. Filterbedingungen aus Suchleiste übernehmen
+. Filter anwenden und Journal aktualisieren
+//. <Unterablauf 1, Schritt n>
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
+---keine wesentlichen Szenarios---
 
-==== <Szenario 1>
-. <Szenario 1, Schritt 1>
-. …
-. <Szenario 1, Schritt n>
+//==== <Szenario 1>
+//. <Szenario 1, Schritt 1>
+//. …
+//. <Szenario 1, Schritt n>
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
+* eine Liste aller gefilterten Termine wurde ausgegeben
 
-==== <Nachbedingung 1>
+//==== <Nachbedingung 1>
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
+* Simple und Benutzerfreundliche, mittels einfacher Suchleiste realisierte FIlterung der Termine
 
-==== <Besondere Anforderung 1>
+//==== <Besondere Anforderung 1>
