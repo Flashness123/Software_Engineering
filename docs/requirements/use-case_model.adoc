@@ -20,6 +20,9 @@ Im nachfolgenden Abschnitt werden alle identifizierten Use Cases, deren Akteure 
 //Kalendereintrag öffnen/Meetingsinfos abrufen
 == Use Case Diagramm
 // ...
+:imageTitle: Use Case Diagramm 
+:imageFile: Use_Case_Diagramm.PNG 
+image::{imageFile}[title="{imageTitle}", alt="{imageTitle}", width={imageWidth}] 
 
 //Fügen Sie nachfolgend alle detaillierten Use-Cases per Include ein.
 //Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem use_case_01.inc.adoc Template basiert.
