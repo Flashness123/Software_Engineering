@@ -1,0 +1,1 @@
+Client-ID: 966425262226-nflro5si4ftpk7c3c4hq57ngrcr70hsn.apps.googleusercontent.comemail: sebeleg51@gmail.compw: Sebeleg1#Python2: python -m SimpleHTTPServer 8000Python3: python3 -m http.server 8000also works: python -m http.server 8000
