@@ -12,7 +12,7 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäte
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf die {project-name}, das von Gruppe E1 entwickelt wird. Das System wird es SpeechMind erlauben, die Meetingdokumentation in den passenden Kalender automatisch einzutragen, um auf vergangene Meetings, samt Dokumentation, besser zugreifen zu können.
+Dieses Visions-Dokument bezieht sich auf die {project-name}, das von Gruppe E1 entwickelt wird. Das System wird es SpeechMind Nutzern erlauben, ihren eigenen Kalender auf der SpeechMind website einzusehen, die Meetingdokumentation in den passenden Kalendereintrag per Knopfdruck hinzuzufügen, Notizen zu diesen hinzuzufügen und Kalendereinträge zu suchen. 
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -45,8 +45,8 @@ kurz und prägnant in einem Kalendereintrag verknüpft.
 
 [cols="1,3"]
 |===
-| Das Problem | Meetingdokumentation in den Kalender zu integrieren
-| betrifft | Auftraggeber, Kunden, Gesetzgeber, Projektteam, Django Server
+| Das Problem | Meetingdokumentation in den Kalender über die SpeechMind Website zu integrieren
+| betrifft | Auftraggeber, Nutzer von SpeechMind, Gesetzgeber, Projektteam, Nodejs Server
 | die Auswirkung davon ist | hoher Zeitaufwand, Fehleranfälligkeit, kein zeitlicher Kontext bei Meetingnachbereitung
 | eine erfolgreiche Lösung wäre |  effiziente und schnelle Auswertung des Meetings und Zugriff via Kalender, womit der Kalender zum zentralen Speichermedium wird
 |===
@@ -69,7 +69,7 @@ Beispiel:
 
 [cols="1,3"]
 |===
-| Für | Softwareentwickler
+| Für | Nutzer von SpeechMind
 | der / die | effizienter auf Meetingdokumentationen zugreifen wollen
 | Das Produkt / die Lösung ist ein | Webanwendung
 | Die / Das | alle Informationen von einem Meeting mit einem Kalendereintrag verknüpft
@@ -102,7 +102,7 @@ Beispiel Produkt:
 | SpeechMind
 | Ansprechpartner für das Projekt der die Anforderungen an das Tool festlegt, Instandhaltung
 
-| Kunden
+| Nutzer
 | Nutzer des SpeechMind Systems
 | Arbeiten mit dem Tool
 
@@ -115,7 +115,7 @@ Beispiel Produkt:
 | Entwicklung des Tools
 
 | Plattform
-| Django Server
+| Nodejs Server
 | Speicherung der Daten
 |===
 
@@ -123,14 +123,10 @@ Beispiel Produkt:
 Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
-. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
-. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
-. Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
-. Internetverbindung muss gewährleistet sein
-. Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
-. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
-
-Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
+. Die Annzahl der Nutzer entspricht den Nutzern von SpeechMind. Diese wird sich je nach Nachfrage ändern. 
+. Die Nutzungszeit kann sich von Nutzer zu Nutzer, je nach Umfang des Meetings und Bearbeitung, ändern. 
+. Die Anwendung soll als Web-Applikation verfügbar sein. 
+. Internetverbindung muss gewährleistet sein.
 
 
 == Produkt-/Lösungsüberblick
@@ -141,28 +137,34 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 [%header, cols="4,1,4,1"]
 |===    
 | Bedarf | Priorität | Features | Geplantes Release
-| Authentifizierung des Nutzenden in der entsprechenden Kalendersoftware | hoch | Ermöglicht den Zugriff auf den selbstgewählten Kalender | mit Veröffentlichung
+| Authentifizierung des Nutzenden in der entsprechenden Kalendersoftware | hoch | Ermöglicht den Zugriff auf den selbstgewählten Kalender | xx
 | DB-Modell für Kalenderintegration  | hoch | universell | xx
-| Sync der Kalendereinträge in das SpeechMind Studio | hoch | Abruf des Kalenders in SpeechMind Studio | mit Veröffentlichung
-| Erstellen der Kalendereinträge | hoch | Nach Meeting (Kalendereintrag für Meetingdokumentation) | mit Veröffentlichung
-| Nachbearbeiten der Kalendereinträge | mittel | nachträgliche Ergänzung von Informationen | xx
+| Sync der Kalendereinträge in das SpeechMind Studio | hoch | Abruf des Kalenders in SpeechMind Studio | xx
+| Nachbearbeiten der Notizfelder des Kalendereinträge | hoch | nachträgliche Ergänzung von Informationen | xx
 |===
 
 
 == Zusätzliche Produktanforderungen
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
-. Backend: Django Server
-.. Endpunkt zum Entwicklungsserver wird gestellt
-. GraphQL Endpunkt
-. Frontend: Vue.js Framework
+//. Backend: Django Server
+//.. Endpunkt zum Entwicklungsserver wird gestellt
+//. GraphQL Endpunkt
+//. Frontend: Vue.js Framework
 
-Hinweise:
+[%header, cols="3,1,1"]
+|===    
+| Anforderung | Priorität | Geplantes Release
+| einfache Bedienung | hoch  | xx
+| Vertraute Nutzerumgebung   | hoch | xx
+|===
 
-. Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen 
+//Hinweise:
 
-. Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
-. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
-. Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
-. Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
+//. Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen 
+
+//. Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
+//. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
+//. Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
+//. Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
 
 

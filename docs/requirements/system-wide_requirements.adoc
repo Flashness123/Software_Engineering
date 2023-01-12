@@ -64,7 +64,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 * GraphQL Endpunkt
 * Frontend: Vue.js Framework
 * Unterstützte Kalendersysteme:
-* Google/Microsoft
+** Microsoft
 //* Ressourcenbegrenzungen
 //* zu nutzende Komponenten / Bibliotheken / Frameworks
 //* Vorgaben für die Programmiersprache
