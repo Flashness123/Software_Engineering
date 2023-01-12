@@ -65,6 +65,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 * Frontend: Vue.js Framework
 * Unterstützte Kalendersysteme:
 ** Microsoft
+** Google
 //* Ressourcenbegrenzungen
 //* zu nutzende Komponenten / Bibliotheken / Frameworks
 //* Vorgaben für die Programmiersprache
