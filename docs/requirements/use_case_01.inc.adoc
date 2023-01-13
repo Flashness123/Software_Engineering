@@ -20,12 +20,12 @@ Dieser Use Case beschreibt, wie sich ein Benutzer beim Kalendersystem anmeldet.
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-1. Der Use Case beginnt, wenn der Benutzer in der Navigationsleiste auf den "Login"-Button klickt.
-2. Das System zeigt die Anmeldeseite an, auf der der Benutzer seine E-Mail-Adresse und sein Passwort eingeben kann.
-3. Der Benutzer gibt seine Daten ein und klickt auf den "Sign In"-Button.
-4. Use Case: Benutzer validieren wird durchgeführt.
-5. Das System zeigt die relevante Hauptseite an.
-6. Der Use Case ist abgeschlossen.
+. Der Use Case beginnt, wenn der Benutzer in der Navigationsleiste auf den "Login"-Button klickt.
+. Das System zeigt die Anmeldeseite an, auf der der Benutzer seine E-Mail-Adresse und sein Passwort eingeben kann.
+. Der Benutzer gibt seine Daten ein und klickt auf den "Sign In"-Button.
+. Use Case: Benutzer validieren wird durchgeführt.
+. Das System zeigt die relevante Hauptseite an.
+. Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
@@ -33,8 +33,8 @@ Dieser Use Case beschreibt, wie sich ein Benutzer beim Kalendersystem anmeldet.
 ==== Ungültiger Benutzername oder falsches Passwort
 Wenn in Schritt 4 des Standardablaufs Benutzer der Use Case: Benutzer validieren diesen nicht erfolgreich abschließt, dann
 
-1. Die Meldung "Ungültige E-Mail oder ungültiges Passwort - bitte versuchen Sie es erneut" wird angezeigt.
-2. Der Anwendungsfall wird bei Schritt 3 fortgesetzt.
+. Die Meldung "Ungültige E-Mail oder ungültiges Passwort - bitte versuchen Sie es erneut" wird angezeigt.
+. Der Anwendungsfall wird bei Schritt 3 fortgesetzt.
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
