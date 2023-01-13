@@ -4,55 +4,67 @@
 
 === Kurzbeschreibung
 //<Kurze Beschreibung des Use Case>
+Dieser Use Case beschreibt, wie ein Kalendereintrag mittels unseres Systems vom Benutzer bearbeitet werden kann
+
 
 === Kurzbeschreibung der Akteure
 
-==== <Akteur 1 Name>
+* Benutzer
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
-
-<Vorbedingung 1>
+* der Benutzer muss im System eingeloggt sein
+* der Kalender muss in das System integriert sein
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn <akteur> <macht>…
-. <Standardablauf Schritt 1>
-. …
-. <Standardablauf Schritt n>
-. Der Use Case ist abgeschlossen.
+. Der Use Case beginnt mit dem Aufruf eines ausgewählten Kalendereintrages
+. Durch Auswählen der jeweiligen Textfelder wird der Ort der jeweiligen Terminbearbeitung ausgewählt
+. Die Änderungen werden eingegeben
+. Die Änderungen werden durch einen Klick des "Speichern"-Buttons im Kalendereintrag gespeichert
+. Der Use Cas endet mit Abschluss der Bearbeitung des Kalendereintrages mittels Speichern
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
+==== AAL 1: Nutzer verändert den Kalendereintrag nicht
+* Der Kalendereintrag wird aufgerufen, es findet aber keinerlei Bearbeitung statt
+* Use Case 3 statt Use Case 4 wird ausgeführt
 
-==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
+==== AAL2:
+
+//==== <Alternativer Ablauf 1>
+//Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
+//. <Ablauf beschreiben>
+//. Der Use Case wird im Schritt <y> fortgesetzt.
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
 
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+==== UA1: Kalendersynchronisation
+. Änderungen des Kalendereintrages werden zwischengespeichert
+. Mit Betätigung des "Speichern"-Buttons werden alle Daten automatisch im Kalender synchronisiert
+
+==== UA2: Ungültige Eingabe von Daten
+. z.B. Das Datum wird geändert und es wird Text eingegeben statt einem Datum
+. Ausgabe einer Fehlermeldung wegen falscher Eingabe
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
-==== <Szenario 1>
-. <Szenario 1, Schritt 1>
-. …
-. <Szenario 1, Schritt n>
+==== Erfolgreiche Bearbeitung
+. Benutzer x bearbeitet alle Felder richtig und bestätigt dies mit der betätigung des "Speichern"-Buttons. Die Daten werden mit dem Kalender-Server synchronisiert
+//. …
+//. <Szenario 1, Schritt n>
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
-
-==== <Nachbedingung 1>
+ Das System hat die eingegebenen und geänderten Daten vollständig mit dem Kalernderserver synchronisiert
+//==== <Nachbedingung 1>
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
+* Da dieser Use Case zu den grundlegenden Funktionen des Systems gehört ist eine einfache Bedienung zu ermöglichen
+
 
 ==== <Besondere Anforderung 1>

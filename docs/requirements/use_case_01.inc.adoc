@@ -3,56 +3,71 @@
 == Use-Case: UC01 Login
 
 === Kurzbeschreibung
-//<Kurze Beschreibung des Use Case>
+Dieser Use Case beschreibt, wie sich ein Benutzer beim Kalendersystem anmeldet.
 
 === Kurzbeschreibung der Akteure
 
-==== <Akteur 1 Name>
+==== Akteur 1: Benutzer
+==== Akteur 2: Authentifizierungssystem
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-<Vorbedingung 1>
+* Website ist verfügbar.
+* Datenbank ist verfügbar.
+* Internet ist verfügbar.
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn <akteur> <macht>…
-. <Standardablauf Schritt 1>
-. …
-. <Standardablauf Schritt n>
-. Der Use Case ist abgeschlossen.
+1. Der Use Case beginnt, wenn der Benutzer in der Navigationsleiste auf den "Login"-Button klickt.
+2. Das System zeigt die Anmeldeseite an, auf der der Benutzer seine E-Mail-Adresse und sein Passwort eingeben kann.
+3. Der Benutzer gibt seine Daten ein und klickt auf den "Sign In"-Button.
+4. Use Case: Benutzer validieren wird durchgeführt.
+5. Das System zeigt die relevante Hauptseite an.
+6. Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
-==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
+==== Ungültiger Benutzername oder falsches Passwort
+Wenn in Schritt 4 des Standardablaufs Benutzer der Use Case: Benutzer validieren diesen nicht erfolgreich abschließt, dann
+
+1. Die Meldung "Ungültige E-Mail oder ungültiges Passwort - bitte versuchen Sie es erneut" wird angezeigt.
+2. Der Anwendungsfall wird bei Schritt 3 fortgesetzt.
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
 
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+---keine wesentlichen Unterabläufe---
+
+//==== <Unterablauf 1>
+//. <Unterablauf 1, Schritt 1>
+//. …
+//. <Unterablauf 1, Schritt n>
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
-==== <Szenario 1>
-. <Szenario 1, Schritt 1>
-. …
-. <Szenario 1, Schritt n>
+---keine wesentlichen Szenarios---
+
+//==== <Szenario 1>
+//. <Szenario 1, Schritt 1>
+//. …
+//. <Szenario 1, Schritt n>
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 
-==== <Nachbedingung 1>
+==== Erfolgreich abgeschlossen
+Der Benutzer wurde angemeldet und die internen Logs wurden aktualisiert.
+
+//==== Fehlerbedingung
+//Die Logs wurden entsprechend aktualisiert.
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 
-==== <Besondere Anforderung 1>
+---keine wesentlichen besonderen Anforderungen---
+
+//==== <Besondere Anforderung 1>
