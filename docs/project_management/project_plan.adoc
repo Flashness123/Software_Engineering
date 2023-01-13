@@ -17,7 +17,7 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele...
 
 === Teammitglieder
 
-[%header,cols=4*] 
+[%header, cols="1,1,3a,1"] 
 |===
 |Name
 |Alter
@@ -40,12 +40,14 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele...
 
 |Jan Trodler
 |20
-|Bachelorstudent Informatik
+|
+* Bachelorstudent Informatik
 |Entwicklung
 
 |Luc Sowodniok
 |21
-|Bachelorstudent Witschaftsinformatik
+|
+* Bachelorstudent Witschaftsinformatik
 |
 
 |Lukas Kouba
