@@ -9,15 +9,15 @@ Dieser Use Case beschreibt, wie ein Benutzer einen bestimmten Kalendereintrag ö
 
 === Kurzbeschreibung der Akteure
 
-===== Akteur 1: Benutzer
+==== Akteur 1: Benutzer
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-===== Vorbedingung 1:
+==== Vorbedingung 1:
 * der Benutzer muss im System eingeloggt sein
 
-===== Vorbedingung 2:
+==== Vorbedingung 2:
 * der Kalender muss in das System integriert sein
 
 //<Vorbedingung 1>
@@ -73,8 +73,8 @@ Dieser Use Case beschreibt, wie ein Benutzer einen bestimmten Kalendereintrag ö
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 
-===== Besondere Anforderung 1: Usability
+==== Besondere Anforderung 1: Usability
 * Der Eintrag muss wie in NFAU-4 beschrieben für jedermann leicht verständlich ausgegeben werden
 
-===== Besondere Anforderung 2: Zuverlässigkeit
+==== Besondere Anforderung 2: Zuverlässigkeit
 * Wie in NFAR-2 beschrieben müssen die Formatvorlagen der Kalendereinträge eingehalten werden
