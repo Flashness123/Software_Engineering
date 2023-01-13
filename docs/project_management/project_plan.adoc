@@ -124,6 +124,8 @@ Aufgrund unserer Zusammenarbeit mit dem Startup Speechmind halten wir es für di
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
 Das System wird über einem Nodejs Server aufgesetzt und somit dem Auftraggeber (SpeechMind) zur Verfügung gestellt.
+Über eine von uns erstellte Vue js Website soll es Usern möglich sein, sich Anzumelden, Abzumelden oder zu Registrieren und auf einen Kalender zuzugreifen. Ziel ist es das System so Kompatibel wie möglich zu machen, um sich mit Google, Microsoft und anderen Kalendern verbinden zu können.
+Die Anmeldedaten werden momentan auf einem lokal gehosteten json Server verwaltet, sollen aber später auf eine Django Datenbank ausgeladen werden. Auf dieser sollen auch einzelne Kalenderereignisse gespeichert werden. Geplant ist es diese mit Hilfe von Graph QL abzurufen.  
 
 == Erkenntnisse (Lessons learned)
 //List lessons learned from the retrospective, with special emphasis on actions to be taken to improve, for example: the development environment, the process, or team collaboration.
