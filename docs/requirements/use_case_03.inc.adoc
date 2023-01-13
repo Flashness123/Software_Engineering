@@ -59,12 +59,11 @@ Dieser Use Case beschreibt, wie ein Kalendereintrag mittels unseres Systems vom 
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
- Das System hat die eingegebenen und geänderten Daten vollständig mit dem Kalernderserver synchronisiert
+ * Das System hat die eingegebenen und geänderten Daten vollständig mit dem Kalernderserver synchronisiert
 //==== <Nachbedingung 1>
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 * Da dieser Use Case zu den grundlegenden Funktionen des Systems gehört ist eine einfache Bedienung zu ermöglichen
 
-
-==== <Besondere Anforderung 1>
+//==== <Besondere Anforderung 1>
