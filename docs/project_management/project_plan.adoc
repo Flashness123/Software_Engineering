@@ -7,7 +7,8 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Einführung
 //Briefly describe the content of the project plan.
-In dem Projektplan sind Organisation, Arbeitsweise und Ziele...
+In dem Projektplan sind Organisation, Arbeitsweise und Ziele festzuhalten um bei langfristiger Zusammenarbiet nicht die Übersicht zu verlieren.
+
 
 
 
@@ -105,7 +106,7 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele...
 
 | I4
 |
-* ...
+* Erste aufrufbare Teile eines Prototypen erstellen
 | Date from 04.01.23 / Date to 15.01.23
 | 18
 
