@@ -13,9 +13,9 @@ Dieser Use Case beschreibt, wie sich ein Benutzer beim Kalendersystem anmeldet.
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-* Website ist verfügbar.
-* Datenbank ist verfügbar.
-* Internet ist verfügbar.
+. Website ist verfügbar.
+. Datenbank ist verfügbar.
+. Internet ist verfügbar.
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")

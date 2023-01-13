@@ -14,11 +14,8 @@ Dieser Use Case beschreibt, wie ein Benutzer einen bestimmten Kalendereintrag ö
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-==== Vorbedingung 1:
-* der Benutzer muss im System eingeloggt sein
-
-==== Vorbedingung 2:
-* der Kalender muss in das System integriert sein
+. der Benutzer muss im System eingeloggt sein
+. der Kalender muss in das System integriert sein
 
 //<Vorbedingung 1>
 
