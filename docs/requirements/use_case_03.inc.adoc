@@ -29,7 +29,7 @@ Dieser Use Case beschreibt, wie ein Kalendereintrag mittels unseres Systems vom 
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 ==== AAL 1: Nutzer verändert den Kalendereintrag nicht
 * Der Kalendereintrag wird aufgerufen, es findet aber keinerlei Bearbeitung statt
-* Use Case 3 statt Use Case 4 wird ausgeführt
+* Use Case 3 statt Use Case 2 wird ausgeführt
 
 ==== AAL2:
 
