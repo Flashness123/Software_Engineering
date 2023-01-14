@@ -1,4 +1,4 @@
-= Iteration Plan I3: {project-name}
+= Iteration Plan I4: {project-name}
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -12,28 +12,20 @@ include::../_includes/default-attributes.inc.adoc[]
 |===
 | Meilenstein | Datum
 
-| Beginn der Iteration |07.12.2022
-| Workshop Kommunkiation im Internet, Client-Server-Modell und API´s | 07.12.2022
-| Teammeeting | 14.12.2022
-| Teammeeting | 18.12.2022
-| Zwischenpräsentation mit Coach | 21.12.2022
-| Ende der Iteration | 21.12.2022
+| Beginn der Iteration | -
+| ... | -
+| Ende der Iteration | -
 |===
 
 
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
-* Fertigstellen der technischen Spezifikationen 
-* Fertigstellen der systemweiten Anforderungen
-* Vervollständigung Use-Case-Modell
-* Vervollständigung Glossar
-* Aneignung Wissen im Bereich Kommunkiation im Internet, Client-Server-Modell und API´s 
 
-//Beispiele:
+Beispiele:
 
-//* Beheben der Usability-Probleme, die von Abteilung X berichtet wurden
-//* Ausliefern der Hauptszenarios, die die Integration mit System Y zeigen
-//* Present a technical demonstration (demo).
+* Beheben der Usability-Probleme, die von Abteilung X berichtet wurden
+* Ausliefern der Hauptszenarios, die die Integration mit System Y zeigen
+* Present a technical demonstration (demo).
 
 
 == Aufgabenzuordnung
@@ -42,17 +34,11 @@ include::../_includes/default-attributes.inc.adoc[]
 Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
 
 _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
-[%header, cols="3,1,1,1,2"]
+[%header, cols="3,1,1,1,2,1,1,1,1"]
 |===
-| Aufgabe bzw. Beschreibung | Priorität (Skala 1-5 1= höchste Prio)| Schätzung der Größe (1-5 5= höchste Aufwand) |geplante Fertigstellung | Zugewiesen (Name) 
+| Aufgabe bzw. Beschreibung | Priorität | Schätzung der Größe (Punkte) |Status | Referenzen | geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
-| Fertigstellen systemweite Anforderungen | 4 | 2 | 18.12.2022 | Marc-Oliver Tittel; Manuel Hartmann; Charlotte Geißler; Jan Trodler; Lukas Kouba; Luc Sowodniok; Phuong Anh Nguyen
-| Vervollständigung Glossar | 4 | 2 | 14.12.2022 | Marc-Oliver Tittel; Manuel Hartmann; Charlotte Geißler; Jan Trodler; Lukas Kouba; Luc Sowodniok; Phuong Anh Nguyen
-| Aneignung Wissen im Bereich Kommunkiation im Internet, Client-Server-Modell und API´s | 5 | 1 | 07.12.2022 |Manuel Hartmann; Jan Trodler; Lukas Kouba; Luc Sowodniok; Phuong Anh Nguyen
-| Fertigstellen der technischen Spezifikationen | 5 | 4 | 19.12.2022 | Marc-Oliver Tittel; Charlotte Geißler
-| Erarbeitungen der Use-Cases | 4 | 4 | 19.12.2022 | Marc-Oliver Tittel; Charlotte Geißler; Luc Sowodniok; Phuong Anh Nguyen
-| Erarbeitung Use-Case-Modell | 4 | 1 | 14.12.2022 | Marc-Oliver Tittel; Manuel Hartmann; Charlotte Geißler; Jan Trodler; Lukas Kouba; Luc Sowodniok; Phuong Anh Nguyen
-
+| x | x | x | x | x | x | x | x | x
 |===
 
 
@@ -70,17 +56,11 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
 
-* Zustimmung vin Coach und Auftraggeber
-* offene Aufgaben aus I2 zu 100% vollständig
-* Aufgaben aus I3 zu mind. 60% erledigt 
+Beispiele:
 
-
-
-//Beispiele:
-
-//* 97% der Testfälle auf Systemebene sind erfolgreich.
-//* Gemeinsame Inspektion des Iterations-Ergebnisses (Inkrement) mit den Abteilungen X und Y ergibt positive Rückmeldung.
-//* Technische Präsentation / Demo erhält positive Rückmeldungen.
+* 97% der Testfälle auf Systemebene sind erfolgreich.
+* Gemeinsame Inspektion des Iterations-Ergebnisses (Inkrement) mit den Abteilungen X und Y ergibt positive Rückmeldung.
+* Technische Präsentation / Demo erhält positive Rückmeldungen.
 
 
 == Assessment

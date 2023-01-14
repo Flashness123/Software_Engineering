@@ -14,7 +14,7 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele festzuhalten um bei
 
 == Projektorganisation
 // Introduce the project team, team members, and roles that they play during this project. If applicable, introduce work areas, domains, or technical work packages that are assigned to team members. Introduce neighboring projects, relationships, and communication channels. If the project is introduced somewhere else, reference that location with a link.
-...
+
 
 === Teammitglieder
 
@@ -28,16 +28,16 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele festzuhalten um bei
 |Charlotte Geißler
 |24
 |
-* WING
+* Bachelorsutdendt Wirtschaftsingenieurswesen
 * Werkstudent bei Sunfire (Projektmanagement)
 |Analyse
 
 |Marc-Oliver Tittel
 |21
 |
-* WING
+* Bachelorsutdendt Wirtschaftsingenieurswesen
 * Team-/Projektmanagement im Motorsport
-|Projektleitung, 
+|Projektleitung 
 
 |Jan Trodler
 |20
@@ -90,30 +90,39 @@ Aufgrund unserer Zusammenarbeit mit dem Startup Speechmind halten wir es für di
 * Organisation im Team
 * Verstehen des Problems der Auftraggeber
 * Erführung in technische Grundlagen durch den Auftraggeber
- 
+* Kontaktaufnahme mit Coach und Kunden 
 | Date from 10.11.22 / Date to 23.11.22 
 | 15
 
 | I2
 |
-* Erarbeitung der ersten Use-Cases 
+* Beginn Erarbeitung Use-Cases Modell
+* Verständnis der Vision mit Kunden
+* Beginn Erarbeitung Glossar
 | Date from 24.11.22 / Date to 06.12.22
 | 16
 
 | I3
 |
 * Erarbeitung der technischen Spezifikationen
+* Erarbeitung der systemweiten Anforderungen 
 | Date from 07.12.22 / Date to 21.12.22
 | 17
 
 | I4
 |
+* Endgültige Abstimmung der Vision mit Kunden 
+* Erstellung der Wireframes
 * Erste aufrufbare Teile eines Prototypen erstellen
+* Erstelltung Risikoliste 
 | Date from 04.01.23 / Date to 15.01.23
 | 18
 
 |I5
 |
+* Detailausarbeitung der Belegarbeit
+* Nachholen offener Aufgaben 
+* Ausscheiden der Teilnehmer Charlotte Geißler und Marc-Oliver Tittel aufgrund Abschluss des Modules 
 | Date from 16.01.23 / Date to 27.01.23
 | 19
 
@@ -124,9 +133,12 @@ Aufgrund unserer Zusammenarbeit mit dem Startup Speechmind halten wir es für di
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
 Das System wird über einem Nodejs Server aufgesetzt und somit dem Auftraggeber (SpeechMind) zur Verfügung gestellt.
-Über eine von uns erstellte Vue js Website soll es Usern möglich sein, sich Anzumelden, Abzumelden oder zu Registrieren und auf einen Kalender zuzugreifen. Ziel ist es das System so Kompatibel wie möglich zu machen, um sich mit Google, Microsoft und anderen Kalendern verbinden zu können.
+Über eine von uns erstellte Vue js Website soll es Usern möglich sein, sich Anzumelden, Abzumelden oder zu Registrieren und auf einen Kalender zuzugreifen. Ziel ist es, das System so kompatibel wie möglich zu machen, um sich mit Google, Microsoft und anderen Kalendern verbinden zu können.
 Die Anmeldedaten werden momentan auf einem lokal gehosteten json Server verwaltet, sollen aber später auf eine Django Datenbank ausgeladen werden. Auf dieser sollen auch einzelne Kalenderereignisse gespeichert werden. Geplant ist es diese mit Hilfe von Graph QL abzurufen.  
 
 == Erkenntnisse (Lessons learned)
 //List lessons learned from the retrospective, with special emphasis on actions to be taken to improve, for example: the development environment, the process, or team collaboration.
-...
+* Die Kommunikation mit Auftraggeber und Coach ist das wichtigste für gegenseitiges Verständnis.
+* Gründliche Vorbereitung der Meetings machte diese deutlich effizenter und verbesserte das Ergebnis.
+* Aufgaben sollten nach Stärken und Schwächen im Team verteilt werden. 
+* Regeömäßige Kommuniktation im Team und Absprache zu Terminen und Vorgehensweisen sind wichtig für eine gute und effektive Zusammenarbeit. 
