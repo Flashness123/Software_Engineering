@@ -58,9 +58,10 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele festzuhalten um bei
 | Implementation
 
 |Manuel Hartmann
+|20
 |
-|
-|
+* Diplomstudent Informatik
+|Entwicklung
 
 |Phoung Anh Nguyen
 |
