@@ -64,8 +64,9 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele festzuhalten um bei
 |Entwicklung
 
 |Phoung Anh Nguyen
+|24
 |
-|
+* Diplomstudent Wirtschaftsinformatik
 |
 |=== 
 
