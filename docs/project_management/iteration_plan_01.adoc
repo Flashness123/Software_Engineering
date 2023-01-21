@@ -23,11 +23,11 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
-* Fertigstellen der technischen Spezifikationen 
-* Fertigstellen der systemweiten Anforderungen
-* Vervollständigung Use-Case-Modell
-* Vervollständigung Glossar
-* Aneignung Wissen im Bereich Kommunkiation im Internet, Client-Server-Modell und API´s 
+* Ziel 1: Fertigstellen der technischen Spezifikationen 
+* Ziel 2: Fertigstellen der systemweiten Anforderungen
+* Ziel 3: Vervollständigung Use-Case-Modell
+* Ziel 4: Vervollständigung Glossar
+* Ziel 5: Aneignung Wissen im Bereich Kommunkiation im Internet, Client-Server-Modell und API´s 
 
 //Beispiele:
 
@@ -70,9 +70,9 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
 
-* Zustimmung vin Coach und Auftraggeber
+* Zustimmung von Coach und Auftraggeber zur Vison 
 * offene Aufgaben aus I2 zu 100% vollständig
-* Aufgaben aus I3 zu mind. 60% erledigt 
+* Aufgaben aus I3 zu mind. 70% erledigt 
 
 
 
@@ -90,20 +90,36 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |===
 | Assessment Ziel | Das kann die gesamte Iteration oder eine spezifische Komponente sein
 
-| Assessment Datum | ...
-| Teilnehmer | ...
-| Projektstatus	| Zum Beispiel ausgedrückt als rot, gelb oder grün.
+| Assessment Datum | 22.12.2022
+| Teilnehmer | Marc-Olvier Tittel und Charlotte Geißler 
+| Projektstatus	| gelb
 |===
 
 * Beurteilung im Vergleich zu den Zielen
 //Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
-
+** Ziel 1 erfüllt
+** Ziel 2 erfüllt 
+** Ziel 3 nicht erfüllt - Wireframes fehlen
+** Ziel 4 nicht erfüllt - wird im laufe des Projektes vollständig
+** Ziel 5 erfüllt 
 * Geplante vs. erledigte Aufgaben
 //Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
+[%header, cols="2,1,3"]
+|===
+| Abgearbeitet | Verschoben | Hinzugekommen
+| Fertigstellen systemweite Aufgaben | Use-Case Wireframes: sobald alle Use-Cases indentifiziert und abgenommen sind | Finale Prüfung Glossar in der Letzten Iteration
+| Indentifizierung der Use-Cases| x | Überprüfung der Grammatik in der Letzten Iteration
+| Glossar für I3 aktuellisieren | x | x
+| Fertigstellen technische Spezifikationen| x | x
+| LCO Meilenstein | x | x
+|===
 
 * Beurteilung im Vergleich zu den Bewertungskriterien
 //Document whether you met the evaluation criteria as specified in the Iteration Plan.
 //Geben Sie an, ob Sie die o.g. Bewertungskriterien erfüllt haben. Das kann z.B. folgende Informationen enthalten: “Demo for Department X was well-received, with some concerns raised around usability,” or “495 test cases were automated with a 98% pass rate. 9 test cases were deferred because the corresponding Work Items were postponed.”
+** Ziel 3: ist entsprechend der Bewertungskriterien zu mind 70% erfüllt. Dennoch ist die Kommunikation und Verständigung zu den Use-Cases ohne Wireframes erschwert. 
+** Ziel 4: Aufnahme aller bisher bekannten Begriffe in das Glossar. Das Glossar ist aber mit Abschluss des Projektes Vollständig, da es sich so lange stätig erweitert. 
 
 * Andere Belange und Abweichungen
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
+** Um das versehentliche Verpassen von Meeting zu vermeiden werden Erinnerungsnachrichten per WhatsApp gesendet. (Ausführung Marc-Oliver Tittel)

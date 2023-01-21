@@ -117,7 +117,7 @@ Aufgrund unserer Zusammenarbeit mit dem Startup Speechmind halten wir es für di
 * Erstellung der Wireframes
 * Erste aufrufbare Teile eines Prototypen erstellen
 * Erstelltung Risikoliste 
-| Date from 04.01.23 / Date to 15.01.23
+| Date from 02.01.23 / Date to 15.01.23
 | 18
 
 |I5
