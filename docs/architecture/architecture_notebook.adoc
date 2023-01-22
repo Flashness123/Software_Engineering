@@ -51,7 +51,8 @@ Funktional
 * *SWFA-4:* Zugangsdaten dauerhaft speichern
 * *SWFA-5:* Daten auf geeignete Weise exportieren
 
-xref:system-wide-requirementsadoc#SWFA-3[SWFA-3]
+xref:system-wide_requirements.adoc#SWFA-3[SWFA-3]
+
 
 Wartbarkeit (Supportability)
 
