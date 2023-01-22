@@ -58,6 +58,10 @@ Herr Titus Hartmann
 | gemeint ist die Meetingdokumentation, welche durch unser Tool von Speechmind in den Kalendereintrag importiert ist 
 | xx
 
+| Client-Server-Modell 
+| beschreibt eine Möglichkeit, Aufgaben und Dienstleistungen innerhalb eines Netzwerkes zu verteilen 
+| Client-Server-Konzept
+
 | xx | xx | xx
 |===
 
