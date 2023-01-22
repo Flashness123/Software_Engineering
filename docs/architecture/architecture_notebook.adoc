@@ -27,11 +27,82 @@ auf die relevanten Komponenten, für die Schnittstelle, bezogen sein und durch �
 == Annahmen und Abhängigkeiten
 //[List the assumptions and dependencies that drive architectural decisions. This could include sensitive or critical areas, dependencies on legacy interfaces, the skill and experience of the team, the availability of important resources, and so forth]
 
+* Die Schittstelle muss in ein bestehendes System eingebunden werden
+* Frontend Framework: Vue js
+* Backend: Django Server(Python)
+* GraphQL als Query Language 
+* Alle benötigten Server(Google, Microsoft, Django) laufen stabil
+
+Nutzer: +
+* Jeder Nutzer besitzt eine stabile Internetverbindung
+* Besitz von Microsoft oder Google Konto
+* Jeder Nutzer erlaubt JavaScript
+
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
+Über die systemweiten funktionalen und nichtfunktionalen Anforderungen kann im Dokument zu den systemweiten Anforderungen nachgelesen werden.
+Funktional
+* Verwaltung
+* <<Riskoliste,Mutter>> test
+* <<Architekturmechanismen,SWFA-1>> Authentifizierung
+* *SWFA-2:* ervorhebung der Tage mit Terminen
+* *SWFA-3:* Zugangsdaten der Anwender vor Diebstahl schützen
+* *SWFA-4:* Zugangsdaten dauerhaft speichern
+* *SWFA-5:* Daten auf geeignete Weise exportieren
 
+xref:system-wide-requirementsadoc#SWFA-3[SWFA-3]
 
+Wartbarkeit (Supportability)
+
+Sicherheit
+
+* *UC01*: Login
+* *UC02*: Kalendereintrag öffnen
+* *UC03*: Notiz-/Textfeld des Kalendereintrag bearbeiten
+* *UC04*: Kalendereintrag suchen
+
+Session-Managment
+[cols="1,1,1"]
+|===
+|Anforderung |Systemkomponente |Architekturmechanismen
+
+|UC01
+|Webanwendung
+|apu
+
+|UC02
+|Webanwendung
+|apu
+
+|UC03
+|Webanwendung
+|apu
+
+|UC04
+|Webanwendung
+|apu
+
+|SWFA-1
+|spa
+|apu
+
+|SWFA-2
+|spa
+|apu
+
+|SWFA-3
+|spa
+|apu
+
+|SWFA-4
+|spa
+|apu
+
+|SWFA-5
+|spa
+|apu
+|===
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
