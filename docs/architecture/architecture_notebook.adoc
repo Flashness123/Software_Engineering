@@ -42,16 +42,15 @@ Nutzer: +
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
 Über die systemweiten funktionalen und nichtfunktionalen Anforderungen kann im Dokument zu den systemweiten Anforderungen nachgelesen werden.
-Funktional
-* Verwaltung
-* <<Riskoliste,Mutter>> test
+
+
 * <<Architekturmechanismen,SWFA-1>> Authentifizierung
 * *SWFA-2:* ervorhebung der Tage mit Terminen
 * *SWFA-3:* Zugangsdaten der Anwender vor Diebstahl schützen
 * *SWFA-4:* Zugangsdaten dauerhaft speichern
 * *SWFA-5:* Daten auf geeignete Weise exportieren
 
-xref:system-wide-requirementsadoc#SWFA-3[SWFA-3]
+xref:system-wide_requirements.adoc#Einführung[SWFA-3]
 
 Wartbarkeit (Supportability)
 
