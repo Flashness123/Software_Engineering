@@ -50,7 +50,18 @@ Betreiber des Verwaltungssystem +
 Herr Titus Hartmann 
 | Themensteller
 
-| xx | xx | xx
+| Agenda 
+| Liste mit Punkten, welche in einer Besprechung besprochen werden müssen
+| Arbeitsplan, Aufgabenliste, Programm, To-do-Liste
+
+| Dokumentation 
+| gemeint ist die Meetingdokumentation, welche durch unser Tool von Speechmind in den Kalendereintrag importiert ist 
+| xx
+
+| Client-Server-Modell 
+| beschreibt eine Möglichkeit, Aufgaben und Dienstleistungen innerhalb eines Netzwerkes zu verteilen 
+| Client-Server-Konzept
+
 | xx | xx | xx
 |===
 
@@ -59,9 +70,23 @@ Herr Titus Hartmann
 [%header]
 |===
 | Abkürzung | Bedeutung | Erläuterung
-//| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
-| API | Application Programming Interface | Programmteil, der von einem Softwaresystem anderen Programmen zur Anbindung an das System zur Verfügung gestellt wird
-| Sync | Synchronisation | siehe "Begriffe"
+
+| UP 
+| Unified Process 
+| Vorgehensmodell für die Softwareentwicklung
+
+| API 
+| Application Programming Interface 
+| Programmteil, der von einem Softwaresystem anderen Programmen zur Anbindung an das System zur Verfügung gestellt wird
+
+| Sync 
+| Synchronisation 
+| siehe "Begriffe"
+
+| DB
+| Datenbank, bzw. Database (eng.)
+| ein System zur elektronischen Verwaltung von Daten
+
 |===
 
 == Verzeichnis der Datenstrukturen
