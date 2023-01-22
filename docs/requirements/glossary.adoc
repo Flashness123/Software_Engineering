@@ -54,6 +54,10 @@ Herr Titus Hartmann
 | Liste mit Punkten, welche in einer Besprechung besprochen werden müssen
 | Arbeitsplan, Aufgabenliste, Programm, To-do-Liste
 
+| Dokumentation 
+| gemeint ist die Meetingdokumentation, welche durch unser Tool von Speechmind in den Kalendereintrag importiert ist 
+| xx
+
 | xx | xx | xx
 |===
 
