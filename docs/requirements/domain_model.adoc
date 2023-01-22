@@ -8,4 +8,6 @@ include::../_includes/default-attributes.inc.adoc[]
 == Allgemeine Informationen
 
 
-== ...
+:imageTitle: Domänmodell
+:imageFile: Domaen-Modell.PNG 
+image::{imageFile}[title="{imageTitle}", alt="{imageTitle}", width={imageWidth}] 
