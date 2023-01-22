@@ -50,7 +50,10 @@ Betreiber des Verwaltungssystem +
 Herr Titus Hartmann 
 | Themensteller
 
-| xx | xx | xx
+| Agenda 
+| Liste mit Punkten, welche in einer Besprechung besprochen werden müssen
+| Arbeitsplan, Aufgabenliste, Programm, To-do-Liste
+
 | xx | xx | xx
 |===
 
