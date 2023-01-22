@@ -4,7 +4,6 @@ Marc-Oliver Tittel <s82452@htw-dresden.de>; Manuel Hartmann <s83688@htw-dresden.
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
-
 == Einführung
 In diesem Dokument werden die systemweiten Anforderungen für das Projekt E1 Kalenderintegration spezifiziert. Die Gliederung erfolgt nach der FURPS+ Anforderungsklassifikation:
 
