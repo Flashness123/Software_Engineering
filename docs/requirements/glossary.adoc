@@ -62,9 +62,23 @@ Herr Titus Hartmann
 [%header]
 |===
 | Abkürzung | Bedeutung | Erläuterung
-//| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
-| API | Application Programming Interface | Programmteil, der von einem Softwaresystem anderen Programmen zur Anbindung an das System zur Verfügung gestellt wird
-| Sync | Synchronisation | siehe "Begriffe"
+
+| UP 
+| Unified Process 
+| Vorgehensmodell für die Softwareentwicklung
+
+| API 
+| Application Programming Interface 
+| Programmteil, der von einem Softwaresystem anderen Programmen zur Anbindung an das System zur Verfügung gestellt wird
+
+| Sync 
+| Synchronisation 
+| siehe "Begriffe"
+
+| DB
+| Datenbank, bzw. Database (eng.)
+| ein System zur elektronischen Verwaltung von Daten
+
 |===
 
 == Verzeichnis der Datenstrukturen
