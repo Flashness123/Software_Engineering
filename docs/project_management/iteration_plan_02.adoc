@@ -14,12 +14,9 @@ include::../_includes/default-attributes.inc.adoc[]
 
 | Beginn der Iteration | 02.01.2023
 | Meeting mit Auftraggeber| 03.01.2023
-| ... | -
-| ... | -
-| ... | -
-| ... | -
-| ... | -
-| ... | -
+| Teammeeting | 08.01.2023
+| Abschlusspräsentation mit dem Coach | 11.01.2023
+| Teammeeting | 15.01.2023
 | Ende der Iteration | 15.01.2023
 |===
 
@@ -27,11 +24,9 @@ include::../_includes/default-attributes.inc.adoc[]
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
-Beispiele:
-
-* Beheben der Usability-Probleme, die von Abteilung X berichtet wurden
-* Ausliefern der Hauptszenarios, die die Integration mit System Y zeigen
-* Present a technical demonstration (demo).
+* Ziel 1: Ferigstellung Use-Case-Modell
+* Ziel 2: Erstellung der Architektur
+* Ziel 3: Erstellung Prototyp
 
 
 == Aufgabenzuordnung
@@ -40,12 +35,22 @@ Beispiele:
 Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
 
 _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
-[%header, cols="3,1,1,1,2,1,1,1,1"]
+[%header, cols="3,1,1,1,2"]
 |===
-| Aufgabe bzw. Beschreibung | Priorität | Schätzung der Größe (Punkte) |Status | Referenzen | geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
+| Aufgabe bzw. Beschreibung | Priorität (Skala 1-5 1= höchste Prio)| Schätzung der Größe (1-5 5= höchste Aufwand) |geplante Fertigstellung | Zugewiesen (Name) 
 
-| x | x | x | x | x | x | x | x | x
+| Fertigstellung Use-Case-Modell| 5 | 3 | 08.01.2023 | Marc-Oliver Tittel + 
+Charlotte Geißler +  
+Luc Sowodniok +
+Phuong Anh Nguyen
+| Vervollständigung Glossar | 4 | 2 | 08.01.2023 | Marc-Oliver Tittel; Manuel Hartmann; Charlotte Geißler; Jan Trodler; Lukas Kouba; Luc Sowodniok; Phuong Anh Nguyen
+| Erstellung Architekturmodell | 3 | 3 | 11.01.2023 |Manuel Hartmann; Jan Trodler; Lukas Kouba
+| Erstellung Wireframes | 3 | 2 | 08.01.2023 | Manuel Hartmann; Luc Sowodniok; Phuong Anh Nguyen 
+| Erstellung Prototyp für Präsentation | 5 | 5 | 13.01.2023 | Jan Trodler; Lukas Kouba; Manuel Hartmann
+| Erstellung Präsentation | 4 | 1 | 15.01.2023  | Marc-Oliver Tittel; Lukas Kouba
+
 |===
+
 
 
 == Probleme (optional)
@@ -62,11 +67,10 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
 
-Beispiele:
+* Prototyp funktionsfähig
+* offene Aufgaben aus I3 zu 100% vollständig
+* Aufgabe aus I4 zu min. 80% erledigt
 
-* 97% der Testfälle auf Systemebene sind erfolgreich.
-* Gemeinsame Inspektion des Iterations-Ergebnisses (Inkrement) mit den Abteilungen X und Y ergibt positive Rückmeldung.
-* Technische Präsentation / Demo erhält positive Rückmeldungen.
 
 
 == Assessment
@@ -76,20 +80,33 @@ Beispiele:
 |===
 | Assessment Ziel | Das kann die gesamte Iteration oder eine spezifische Komponente sein
 
-| Assessment Datum | ...
-| Teilnehmer | ...
-| Projektstatus	| Zum Beispiel ausgedrückt als rot, gelb oder grün.
+| Assessment Datum | 16.01.2023
+| Teilnehmer | Marc-Oliver Tittel und Charlotte Geißler
+| Projektstatus	| gelb
 |===
 
 * Beurteilung im Vergleich zu den Zielen
 //Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
+** Ziel 1 erfüllt zu mind. 90% (Wireframes müssen noch überprüft werden)
+** Ziel 2 erfüllt (muss aber in Beleg vervollständigt werden)
+** Ziel 3 erfüllt
 
 * Geplante vs. erledigte Aufgaben
 //Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
-
+[%header, cols="2,1,3"]
+|===
+| Abgearbeitet | Verschoben | Hinzugekommen
+| Erstellung Prototyp | Finale Prüfung der Wireframes | x
+| Erstellung Architektur| Architektur im Beleg vervollständigen | x
+| Glossar für I4 aktuellisieren | x | x
+| LCA Meilenstein | x | x
+|===
 * Beurteilung im Vergleich zu den Bewertungskriterien
 //Document whether you met the evaluation criteria as specified in the Iteration Plan.
 //Geben Sie an, ob Sie die o.g. Bewertungskriterien erfüllt haben. Das kann z.B. folgende Informationen enthalten: “Demo for Department X was well-received, with some concerns raised around usability,” or “495 test cases were automated with a 98% pass rate. 9 test cases were deferred because the corresponding Work Items were postponed.”
+**  Ziel 1: entsprechend der Bewertungskriterien zu mind. 80% erfüllt; finale Prüfung steht noch aus
+** Ziel 2: entsprechend der Bewertungskriterien zu mind. 80% erfüllt; muss noch final in Belegdatei vervollständigt werden
 
 * Andere Belange und Abweichungen
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
+** nicht vorhanden

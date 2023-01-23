@@ -13,10 +13,10 @@ include::../_includes/default-attributes.inc.adoc[]
 | Meilenstein | Datum
 
 | Beginn der Iteration |07.12.2022
-| Workshop Kommunkiation im Internet, Client-Server-Modell und API´s | 07.12.2022
+| Workshop Kommunkiation im Internet, Client-Server-Modell und API | 07.12.2022
 | Teammeeting | 14.12.2022
 | Teammeeting | 18.12.2022
-| Zwischenpräsentation mit Coach | 21.12.2022
+| Zwischenpräsentation mit dem Coach | 21.12.2022
 | Ende der Iteration | 21.12.2022
 |===
 
@@ -27,7 +27,7 @@ include::../_includes/default-attributes.inc.adoc[]
 * Ziel 2: Fertigstellen der systemweiten Anforderungen
 * Ziel 3: Vervollständigung Use-Case-Modell
 * Ziel 4: Vervollständigung Glossar
-* Ziel 5: Aneignung Wissen im Bereich Kommunkiation im Internet, Client-Server-Modell und API´s 
+* Ziel 5: Aneignung Wissen im Bereich Kommunkiation im Internet, Client-Server-Modell und API
 
 //Beispiele:
 
@@ -56,21 +56,13 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |===
 
 
-== Probleme (optional)
-//Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.
 
-[%header, cols="2,1,3"]
-|===
-| Problem | Status | Notizen
-
-| x | x | x
-|===
 
 
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
 
-* Zustimmung von Coach und Auftraggeber zur Vison 
+* Zustimmung von Coach und Auftraggeber zur Vision 
 * offene Aufgaben aus I2 zu 100% vollständig
 * Aufgaben aus I3 zu mind. 70% erledigt 
 
