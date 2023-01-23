@@ -12,7 +12,7 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäte
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf die {project-name}, das von Gruppe E1 entwickelt wird. Das System wird es SpeechMind Nutzern erlauben, ihren eigenen Kalender auf der SpeechMind website einzusehen, die Meetingdokumentation in den passenden Kalendereintrag per Knopfdruck hinzuzufügen, Notizen zu diesen hinzuzufügen und Kalendereinträge zu suchen. 
+Dieses Visions-Dokument bezieht sich auf die {project-name}, das von Gruppe E1 entwickelt wird. Das System wird es SpeechMind Nutzern erlauben, ihren eigenen Kalender auf der SpeechMind Website einzusehen, die Meetingdokumentation in den passenden Kalendereintrag per Knopfdruck hinzuzufügen, Notizen zu diesen hinzuzufügen und Kalendereinträge zu suchen. 
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -31,13 +31,14 @@ Studios sind Product Owner in Unternehmen, die Software entwickeln.
 In Kalendern sind Telefonnummern und Links zu Onlinemeetings, die Agenda des nächsten Termins
 oder Terminpriorisierungen vermerkt. Diese Informationen haben einen hohen Mehrwert in
 einem automatisierten System, da über die zusätzlichen Informationen Funktionen gestartet werden
-können oder im nachhinein erneut wichtige Punkte/Informationen entnommen werden können.
-Mit SpeechMind sollen diese Kalendereinträge sowohl auslesen, damit nach dem Ende eines
+können oder im nachhinein erneut wichtige Punkte/Informationen entnommen werden können. +
+(Mit SpeechMind sollen diese Kalendereinträge sowohl auslesen, damit nach dem Ende eines
 Meetings automatisch die Audioaufnahme durch Speechmind ausgewertet werden kann. Darüber hinaus ist
 jedoch auch geplant diese Einträge als Dokumentationselement zu nutzen und mit den generierten
 Daten anzureichern. Somit muss der Product Owner nicht erst die verschiedenen Systeme öffnen,
 um schnell an aktuelle oder vergangene Dokumentation zu kommen, sondern hat all diese Informationen
-kurz und prägnant in einem Kalendereintrag verknüpft.
+kurz und prägnant in einem Kalendereintrag verknüpft.)
+//-> überprüfen ggf umschreiben
 
 
 === Problem Statement

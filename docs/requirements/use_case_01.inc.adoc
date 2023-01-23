@@ -23,7 +23,7 @@ Dieser Use Case beschreibt, wie sich ein Benutzer beim Kalendersystem anmeldet.
 . Der Use Case beginnt, wenn der Benutzer in der Navigationsleiste auf den "Login"-Button klickt.
 . Das System zeigt die Anmeldeseite an, auf der der Benutzer seine E-Mail-Adresse und sein Passwort eingeben kann.
 . Der Benutzer gibt seine Daten ein und klickt auf den "Sign In"-Button.
-. Use Case: Benutzer validieren wird durchgeführt.
+. Benutzervalidierung wird durchgeführt.
 . Das System zeigt die relevante Hauptseite an.
 . Der Use Case ist abgeschlossen.
 
@@ -31,7 +31,7 @@ Dieser Use Case beschreibt, wie sich ein Benutzer beim Kalendersystem anmeldet.
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
 ==== Ungültiger Benutzername oder falsches Passwort
-Wenn in Schritt 4 des Standardablaufs Benutzer der Use Case: Benutzer validieren diesen nicht erfolgreich abschließt, dann
+Wenn in Schritt 4 des Standardablaufs die Benutzervalidierung nicht erfolgreich abschließt, dann
 
 . Die Meldung "Ungültige E-Mail oder ungültiges Passwort - bitte versuchen Sie es erneut" wird angezeigt.
 . Der Anwendungsfall wird bei Schritt 3 fortgesetzt.

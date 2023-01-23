@@ -33,7 +33,8 @@ auf die relevanten Komponenten, für die Schnittstelle, bezogen sein und durch �
 * GraphQL als Query Language 
 * Alle benötigten Server(Google, Microsoft, Django) laufen stabil
 
-Nutzer: +
+Nutzer: 
+
 * Jeder Nutzer besitzt eine stabile Internetverbindung
 * Besitz von Microsoft oder Google Konto
 * Jeder Nutzer erlaubt JavaScript
