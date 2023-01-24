@@ -43,12 +43,6 @@ ein formelles Treffen von mindestens zwei Projektbeteiligten zum Zweck des Infor
 | zeitliche Abgleichen von Vorgängen 
 | xx
 
-| Kunde 
-| Auftraggeber des Projekts,
-vorrangiger Stakeholder +
-Betreiber des Verwaltungssystem + 
-Herr Titus Hartmann 
-| Themensteller
 
 | Agenda 
 | Liste mit Punkten, welche in einer Besprechung besprochen werden müssen
@@ -62,7 +56,9 @@ Herr Titus Hartmann
 | beschreibt eine Möglichkeit, Aufgaben und Dienstleistungen innerhalb eines Netzwerkes zu verteilen 
 | Client-Server-Konzept
 
+| SpeechMind  | Auftraggeber des Projektes | SpeechMind Studio, Auftraggeber, Themensteller  
 | xx | xx | xx
+
 |===
 
 

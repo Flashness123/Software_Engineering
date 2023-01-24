@@ -26,19 +26,17 @@ Siehe <<#glossary, Glossar>>.
 
 === Fachliche Motivation
 Der Kalender spielt in der Arbeitswelt eine enorm große Rolle, da darüber Termine, Meetings und
-die gesamte Organisation des Arbeits- und Privatlebens stattfindet. Die Zielgruppe des SpeechMind
-Studios sind Product Owner in Unternehmen, die Software entwickeln.
+die gesamte Organisation des Arbeits- und Privatlebens stattfindet. 
 In Kalendern sind Telefonnummern und Links zu Onlinemeetings, die Agenda des nächsten Termins
 oder Terminpriorisierungen vermerkt. Diese Informationen haben einen hohen Mehrwert in
 einem automatisierten System, da über die zusätzlichen Informationen Funktionen gestartet werden
 können oder im nachhinein erneut wichtige Punkte/Informationen entnommen werden können. +
-(Mit SpeechMind sollen diese Kalendereinträge sowohl auslesen, damit nach dem Ende eines
-Meetings automatisch die Audioaufnahme durch Speechmind ausgewertet werden kann. Darüber hinaus ist
-jedoch auch geplant diese Einträge als Dokumentationselement zu nutzen und mit den generierten
-Daten anzureichern. Somit muss der Product Owner nicht erst die verschiedenen Systeme öffnen,
-um schnell an aktuelle oder vergangene Dokumentation zu kommen, sondern hat all diese Informationen
-kurz und prägnant in einem Kalendereintrag verknüpft.)
-//-> überprüfen ggf umschreiben
+Der Auftraggeber SpeechMind hat eine KI-Anwendung zur Meetingdokumentation entwickelt, welche aus Tonaufnahmen zu Textdukumenten umwandelt. Dies ermöglicht die Dokumentation informationslastiger Gespräche in der Produktentwicklung. +
+ Dafür werden Meeting Online oder in Präsenz durchgeführt und aufgenommen. Diese Sprachspur wird in der Software hochgeladen und in ein Transkript umgewandelt. Die KI-Technoliógie identifiziert die wichtigsten Informationen und kategorisiert diese. +
+Die Dokumentation kann für bestehende Arbeitsabläufe und Konversationen mit Kollegen genutzt werden. +
+Die Projektaufgabe bestehnt nun darin, den Kalender als zentrales Speichermedium auf der Website von SpeechMind zu integieren. Dieser Kalender soll jedoch nur in bestimmten Punkten bearbeitet werden können. Dafür sollen die Kalendereinträge nur um Notizen oder Links zu den Meetingdokumentationen erweiterbar sein. Der Kalender wird hierfür von den gängigen Anbietern (Google, Microsoft,...) importiert.  
+
+
 
 
 === Problem Statement
@@ -47,9 +45,12 @@ kurz und prägnant in einem Kalendereintrag verknüpft.)
 [cols="1,3"]
 |===
 | Das Problem | Meetingdokumentation in den Kalender über die SpeechMind Website zu integrieren
-| betrifft | Auftraggeber, Nutzer von SpeechMind, Gesetzgeber, Projektteam, Nodejs Server
-| die Auswirkung davon ist | hoher Zeitaufwand, Fehleranfälligkeit, kein zeitlicher Kontext bei Meetingnachbereitung
-| eine erfolgreiche Lösung wäre |  effiziente und schnelle Auswertung des Meetings und Zugriff via Kalender, womit der Kalender zum zentralen Speichermedium wird
+| betrifft | Nutzer von SpeechMind
+| die Auswirkung davon ist | hoher Zeitaufwand +
+Fehleranfälligkeit +
+keine zeitliche Zuordnung bei Meetingnachbereitung +
+ kein zentrales Speicherelement, auf das alle beteiligten Personen zugreifen können 
+| eine erfolgreiche Lösung wäre |  effiziente und schnelle Auswertung des Meetings und Zugriff via Kalender, womit der Kalender zum zentralen Speichermedium wird 
 |===
 
 ////
@@ -71,11 +72,11 @@ Beispiel:
 [cols="1,3"]
 |===
 | Für | Nutzer von SpeechMind
-| der / die | effizienter auf Meetingdokumentationen zugreifen wollen
+| der / die | effizienter und schneller auf Meetingdokumentationen zugreifen wollen
 | Das Produkt / die Lösung ist ein | Webanwendung
-| Die / Das | alle Informationen von einem Meeting mit einem Kalendereintrag verknüpft
+| Die / Das | alle Informationen von einem Meeting mit einem bestehenden Kalendereintrag verknüpft, wobei die Hauptinformationen nicht veränderbar sind (Datum, Zeit, Ort, Teilnehmer)
 | Im Gegensatz zu | manueller Eingabe
-| Unser Produkt | ermöglicht eine einfache Integration Ihrer Meetingdokumentation in einen Kalender Ihrer Wahl über die SpeechMind Seite
+| Unser Produkt | ermöglicht eine einfache Integration der Meetingdokumentation in einen Kalender ihrer Wahl über die SpeechMind Seite
 |===
 
 ////
@@ -100,8 +101,9 @@ Beispiel Produkt:
 | Name | Beschreibung | Verantwortlichkeiten
 
 | Auftraggeber
-| SpeechMind
-| Ansprechpartner für das Projekt der die Anforderungen an das Tool festlegt, Instandhaltung
+| SpeechMind Studio
+| Ansprechpartner für das Projekt, der die Anforderungen an das Tool festlegt +
+ Instandhaltung
 
 | Nutzer
 | Nutzer des SpeechMind Systems
@@ -121,13 +123,21 @@ Beispiel Produkt:
 |===
 
 === Benutzerumgebung
-Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
+//Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
-. Die Annzahl der Nutzer entspricht den Nutzern von SpeechMind. Diese wird sich je nach Nachfrage ändern. 
-. Die Nutzungszeit kann sich von Nutzer zu Nutzer, je nach Umfang des Meetings und Bearbeitung, ändern. 
-. Die Anwendung soll als Web-Applikation verfügbar sein. 
-. Internetverbindung muss gewährleistet sein.
+Auftraggeber
+
+* Bereitstellung des Tools als Webappliktion
+* Nutzer müssen Kalendereinträge einsehen können
+* Die Annzahl der Nutzer entspricht den Nutzern von SpeechMind. Diese wird sich je nach Nachfrage ändern. 
+
+
+Nutzer 
+
+* Nutzung des Tools nur mit Authentifizierung 
+* Nutzung ist an verschiedenen Endgeräten durchführbar
+* Die Anwendung soll als Web-Applikation verfügbar sein. 
 
 
 == Produkt-/Lösungsüberblick
@@ -141,7 +151,7 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 | Authentifizierung des Nutzenden in der entsprechenden Kalendersoftware | hoch | Ermöglicht den Zugriff auf den selbstgewählten Kalender | xx
 | DB-Modell für Kalenderintegration  | hoch | universell | xx
 | Sync der Kalendereinträge in das SpeechMind Studio | hoch | Abruf des Kalenders in SpeechMind Studio | xx
-| Nachbearbeiten der Notizfelder des Kalendereinträge | hoch | nachträgliche Ergänzung von Informationen | xx
+| Nachbearbeiten der Notizfelder des Kalendereintrages | hoch | nachträgliche Ergänzung von Informationen (To-Do Listen, Transkriptionsdatei, o.Ä.)| xx
 |===
 
 
@@ -155,7 +165,7 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 [%header, cols="3,1,1"]
 |===    
 | Anforderung | Priorität | Geplantes Release
-| einfache Bedienung | hoch  | xx
+| Einfache und intuitive Bedienung | hoch  | xx
 | Vertraute Nutzerumgebung   | hoch | xx
 |===
 
