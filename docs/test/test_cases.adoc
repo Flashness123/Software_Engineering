@@ -6,9 +6,68 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Allgemeine Informationen
+. Internetverbindung muss vorhanden sein
+. Das Tool muss geöffnet sein
 
 == Test Cases
 
-=== Test Case 01
+=== TC01: Nutzer loggt sich erfolgreich ein
 
-=== Test Case 02
+[cols="1,3"]
+|===
+| *Beschreibung*
+| Im ersten Test Case wird sich in das Tool eingeloggt. Dabei wird eine E-Mail-Adresse abgefragt. Erwartet wird, dass sich mit korrekten Login-Daten erfoglreich eingeloggt wird.
+
+| *Vorbedingungen*
+| - es wird ein Google Account benötigt
+
+| *Testablauf*
+| - Login-Button wird betätigt +
+- Nutzer wird auf eine Google-Loginseite weitergeleitet +
+- Nutzer gibt seine Login-Daten für sein entsprechendes Google-Konto ein +
+- Nutzer wird auf die eingeloggt und auf die Kalenderübersicht weitergeleitet
+
+| *erwartetes Ergebis*
+| - anstehende Events in dieser Kalenderwoche werden ausgegeben
+|===
+=== TC02: Nutzer loggt sich aus
+
+[cols="1,3"]
+|===
+| *Beschreibung*
+| Hier wird gezeigt, dass sich ein Nutzer auch erfolgreich wieder ausloggen kann. Anschließend soll ein wiederholtes Einloggen möglich sein
+
+| *Vorbedingungen*
+| - ein Google-Konto wird benötigt +
+- Nutzer muss mit Google-Konto im Tool eingeloggt sein
+
+| *Testablauf*
+| - der Logout-Button wird betätigt +
+- der Nutzer wird auf die urprüngliche Login-Seite des Tools weitergeleitet
+
+| *erwartetes Ergebnis*
+| - Der Nutzer wird erfolgreich ausgeloggt
+|===
+
+=== TC03: Kalendereinträge werden neu geladen
+
+[cols="1,3"]
+|===
+| *Beschreibung*
+| Um die ausgegebenen Kalendereinträge des Toolszu aktualisieren wird in diesem Test Case das Tool erneut mit dem Kalenderserver synchronisiert 
+
+| *Vorbedingungen*
+| - ein Google-Konto wird benötigt +
+- Nutzer muss mit Google-Konto im Tool eingeloggt sein
+
+| *Testablauf*
+| - der Refresh-Button wird betätigt +
+- das Tool wird erneut mit dem Kalenderserver synchronisiert +
+- die aktualisierten Kalendereinträge werden ausgegeben
+
+| *erwartetes Ergebnis*
+| Fall 1: keine neuen Kalendereinträge vorhanden: +
+- Die Ausgabe bleibt gleich, bei der Aktualisierung wurden keine neuen Kalendereinträge gefunden +
+Fall 2: neue Kalendereinträge vorhanden: +
+- die neuen Kalendereinträge werden im Tool ausgegeben
+|===
