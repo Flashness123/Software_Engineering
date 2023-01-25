@@ -10,12 +10,10 @@ include::../_includes/default-attributes.inc.adoc[]
 . Das Tool muss geöffnet sein
 
 == Test Cases
+////
+besser geeignet für Test Script
 
-<<<<<<< HEAD
-
-=======
 === TC01: Nutzer loggt sich erfolgreich ein
->>>>>>> 578375849ffcc6040709177c951b29c50abe4468
 
 [cols="1,3"]
 |===
@@ -75,3 +73,90 @@ include::../_includes/default-attributes.inc.adoc[]
 Fall 2: neue Kalendereinträge vorhanden: +
 - die neuen Kalendereinträge werden im Tool ausgegeben
 |===
+
+////
+
+=== Test Case 01: TC01 Login
+==== Email Feld: TC0101
+|===
+^| *Test Case ID* ^| *Beschreibung*  ^| *Vorbedingungen* ^| *Erwartetes Ergebnis* ^| *Nachbedingungen*
+
+| TC010100
+| Die E-Mail Anwesenheit wird überprüft.
+| Die Eingabe der E-Mail sollte akzeptiert werden.
+| Die E-Mail sollte vorhanden sein.
+|
+
+| TC010101
+| Das E-Mail-Feld sollte gültige E-Mail-Adressen akzeptieren.
+| Ein Google-Konto wird benötigt.
+| Gültige E-Mails werden vom System akzeptiert.
+|
+
+| TC010102
+| Das E-Mail-Feld sollte Groß- und Kleinschreibung nicht berücksichtigen.
+| 
+| Die E-Mail sollte vorhanden sein.
+|
+
+| TC010103
+| Ungültige E-Mails sollten nicht akzeptiert werden.
+|
+| Eine Fehlermeldung zur Anmeldung wird angezeigt.
+|
+
+|===
+
+==== Passwort Feld: TC0102
+|===
+^| *Test Case ID* ^| *Beschreibung*  ^| *Vorbedingungen* ^| *Erwartetes Ergebnis* ^| *Nachbedingungen*
+
+| TC010200
+| Die Passwort Anwesenheit wird überprüft.
+| Die Eingabe des Passworts sollte akzeptiert werden.
+| Das Passwort sollte vorhanden sein.
+| Das Passwort sollte maskiert sein.
+
+| TC010201
+| Das Kennwort sollte eine Mindestlänge und einen Mindestzeichentyp aufweisen.
+| 
+| Gültige Passwort werden vom System akzeptiert.
+| 
+
+| TC010202
+| Ungültige Passwort sollten nicht akzeptiert werden.
+|
+| Eine Fehlermeldung zur Anmeldung wird angezeigt.
+|
+
+|===
+
+==== Login: TC0103
+|===
+^| *Test Case ID* ^| *Beschreibung*  ^| *Vorbedingungen* ^| *Erwartetes Ergebnis* ^| *Nachbedingungen*
+
+| TC010300
+| Der Benutzer sollte sich mit den richtigen Anmeldedaten anmelden können.
+| 
+| Der Benutzer sollte nach der Anmeldung auf die richtige Seite weitergeleitet werden.
+| 
+
+| TC010301
+| Der "Submit"-Button kann ausgewählt werden.
+| 
+| Der "Submit"-Button ist vorhanden und kann angeklickt werden.
+| 
+
+| TC010302
+| Die Felder E-mail und Passwort sind vorhanden.
+|
+| Die Login-Seite wurde korrekt erstellt.
+|
+
+|===
+
+=== Test Case 02: TC02 Kalendereintrag öffnen
+
+=== Test Case 03: TC03 Notiz-/Textfeld des Kalendereintrag bearbeiten
+
+=== Test Case 04: TC04 Kalendereintrag suchen
