@@ -9,19 +9,19 @@ Dieser Use Case beschreibt, wie ein Kalendereintrag mittels unseres Systems vom 
 
 === Kurzbeschreibung der Akteure
 
-==== Akteur 1: Benutzer
+* Akteur 1: Benutzer
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
-. der Benutzer muss im System eingeloggt sein
-. der Kalender muss in das System integriert sein
+. Benutzer ist im System eingeloggt
+. Kalender ist im System integriert 
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 . Der Use Case beginnt mit dem Aufruf eines ausgewählten Kalendereintrages
 . Durch Auswählen der jeweiligen Textfelder wird der Ort der jeweiligen Terminbearbeitung ausgewählt
-. Die Änderungen werden eingegeben
+. Die Änderungen werden in dem Feld eingegeben
 . Die Änderungen werden durch einen Klick des "Speichern"-Buttons im Kalendereintrag gespeichert
 . Der Use Cas endet mit Abschluss der Bearbeitung des Kalendereintrages mittels Speichern
 
@@ -32,8 +32,8 @@ Dieser Use Case beschreibt, wie ein Kalendereintrag mittels unseres Systems vom 
 * Use Case 2 statt Use Case 3 wird ausgeführt
 
 ==== Alternativer Ablauf 2: Nichteinhaltung der Formatvorlage
-* Die vorgegebenen Formate für die einzelnen Felder wurde nicht eingehalten
-* es wird ein Fehler ausgegeben
+* Die vorgegebenen Formate für das Notizfeld wird nicht eingehalten (wenn vorhanden)
+* Es wird ein Fehler ausgegeben
 
 //==== <Alternativer Ablauf 1>
 //Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
@@ -47,15 +47,12 @@ Dieser Use Case beschreibt, wie ein Kalendereintrag mittels unseres Systems vom 
 . Änderungen des Kalendereintrages werden zwischengespeichert
 . Mit Betätigung des "Speichern"-Buttons werden alle Daten automatisch im Kalender synchronisiert
 
-==== Unterablauf 2: Ungültige Eingabe von Daten
-. z.B. Das Datum wird geändert und es wird Text eingegeben statt einem Datum
-. Ausgabe einer Fehlermeldung wegen falscher Eingabe
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
 ==== Wesentliches Szenario 1: Erfolgreiche Bearbeitung
-* Benutzer x bearbeitet alle Felder richtig und bestätigt dies mit der betätigung des "Speichern"-Buttons. Die Daten werden mit dem Kalender-Server synchronisiert
+* Benutzer x bearbeitet das Notizfeld und bestätigt dies mit der betätigung des "Speichern"-Buttons. Die Daten werden mit dem Kalender-Server synchronisiert
 //. …
 //. <Szenario 1, Schritt n>
 

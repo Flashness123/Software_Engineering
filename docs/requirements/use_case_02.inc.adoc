@@ -9,13 +9,13 @@ Dieser Use Case beschreibt, wie ein Benutzer einen bestimmten Kalendereintrag ö
 
 === Kurzbeschreibung der Akteure
 
-==== Akteur 1: Benutzer
+* Akteur 1: Benutzer
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-. der Benutzer muss im System eingeloggt sein
-. der Kalender muss in das System integriert sein
+. Benutzer ist im System eingeloggt
+. Kalender ist im System integriert 
 
 //<Vorbedingung 1>
 
@@ -63,7 +63,7 @@ Dieser Use Case beschreibt, wie ein Benutzer einen bestimmten Kalendereintrag ö
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
-. Der ausgewählte Kalendereintrag wirde vollständig ausgegeben
+. Der ausgewählte Kalendereintrag wird vollständig ausgegeben
 
 //==== <Nachbedingung 1>
 

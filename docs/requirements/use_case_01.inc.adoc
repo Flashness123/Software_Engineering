@@ -7,15 +7,16 @@ Dieser Use Case beschreibt, wie sich ein Benutzer beim Kalendersystem anmeldet.
 
 === Kurzbeschreibung der Akteure
 
-==== Akteur 1: Benutzer
-==== Akteur 2: Authentifizierungssystem
+* Akteur 1: Benutzer
+* Akteur 2: Authentifizierungssystem
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-. Website ist verfügbar.
-. Datenbank ist verfügbar.
-. Internet ist verfügbar.
+. Website ist verfügbar
+. Datenbank ist verfügbar
+. Internet ist verfügbar
+. Nutzerkonto ist bei Kalenderanbierter vorhanden
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
@@ -23,7 +24,7 @@ Dieser Use Case beschreibt, wie sich ein Benutzer beim Kalendersystem anmeldet.
 . Der Use Case beginnt, wenn der Benutzer in der Navigationsleiste auf den "Login"-Button klickt.
 . Das System zeigt die Anmeldeseite an, auf der der Benutzer seine E-Mail-Adresse und sein Passwort eingeben kann.
 . Der Benutzer gibt seine Daten ein und klickt auf den "Sign In"-Button.
-. Benutzervalidierung wird durchgeführt.
+. Die Benutzervalidierung wird durchgeführt.
 . Das System zeigt die relevante Hauptseite an.
 . Der Use Case ist abgeschlossen.
 

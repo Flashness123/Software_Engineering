@@ -9,12 +9,12 @@ Der Benutzer möchte einen bestimmten Kalendereintrag aus seinem verknüpften Ka
 === Kurzbeschreibung der Akteure
 
 //==== <Akteur 1 Name>
-* Benutzer
+* Akteur 1: Benutzer
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
-. der Benutzer muss im System eingeloggt sein
-. der Kalender muss in das System integriert sein
+. Benutzer ist im System eingeloggt
+. Kalender ist im System integriert 
 . Kalendereinträge sind vorhanden
 //<Vorbedingung 1>
 
@@ -55,12 +55,12 @@ Der Benutzer möchte einen bestimmten Kalendereintrag aus seinem verknüpften Ka
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
-* eine Liste aller gefilterten Termine wurde ausgegeben
+* Eine Liste aller gefilterten Termine wurde ausgegeben.
 
 //==== <Nachbedingung 1>
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
-* Simple und Benutzerfreundliche, mittels einfacher Suchleiste realisierte FIlterung der Termine
+* Mittels einfacher Suchleiste realisierte Filterung der Termine
 
 //==== <Besondere Anforderung 1>

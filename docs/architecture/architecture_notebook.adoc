@@ -45,11 +45,12 @@ Nutzer:
 Über die systemweiten funktionalen und nichtfunktionalen Anforderungen kann im Dokument zu den systemweiten Anforderungen nachgelesen werden.
 
 
-* <<Architekturmechanismen,SWFA-1>> Authentifizierung
-* *SWFA-2:* ervorhebung der Tage mit Terminen
-* *SWFA-3:* Zugangsdaten der Anwender vor Diebstahl schützen
-* *SWFA-4:* Zugangsdaten dauerhaft speichern
-* *SWFA-5:* Daten auf geeignete Weise exportieren
+* *SWFA-1:* Das System muss sicherstellen, dass der Benutzer authentifiziert ist.
+* *SWFA-2:* Das System muss in der Lage sein der Tage mit Terminen hervorzuheben. 
+* *SWFA-3:* Das System muss die Login-Daten der Nutzer vor Diebstahl schützen.
+* *SWFA-4:* Das System muss die Zugangsdaten und sonstige Dateninhalte des Nutzers dauerhaft speichern.
+* *SWFA-5:* Das System muss die gesammelten Daten auf geeignete Weise exportieren können. 
+ 
 
 xref:system-wide-requirementsadoc#SWFA-3[SWFA-3]
 
