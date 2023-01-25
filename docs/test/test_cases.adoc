@@ -9,6 +9,36 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Test Cases
 
-=== Test Case 01
+=== Test Case 01: TC 01 Login
+[cols="1,1"]
+|===
+^|Merkmale ^|Test Cases
+
+|*Email Feld*
+a|
+* Die E-Mail sollte vorhanden sein.
+* Das E-Mail-Feld sollte gültige E-Mail-Adressen akzeptieren.
+* Das E-Mail-Feld sollte keine ungültigen E-Mail-Adressen akzeptieren.
+* Das E-Mail-Feld sollte eine Fehlermeldung anzeigen, wenn eine ungültige E-Mail-Adresse eingegeben wird.
+* Das E-Mail-Feld sollte Groß- und Kleinschreibung nicht berücksichtigen.
+
+|*Passwort Feld*
+a|
+* Das Kennwort sollte vorhanden sein.
+* Das Passwort sollte maskiert sein.
+* Die Eingabe des Passworts sollte akzeptiert werden.
+* Das eingegebene Passwort sollte korrekt validiert werden.
+* Das Kennwort sollte eine Mindestlänge und einen Mindestzeichentyp aufweisen.
+
+|*Login*
+a|
+* Der Benutzer sollte sich mit den richtigen Anmeldedaten anmelden können.
+* Die E-Mail und Passwort sind Pflichtfelder.
+* Der Benutzer sollte nach der Anmeldung auf die richtige Seite weitergeleitet werden.
+* Der Benutzer sollte sich nicht mit einem bereits bestehenden Benutzernamen oder einem falschen Passwort anmelden können.
+
+|*Fehlermeldung*
+|Der Benutzer sollte eine Fehlermeldung erhalten, wenn die Anmeldedaten falsch sind.
+|=== 
 
 === Test Case 02
