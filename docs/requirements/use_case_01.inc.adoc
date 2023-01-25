@@ -72,3 +72,9 @@ Der Benutzer wurde angemeldet und die internen Logs wurden aktualisiert.
 ---keine wesentlichen besonderen Anforderungen---
 
 //==== <Besondere Anforderung 1>
+
+=== Wireframes
+
+:imageTitle: Login 
+:imageFile: Login.jpg 
+image::{imageFile}[title="{imageTitle}", alt="{imageTitle}", width={imageWidth}]
