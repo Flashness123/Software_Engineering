@@ -85,25 +85,25 @@ Fall 2: neue Kalendereinträge vorhanden: +
 | Die E-Mail Anwesenheit wird überprüft.
 | Die Eingabe der E-Mail sollte akzeptiert werden.
 | Die E-Mail sollte vorhanden sein.
-|
+^|---keine wesentlichen Bedingungen---
 
 | TC010101
 | Das E-Mail-Feld sollte gültige E-Mail-Adressen akzeptieren.
 | Ein Google-Konto wird benötigt.
 | Gültige E-Mails werden vom System akzeptiert.
-|
+^|---keine wesentlichen Bedingungen---
 
 | TC010102
 | Das E-Mail-Feld sollte Groß- und Kleinschreibung nicht berücksichtigen.
-| 
+^|---keine wesentlichen Bedingungen---
 | Die E-Mail sollte vorhanden sein.
-|
+^|---keine wesentlichen Bedingungen---
 
 | TC010103
 | Ungültige E-Mails sollten nicht akzeptiert werden.
-|
+^|---keine wesentlichen Bedingungen---
 | Eine Fehlermeldung zur Anmeldung wird angezeigt.
-|
+^|---keine wesentlichen Bedingungen---
 
 |===
 
@@ -119,15 +119,15 @@ Fall 2: neue Kalendereinträge vorhanden: +
 
 | TC010201
 | Das Kennwort sollte eine Mindestlänge und einen Mindestzeichentyp aufweisen.
-| 
+^|---keine wesentlichen Bedingungen--- 
 | Gültige Passwort werden vom System akzeptiert.
-| 
+^|---keine wesentlichen Bedingungen---
 
 | TC010202
 | Ungültige Passwort sollten nicht akzeptiert werden.
-|
+^|---keine wesentlichen Bedingungen---
 | Eine Fehlermeldung zur Anmeldung wird angezeigt.
-|
+^|---keine wesentlichen Bedingungen---
 
 |===
 
@@ -137,21 +137,23 @@ Fall 2: neue Kalendereinträge vorhanden: +
 
 | TC010300
 | Der Benutzer sollte sich mit den richtigen Anmeldedaten anmelden können.
-| 
+a|
+* Datenbank ist verfügbar
+* Nutzerkonto ist bei Kalenderanbierter vorhanden
 | Der Benutzer sollte nach der Anmeldung auf die richtige Seite weitergeleitet werden.
-| 
+^|---keine wesentlichen Bedingungen---
 
 | TC010301
 | Der "Login"-Button kann ausgewählt werden.
-| 
+^|---keine wesentlichen Bedingungen--- 
 | Der "Login"-Button ist vorhanden und kann angeklickt werden.
-| 
+^|---keine wesentlichen Bedingungen--- 
 
 | TC010302
 | Die Felder E-mail und Passwort sind vorhanden.
-|
+^|---keine wesentlichen Bedingungen---
 | Die Login-Seite wurde korrekt erstellt.
-|
+^|---keine wesentlichen Bedingungen---
 
 |===
 
@@ -162,30 +164,64 @@ Fall 2: neue Kalendereinträge vorhanden: +
 
 | TC0201
 | Der Kalender sollte korrekt erstellt werden.
-| 
+^|---keine wesentlichen Bedingungen---
 | Der Kalender wird mit dem richtigen Datum angezeigt und das heutige Datum ist hervorgehoben.
-| 
+^|---keine wesentlichen Bedingungen--- 
 
 | TC0202
 | Das Datumsfeld im Kalender kann ausgewählt werden.
-| 
+^|---keine wesentlichen Bedingungen--- 
 | Wenn ein Datum angeklickt wird, erscheint ein Popup mit den zugehörigen Einträgen und das "Bearbeitung"-Button.
-| 
+^|---keine wesentlichen Bedingungen--- 
 
 | TC0203
 | Der Name des Eintrags wird im Datumsfeld angezeigt.
-|
+^|---keine wesentlichen Bedingungen---
 | Der Name des Eintrags wird gekürzt, wenn er länger als die Breite des Datumsfelds ist, so dass jeder Name in einer Zeile angezeigt wird.
-|
-
-| TC0204
-| Mit der "Refresh"-Button" wird das Tool erneut mit dem Kalenderserver synchronisiert.
-|
-| Die aktualisierten Kalendereinträge werden ausgegeben
-|
+^|---keine wesentlichen Bedingungen---
 
 |===
 
 === Test Case 03: TC03 Notiz-/Textfeld des Kalendereintrag bearbeiten
 
+|===
+^| *Test Case ID* ^| *Beschreibung*  ^| *Vorbedingungen* ^| *Erwartetes Ergebnis* ^| *Nachbedingungen*
+
+| TC0301
+| Die Notiz sollte nach der Eingabe gespeichert werden.
+| Die Eingabe der Notiz sollte akzeptiert werden.
+| Eingabe wird im Notizbereich angezeigt.
+^|---keine wesentlichen Bedingungen--- 
+
+| TC0302
+| Mit der "Refresh"-Button" wird das Tool erneut mit dem Kalenderserver synchronisiert.
+^|---keine wesentlichen Bedingungen---
+| Die aktualisierten Kalendereinträge werden ausgegeben.
+^|---keine wesentlichen Bedingungen---
+
+| TC0303
+| Der "Speichern"-Button kann ausgewählt werden.
+^|---keine wesentlichen Bedingungen---
+| Der "Speichern"-Button ist vorhanden und kann angeklickt werden.
+^|---keine wesentlichen Bedingungen---
+
+|===
+
 === Test Case 04: TC04 Kalendereintrag suchen
+
+|===
+^| *Test Case ID* ^| *Beschreibung*  ^| *Vorbedingungen* ^| *Erwartetes Ergebnis* ^| *Nachbedingungen*
+
+| TC0401
+| Registerkarte "Suche" ist verfügbar.
+^|---keine wesentlichen Bedingungen--- 
+| Suchregister akzeptiert Benutzereingaben und gibt korrekte Daten zurück.
+^|---keine wesentlichen Bedingungen--- 
+
+| TC0402
+| Die Filterfunktion ist verfügbar.
+^|---keine wesentlichen Bedingungen---  
+| Der Benutzer sollte die Möglichkeit haben, den Termin nach Datum, Monat oder einem Zeitraum von 3 oder 6 Monaten zu filtern.
+^|---keine wesentlichen Bedingungen---  
+
+|===
