@@ -142,9 +142,9 @@ Fall 2: neue Kalendereinträge vorhanden: +
 | 
 
 | TC010301
-| Der "Submit"-Button kann ausgewählt werden.
+| Der "Login"-Button kann ausgewählt werden.
 | 
-| Der "Submit"-Button ist vorhanden und kann angeklickt werden.
+| Der "Login"-Button ist vorhanden und kann angeklickt werden.
 | 
 
 | TC010302
@@ -156,6 +156,35 @@ Fall 2: neue Kalendereinträge vorhanden: +
 |===
 
 === Test Case 02: TC02 Kalendereintrag öffnen
+
+|===
+^| *Test Case ID* ^| *Beschreibung*  ^| *Vorbedingungen* ^| *Erwartetes Ergebnis* ^| *Nachbedingungen*
+
+| TC0201
+| Der Kalender sollte korrekt erstellt werden.
+| 
+| Der Kalender wird mit dem richtigen Datum angezeigt und das heutige Datum ist hervorgehoben.
+| 
+
+| TC0202
+| Das Datumsfeld im Kalender kann ausgewählt werden.
+| 
+| Wenn ein Datum angeklickt wird, erscheint ein Popup mit den zugehörigen Einträgen und das "Bearbeitung"-Button.
+| 
+
+| TC0203
+| Der Name des Eintrags wird im Datumsfeld angezeigt.
+|
+| Der Name des Eintrags wird gekürzt, wenn er länger als die Breite des Datumsfelds ist, so dass jeder Name in einer Zeile angezeigt wird.
+|
+
+| TC0204
+| Mit der "Refresh"-Button" wird das Tool erneut mit dem Kalenderserver synchronisiert.
+|
+| Die aktualisierten Kalendereinträge werden ausgegeben
+|
+
+|===
 
 === Test Case 03: TC03 Notiz-/Textfeld des Kalendereintrag bearbeiten
 
