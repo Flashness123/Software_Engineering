@@ -73,11 +73,6 @@ Dieser Use Case beschreibt, wie ein Benutzer einen bestimmten Kalendereintrag ö
 ==== Besondere Anforderung 1: Usability
 * Der Eintrag muss wie in <<Benutzbarkeit (Usability), NFAU-4>> beschrieben für jedermann leicht verständlich ausgegeben werden
 
-==== Besondere Anforderung 2: Zuverlässigkeit
-* Wie in NFAR-2 beschrieben müssen die Formatvorlagen der Kalendereinträge eingehalten werden
-
-<<Zuverlässigkeit (Reliability), NFAR-2>>
-
 === Wireframes
 
 :imageTitle: Kalendereintrag öffnen
