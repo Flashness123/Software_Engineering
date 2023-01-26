@@ -1,4 +1,4 @@
- = Architecture Notebook: {project-name}
+= Architecture Notebook: {project-name}
 Jan Trodler <s83832@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -121,18 +121,40 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
-. Sicherheit
+
+. Eingabelogik
+* +++<u>Zustand</u>+++:
+* +++<u>Zweck</u>+++: Spezifiziert und prüft nach Korrektheit von Eingaben
+* +++<u>Eigenschaften</u>+++:
+* +++<u>Funktion</u>+++:
+. Persistenz
+* +++<u>Zustand</u>+++:
+* +++<u>Zweck</u>+++: Art der Datenspeicherung
+* +++<u>Eigenschaften</u>+++: sinnvoll, verlustsicher
+* +++<u>Funktion</u>+++:
+. Zugriffsschutz
+* +++<u>Zustand</u>+++:
+* +++<u>Zweck</u>+++: 
+** Prüfen von Zeige-/Bearbeitungsrechten
+** Verhindern von Hacking über Formularfelder(z.B. Injection)
+* +++<u>Eigenschaften</u>+++:
+* +++<u>Funktion</u>+++:
+. Verschlüsselung
 * +++<u>Zustand</u>+++:
 * +++<u>Zweck</u>+++:
 * +++<u>Eigenschaften</u>+++:
 * +++<u>Funktion</u>+++:
-. Eingabelogik
-. Persistenz
-. Zugriffsschutz
-. Verschlüsselung
 . Session Managment
+* +++<u>Zustand</u>+++:
+* +++<u>Zweck</u>+++:
+* +++<u>Eigenschaften</u>+++:
+* +++<u>Funktion</u>+++:
 . Error Managment
-. Architekturmechanismus 2
+* +++<u>Zustand</u>+++:
+* +++<u>Zweck</u>+++:
+* +++<u>Eigenschaften</u>+++:
+* +++<u>Funktion</u>+++:
+
 
 
 == Wesentliche Abstraktionen
