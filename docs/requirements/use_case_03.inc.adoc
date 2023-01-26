@@ -65,7 +65,17 @@ Dieser Use Case beschreibt, wie ein Kalendereintrag mittels unseres Systems vom 
 //==== <Besondere Anforderung 1>
 
 === Wireframes
-
+////
 :imageTitle: Kalendereintrag öffnen und Bearbeiten
 :imageFile: Kalendereintrag_öffnen_bearbeiten.png 
 image::{imageFile}[title="{imageTitle}", alt="{imageTitle}", width={imageWidth}]
+////
+
+:imageTitle1: Kalendereintrag öffnen
+:imageTitle2: Kalendereintrag bearbeiten
+:imageFile1: Kalendereintrag_öffnen_bearbeiten1.png
+:imageFile2: Kalendereintrag_öffnen_bearbeiten2.png
+
+image::{imageFile1}[title="{imageTitle1}"]
+
+image::{imageFile2}[title="{imageTitle2}"]

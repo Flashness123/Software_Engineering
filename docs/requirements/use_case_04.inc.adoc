@@ -67,6 +67,19 @@ Der Benutzer möchte einen bestimmten Kalendereintrag aus seinem verknüpften Ka
 
 === Wireframes
 
+////
 :imageTitle: Kalendereintrag suchen
 :imageFile: Kalendereintrag_suchen.png 
 image::{imageFile}[title="{imageTitle}", alt="{imageTitle}", width={imageWidth}]
+////
+
+:imageTitle1: Kalendereintrag suchen
+:imageTitle2: gefilterte Kalendereinträge anzeigen
+:imageFile1: Kalendereintrag_suchen1.png 
+:imageFile2: Kalendereintrag_suchen2.png 
+
+
+image::{imageFile1}[title="{imageTitle1}"]
+image::{imageFile2}[title="{imageTitle2}"]
+
+
