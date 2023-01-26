@@ -19,7 +19,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 * *SWFA-1:* Das System muss sicherstellen, dass der Benutzer authentifiziert ist.
 ** Die Validierung dre Daten erfolgt anhand existierender Anmeldedaten bei den Kalenderplatformen.
-* *SWFA-2:* Das System muss in der Lage sein der Tage mit Terminen hervorzuheben. 
+* *SWFA-2:* Das System muss in der Lage sein, Tage mit Terminen, hervorzuheben. 
 ** Zur Überprüfung wird ein Testtermin angelegt, dieser muss hervorgehoben werden. 
 * *SWFA-3:* Das System muss die Login-Daten der Nutzer vor Diebstahl schützen.
 ** Zur Überprüfung gibt es einen Versuch Testzugangsdaten auszulesen. 
@@ -39,7 +39,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 ** Zur Überprüfung benutzt ein Testnutzer das Tool ohne vorherige Kenntnisse über das Tool. 
 * *NFAU-3:* Die kompatiblen Kalenderanbieter sollen im Tool einfach auswählbar sein.
 ** Zur Überprüfung melden sich Testnutzer mit verschiedenen Kalenderanbietern an.
-* *NFAU-4:* Das Tool Bearbeitungen im Kalendereintrag nur im Bereich "Notizen" erlauben. Alle anderen Daten sind statisch und werden nur übermittelt (Tag, Zeit, Ort, Teilnehmer, Titel,...).  
+* *NFAU-4:* Das Tool Bearbeitungen im Kalendereintrag nur im Bereich "Notizen" erlauben. Alle anderen Daten sind statisch und werden nur übermittelt (Tag, Zeit, Ort, Teilnehmer, Titel, ...).  
 ** Zur Überprüfung versucht ein Testnutzer die festen Daten zu ändern. 
 
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)

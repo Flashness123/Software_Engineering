@@ -4,7 +4,7 @@ ID;	Datum;	Name;	Beschreibung;	Typ;	IMP;	PRB	;MAG;	Owner;	Gegenmaßnahme
 3;	03.01.2023;	Anforderungen;	Änderung oder Missverständnisse bei der Anforderungsanalyse;	Geschäftlich;	5;	50%	;2,5	;Team, Analyse;	Rücksprache mit dem Auftraggeber/Coach, Teammitglieder informieren, Thema im Team diskutieren
 4;	21.12.2022;	Einsatz unbekannter Tools;	Nutzung von Tools (GitHub, Visual Studio Code)	;Geschäftlich, Technisch;	3	;20%;	0,6	;Team	;"Gegenseitige Unterstützung innerhalb des Teams; selbstständige Einarbeitung, Technische Unterstützung durch Ruben-David Kraus"
 5;	11.01.2023	;Aufgabenbearbeitung;	Ungenaue od. zu aufwendige Bearbeitung der Aufgaben;	Geschäftlich;	4	;50%	;2	;Team, Projektmanagement;	Aufgabeninhalt möglichst genau festhalten in den Iterationsbesprechungen
-6;	17.11.2022;	Wegfall PM und Analyst im 2.Semester;	Ab dem 2. Semester entfallen die Rollen der WINGs;	Geschäftlich, Ressourcen	;5	;100%	;5	;Team	;Ernennung eines Stellverteters 
+6;	17.11.2022;	Wegfall PL und Analyst im 2.Semester;	Ab dem 2. Semester entfallen die Rollen der WINGs;	Geschäftlich, Ressourcen	;5	;100%	;5	;Team	;Ernennung eines Stellverteters 
 7;	11.01.2023;	Zeit für die Bearbeitung reicht nicht aus;	"Unterschützung des Arbeitsaufwandes; rechtzeitige Fertigstellung gefährdet";	Zeitlich;	4;30%	;1,2;	Team, Projektmanagement; Rücksprache mit Coach und/oder Auftraggeber, Notfallplanung im gesamten Team zur effizentesten Zeitausnutzung und Aufgabenverteilung
 8;  11.01.2023; Sprachbarriere; Einzelne Teammitglieder haben Verständnisprobleme aufgrund einer anderen Muttersprache; Ressourcen; 1; 40%; 0,4; Team; Gegenseitige Rücksichtnahme, arbeiten mit Übersetzer oder nutzen der Englischen Sprache	
 									

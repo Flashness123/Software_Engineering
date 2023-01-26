@@ -94,7 +94,7 @@ Aufgrund unserer Zusammenarbeit mit dem Startup Speechmind halten wir es für di
 * Erführung in technische Grundlagen durch den Auftraggeber
 * Kontaktaufnahme mit Coach und Kunden 
 | Date from 10.11.22 / Date to 23.11.22 
-| 15
+| 10
 
 | I2
 |
@@ -102,23 +102,23 @@ Aufgrund unserer Zusammenarbeit mit dem Startup Speechmind halten wir es für di
 * Verständnis der Vision mit Kunden
 * Beginn Erarbeitung Glossar
 | Date from 24.11.22 / Date to 06.12.22
-| 16
+| 13
 
 | I3
 |
 * Erarbeitung der technischen Spezifikationen
 * Erarbeitung der systemweiten Anforderungen 
 | Date from 07.12.22 / Date to 21.12.22
-| 17
+| 15
 
 | I4
 |
-* Endgültige Abstimmung der Vision mit Kunden 
+* Bestätigung der Vision mit Kunden für Prototyp
 * Erstellung der Wireframes
 * Erste aufrufbare Teile eines Prototypen erstellen
 * Erstelltung Risikoliste 
 | Date from 02.01.23 / Date to 15.01.23
-| 18
+| 20
 
 |I5
 |
@@ -126,7 +126,7 @@ Aufgrund unserer Zusammenarbeit mit dem Startup Speechmind halten wir es für di
 * Nachholen offener Aufgaben 
 * Ausscheiden der Teilnehmer Charlotte Geißler und Marc-Oliver Tittel aufgrund Abschluss des Modules 
 | Date from 16.01.23 / Date to 27.01.23
-| 19
+| 10
 
 
 |===
@@ -143,4 +143,4 @@ Die Anmeldedaten werden momentan auf einem lokal gehosteten json Server verwalte
 * Die Kommunikation mit Auftraggeber und Coach ist das wichtigste für gegenseitiges Verständnis.
 * Gründliche Vorbereitung der Meetings machte diese deutlich effizenter und verbesserte das Ergebnis.
 * Aufgaben sollten nach Stärken und Schwächen im Team verteilt werden. 
-* Regeömäßige Kommuniktation im Team und Absprache zu Terminen und Vorgehensweisen sind wichtig für eine gute und effektive Zusammenarbeit. 
+* Regelmäßige Kommuniktation im Team und Absprache zu Terminen und Vorgehensweisen sind wichtig für eine gute und effektive Zusammenarbeit. 

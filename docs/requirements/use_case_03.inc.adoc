@@ -31,9 +31,6 @@ Dieser Use Case beschreibt, wie ein Kalendereintrag mittels unseres Systems vom 
 * Der Kalendereintrag wird aufgerufen, es findet aber keinerlei Bearbeitung statt
 * Use Case 2 statt Use Case 3 wird ausgeführt
 
-==== Alternativer Ablauf 2: Nichteinhaltung der Formatvorlage
-* Die vorgegebenen Formate für das Notizfeld wird nicht eingehalten (wenn vorhanden)
-* Es wird ein Fehler ausgegeben
 
 //==== <Alternativer Ablauf 1>
 //Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
