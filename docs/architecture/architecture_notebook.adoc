@@ -1,4 +1,4 @@
-= Architecture Notebook: {project-name}
+ = Architecture Notebook: {project-name}
 Jan Trodler <s83832@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]

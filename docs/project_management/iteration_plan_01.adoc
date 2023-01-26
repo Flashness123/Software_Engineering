@@ -39,19 +39,45 @@ include::../_includes/default-attributes.inc.adoc[]
 == Aufgabenzuordnung
 //Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
 
-Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
+Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt.
 
 _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="3,1,1,1,2"]
 |===
 | Aufgabe bzw. Beschreibung | Priorität (Skala 1-5 1= höchste Prio)| Schätzung der Größe (1-5 5= höchste Aufwand) |geplante Fertigstellung | Zugewiesen (Name) 
 
-| Fertigstellen systemweite Anforderungen | 4 | 2 | 18.12.2022 | Marc-Oliver Tittel; Manuel Hartmann; Charlotte Geißler; Jan Trodler; Lukas Kouba; Luc Sowodniok; Phuong Anh Nguyen
-| Vervollständigung Glossar | 4 | 2 | 14.12.2022 | Marc-Oliver Tittel; Manuel Hartmann; Charlotte Geißler; Jan Trodler; Lukas Kouba; Luc Sowodniok; Phuong Anh Nguyen
-| Aneignung Wissen im Bereich Kommunkiation im Internet, Client-Server-Modell und API´s | 5 | 1 | 07.12.2022 |Manuel Hartmann; Jan Trodler; Lukas Kouba; Luc Sowodniok; Phuong Anh Nguyen
-| Fertigstellen der technischen Spezifikationen | 5 | 4 | 19.12.2022 | Marc-Oliver Tittel; Charlotte Geißler
-| Erarbeitungen der Use-Cases | 4 | 4 | 19.12.2022 | Marc-Oliver Tittel; Charlotte Geißler; Luc Sowodniok; Phuong Anh Nguyen
-| Erarbeitung Use-Case-Modell | 4 | 1 | 14.12.2022 | Marc-Oliver Tittel; Manuel Hartmann; Charlotte Geißler; Jan Trodler; Lukas Kouba; Luc Sowodniok; Phuong Anh Nguyen
+| Fertigstellen systemweite Anforderungen | 4 | 2 | 18.12.2022 | Marc-Oliver Tittel +
+Manuel Hartmann +
+Charlotte Geißler +
+Jan Trodler +
+Lukas Kouba +
+Luc Sowodniok +
+Phuong Anh Nguyen
+| Vervollständigung Glossar | 4 | 2 | 14.12.2022 | Marc-Oliver Tittel +
+Manuel Hartmann +
+Charlotte Geißler +
+Jan Trodler +
+Lukas Kouba +
+Luc Sowodniok +
+Phuong Anh Nguyen
+| Aneignung Wissen im Bereich Kommunkiation im Internet, Client-Server-Modell und API´s | 5 | 1 | 07.12.2022 |Manuel Hartmann +
+Jan Trodler +
+Lukas Kouba +
+Luc Sowodniok +
+Phuong Anh Nguyen
+| Fertigstellen der technischen Spezifikationen | 5 | 4 | 19.12.2022 | Marc-Oliver Tittel +
+Charlotte Geißler
+| Erarbeitungen der Use-Cases | 4 | 4 | 19.12.2022 | Marc-Oliver Tittel +
+Charlotte Geißler +
+Luc Sowodniok +
+Phuong Anh Nguyen
+| Erarbeitung Use-Case-Modell | 4 | 1 | 14.12.2022 | Marc-Oliver Tittel +
+Manuel Hartmann +
+Charlotte Geißler +
+Jan Trodler +
+Lukas Kouba +
+Luc Sowodniok +
+Phuong Anh Nguyen
 
 |===
 
