@@ -1,5 +1,5 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-
+include::../_includes/default-attributes.inc.adoc[]
 == Use-Case: UC03 Notiz-/Textfeld des Kalendereintrag bearbeiten
 
 === Kurzbeschreibung
@@ -66,3 +66,9 @@ Dieser Use Case beschreibt, wie ein Kalendereintrag mittels unseres Systems vom 
 * Da dieser Use Case zu den grundlegenden Funktionen des Systems gehört ist eine einfache Bedienung zu ermöglichen
 
 //==== <Besondere Anforderung 1>
+
+=== Wireframes
+
+:imageTitle: Kalendereintrag öffnen und Bearbeiten
+:imageFile: Kalendereintrag_öffnen_bearbeiten.png 
+image::{imageFile}[title="{imageTitle}", alt="{imageTitle}", width={imageWidth}]

@@ -1,5 +1,5 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-
+include::../_includes/default-attributes.inc.adoc[]
 == Use-Case: UC04 Kalendereintrag suchen
 
 === Kurzbeschreibung
@@ -64,3 +64,9 @@ Der Benutzer möchte einen bestimmten Kalendereintrag aus seinem verknüpften Ka
 * Mittels einfacher Suchleiste realisierte Filterung der Termine
 
 //==== <Besondere Anforderung 1>
+
+=== Wireframes
+
+:imageTitle: Kalendereintrag suchen
+:imageFile: Kalendereintrag_suchen.png 
+image::{imageFile}[title="{imageTitle}", alt="{imageTitle}", width={imageWidth}]

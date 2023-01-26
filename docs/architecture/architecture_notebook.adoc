@@ -52,7 +52,6 @@ Nutzer:
 * *SWFA-5:* Das System muss die gesammelten Daten auf geeignete Weise exportieren können. 
  
 
-xref:system-wide-requirementsadoc#SWFA-3[SWFA-3]
 
 Wartbarkeit (Supportability)
 

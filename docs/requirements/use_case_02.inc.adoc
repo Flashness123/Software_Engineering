@@ -1,5 +1,5 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-
+include::../_includes/default-attributes.inc.adoc[]
 == Use-Case: UC02 Kalendereintrag öffnen
 
 === Kurzbeschreibung
@@ -75,3 +75,9 @@ Dieser Use Case beschreibt, wie ein Benutzer einen bestimmten Kalendereintrag ö
 
 ==== Besondere Anforderung 2: Zuverlässigkeit
 * Wie in NFAR-2 beschrieben müssen die Formatvorlagen der Kalendereinträge eingehalten werden
+
+=== Wireframes
+
+:imageTitle: Kalendereintrag öffnen
+:imageFile: Kalendereintrag_öffnen.png 
+image::{imageFile}[title="{imageTitle}", alt="{imageTitle}", width={imageWidth}]
