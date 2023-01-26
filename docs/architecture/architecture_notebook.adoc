@@ -46,7 +46,7 @@ Nutzer:
 
 
 * *SWFA-1:* Das System muss sicherstellen, dass der Benutzer authentifiziert ist.
-* *SWFA-2:* Das System muss in der Lage sein der Tage mit Terminen hervorzuheben. 
+* *SWFA-2:* Das System muss in der Lage sein, Tage mit Terminen, hervorzuheben. 
 * *SWFA-3:* Das System muss die Login-Daten der Nutzer vor Diebstahl schützen.
 * *SWFA-4:* Das System muss die Zugangsdaten und sonstige Dateninhalte des Nutzers dauerhaft speichern.
 * *SWFA-5:* Das System muss die gesammelten Daten auf geeignete Weise exportieren können. 
@@ -138,15 +138,17 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 == Wesentliche Abstraktionen
 //[List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.]
 
-* Klasse Kalender(Vererbung):
-** Google: Kalender mithilfe von Google API
-** Microsoft: Kalender mit Outlook-Kalender API
-** Methoden:
-*** zeigenKalender: Anzeigen von gewählten Kalender
-*** suchenEintrag/e: 
-*** aktualisierenKalender
-*** bearbeitenNotizfeld
-*** löschenEintrag/e
+* *Klasse Kalender(Vererbung):*
+** *Google:* Kalender mithilfe von Google API
+** *Microsoft:* Kalender mit Outlook-Kalender API
+** *Methoden:*
+*** +++<u>zeigenKalender</u>+++: Anzeigen von gewählten Kalender
+*** +++<u>aktualisierenKalender</u>+++: Kalender wird über API neu geladen
+*** +++<u>bearbeitenNotizfeld</u>+++: Nutzer kann in Formular Notizfeld bearbeiten
+*** +++<u>hinzufügenEintrag/e</u>+++: automatische Erstellung bei Datenübergabe von make/save conference site
+*** +++<u>suchenEintrag/e</u>+++:  Suche über Eingabefeld und Anzeige durch Entfernen unrelevanter Einträge im Kalender bzw. nach dem Prinzip von Strg+F
+*** +++<u>löschenEintrag/e</u>+++: Löschen eines Eintrages durch Nutzer
+* *Bind*: Google/Microsoft Konto mit SpeechMind Konto verknüpfen
 
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
