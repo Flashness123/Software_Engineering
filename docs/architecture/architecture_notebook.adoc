@@ -106,8 +106,11 @@ Nutzer:
 .. Framework
 .. (Datenbank)
 
-. Verwendung von Google API benötigt (aktuell) Google Cloud Project
-. Entscheidung oder Einschränkung oder Begründung 2
+. Verwendung von Google Cloud Project
+.. Grund: wird (aktuell) für Google API benötigt
+
+. Einführung von Codekommentierung
+.. Grund: leichteres und schnelleres Verständnis 
 
 
 == Architekturmechanismen
