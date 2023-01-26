@@ -213,6 +213,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 :imageTitle: Architekturmodell
 :imageFile: ArchitekturModell.png 
 image::{imageFile}[title="{imageTitle}", alt="{imageTitle}", width={imageWidth}] 
+<<<
 === Use cases
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungne enthalten.
 :imageTitle: Use Case Diagramm 
