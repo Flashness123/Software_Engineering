@@ -1,5 +1,5 @@
 // --- 1. Projektthema -------------------------
-= SE I - Belegabgabe: {E1 Kalenderintegration}
+= SE I - Belegabgabe: {project-name}
 // --- 2. Teammitglieder -----------------------
 Marc-Oliver Tittel <s82452@htw-dresden.de>; Manuel Hartmann <s83688@htw-dresden.de>; Charlotte Geißler <s82397@htw-dresden.de>; Jan Trodler <s83832@htw-dresden.de>; Lukas Kouba <s83783@htw-dresden.de>; Luc Sowodniok <s83864@htw-dresden.de>; Phuong Anh Nguyen <s82036@htw-dresden.de>
 // --- 3. Abgabedatum ------------------------------

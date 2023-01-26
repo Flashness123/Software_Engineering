@@ -1,5 +1,5 @@
 = Iteration Plan I3: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+Marc-Oliver Tittel <s82452@htw-dresden.de>; Charlotte Geißler <s82397@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
@@ -125,11 +125,12 @@ Phuong Anh Nguyen
 [%header, cols="2,1,3"]
 |===
 | Abgearbeitet | Verschoben | Hinzugekommen
+
 | Fertigstellen systemweite Aufgaben | Use-Case Wireframes: sobald alle Use-Cases indentifiziert und abgenommen sind | Finale Prüfung Glossar in der Letzten Iteration
-| Indentifizierung der Use-Cases| x | Überprüfung der Grammatik in der Letzten Iteration
-| Glossar für I3 aktuellisieren | x | x
-| Fertigstellen technische Spezifikationen| x | x
-| LCO Meilenstein | x | x
+| Indentifizierung der Use-Cases| --- | Überprüfung der Grammatik in der Letzten Iteration
+| Glossar für I3 aktuellisieren | --- | ---
+| Fertigstellen technische Spezifikationen| --- | ---
+| LCO Meilenstein | --- | ---
 |===
 
 * Beurteilung im Vergleich zu den Bewertungskriterien

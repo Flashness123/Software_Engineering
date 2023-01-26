@@ -1,5 +1,5 @@
 = Vision: {project-name}
-Marc-Oliver Tittel <s82452@htw-dresden.de>; Manuel Hartmann <s83688@htw-dresden.de>; Charlotte Geißler <s82397@htw-dresden.de>; Jan Trodler <s83832@htw-dresden.de>; Lukas Kouba <s00000@htw-dresden.de>; Luc Sowodniok <s83864@htw-dresden.de>
+Marc-Oliver Tittel <s82452@htw-dresden.de>; Manuel Hartmann <s83688@htw-dresden.de>; Charlotte Geißler <s82397@htw-dresden.de>; Jan Trodler <s83832@htw-dresden.de>; Lukas Kouba <s83783@htw-dresden.de>; Luc Sowodniok <s83864@htw-dresden.de>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
@@ -94,6 +94,8 @@ Beispiel Produkt:
 |===
 ////
 
+<<< 
+    
 
 == Stakeholder Beschreibungen
 
@@ -149,10 +151,10 @@ Nutzer
 [%header, cols="4,1,4,1"]
 |===    
 | Bedarf | Priorität | Features | Geplantes Release
-| Authentifizierung des Nutzenden in der entsprechenden Kalendersoftware | hoch | Ermöglicht den Zugriff auf den selbstgewählten Kalender | xx
-| DB-Modell für Kalenderintegration  | hoch | universell | xx
-| Sync der Kalendereinträge in das SpeechMind Studio | hoch | Abruf des Kalenders in SpeechMind Studio | xx
-| Nachbearbeiten der Notizfelder des Kalendereintrages | hoch | nachträgliche Ergänzung von Informationen (To-Do Listen, Transkriptionsdatei, o.Ä.)| xx
+| Authentifizierung des Nutzenden in der entsprechenden Kalendersoftware | hoch | Ermöglicht den Zugriff auf den selbstgewählten Kalender | ---
+| DB-Modell für Kalenderintegration  | hoch | universell | ---
+| Sync der Kalendereinträge in das SpeechMind Studio | hoch | Abruf des Kalenders in SpeechMind Studio | ---
+| Nachbearbeiten der Notizfelder des Kalendereintrages | hoch | nachträgliche Ergänzung von Informationen (To-Do Listen, Transkriptionsdatei, o.Ä.)| ---
 |===
 
 
@@ -166,8 +168,8 @@ Nutzer
 [%header, cols="3,1,1"]
 |===    
 | Anforderung | Priorität | Geplantes Release
-| Einfache und intuitive Bedienung | hoch  | xx
-| Vertraute Nutzerumgebung   | hoch | xx
+| Einfache und intuitive Bedienung | hoch  | ---
+| Vertraute Nutzerumgebung   | hoch | ---
 |===
 
 //Hinweise:

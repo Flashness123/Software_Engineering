@@ -1,5 +1,5 @@
 = Use-Case Model: {project-name}
-Luc Sowodniok <s83864@htw-dresden.de>; Phuong Anh Nguyen <sXXXXX@htw-dresden.de>;
+Luc Sowodniok <s83864@htw-dresden.de>; Phuong Anh Nguyen <s82036@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
