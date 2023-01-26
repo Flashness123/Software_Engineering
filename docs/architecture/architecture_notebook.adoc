@@ -53,16 +53,11 @@ Nutzer:
  
 
 
-Wartbarkeit (Supportability)
-
-Sicherheit
-
 * *UC01*: Login
 * *UC02*: Kalendereintrag öffnen
 * *UC03*: Notiz-/Textfeld des Kalendereintrag bearbeiten
 * *UC04*: Kalendereintrag suchen
 
-Session-Managment
 [cols="1,1,1"]
 |===
 |Anforderung |Systemkomponente |Architekturmechanismen
@@ -110,6 +105,8 @@ Session-Managment
 .. Sprache
 .. Framework
 .. (Datenbank)
+
+. Verwendung von Google API benötigt (aktuell) Google Cloud Project
 . Entscheidung oder Einschränkung oder Begründung 2
 
 
@@ -122,6 +119,10 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
 . Sicherheit
+* +++<u>Zustand</u>+++:
+* +++<u>Zweck</u>+++:
+* +++<u>Eigenschaften</u>+++:
+* +++<u>Funktion</u>+++:
 . Eingabelogik
 . Persistenz
 . Zugriffsschutz
