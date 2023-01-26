@@ -72,7 +72,8 @@ Dieser Use Case beschreibt, wie ein Benutzer einen bestimmten Kalendereintrag ö
 
 ==== Besondere Anforderung 1: Usability
 * Der Eintrag muss wie in NFAU-4 beschrieben für jedermann leicht verständlich ausgegeben werden
-<<System-Wide Requirements: E1 Kalenderintegration#NFAU-4, NFAU-4>>
+//<<System-Wide Requirements: E1 Kalenderintegration, NFAU-4>>
+<<3.3.1. Benutzbarkeit (Usability), NFAU-4>>
 
 ==== Besondere Anforderung 2: Zuverlässigkeit
 * Wie in NFAR-2 beschrieben müssen die Formatvorlagen der Kalendereinträge eingehalten werden
