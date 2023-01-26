@@ -21,8 +21,8 @@ Siehe <<#glossary, Glossar>>.
 === Referenzen
 
 Inspiration +
-https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/21511831560/CourseNode/102524823337487/Beispielbelege/Bewerbungsprozess_Incomings.pdf[Beispiekbeleg Bewerbungsprozesse] +
-https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/21511831560/CourseNode/102524823337487/Beispielbelege/Experimenteverwaltung.pdf[Beispiekbeleg Experimenteverwaltung] +
+https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/21511831560/CourseNode/102524823337487/Beispielbelege/Bewerbungsprozess_Incomings.pdf[Beispielbeleg Bewerbungsprozesse] +
+https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/21511831560/CourseNode/102524823337487/Beispielbelege/Experimenteverwaltung.pdf[Beispielbeleg Experimenteverwaltung] +
 https://www2.htw-dresden.de/~anke/openup/core.default.nav_view.base/customcategories/checklist_list_DB7CB367.html?nodeId=cbfade2e[Checklist OpenUP]
 
 == Positionierung
