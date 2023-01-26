@@ -68,45 +68,48 @@ Session-Managment
 |Anforderung |Systemkomponente |Architekturmechanismen
 
 |UC01
-|Webanwendung
-|apu
+|Webanwendung, Weboberfläche, API, Datenbank
+|Sicherheit, Eingabelogik, Session/Error Managment
 
 |UC02
-|Webanwendung
-|apu
+|Webanwendung, Weboberfläche, API
+|(Informationsaustausch, Zugriffschutz)
 
 |UC03
-|Webanwendung
-|apu
+|Webanwendung, Weboberfläche, API
+|Eingabelogik, Sicherheit, Zugriffsschutz
 
 |UC04
-|Webanwendung
-|apu
+|Webanwendung, Weboberfläche, (API)
+|Eingabelogik, Sicherheit, (Informationsaustausch, Error Managment)
 
 |SWFA-1
-|spa
-|apu
+|Webanwendung
+|Session Managment
 
 |SWFA-2
 |spa
 |apu
 
 |SWFA-3
-|spa
-|apu
+|(Webanwendung)
+|Sicherheit, Zugriffsschutz, Verschlüsselung
 
 |SWFA-4
-|spa
-|apu
+|Datenbank, API
+|Persistenz
 
 |SWFA-5
-|spa
-|apu
+|Webanwendung
+|Informationsaustausch
 |===
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
-. Entscheidung oder Einschränkung oder Begründung 1
+. Weiterverwendung folgender Aspekte aufgrund von Schnittstellenentwicklung:
+.. Sprache
+.. Framework
+.. (Datenbank)
 . Entscheidung oder Einschränkung oder Begründung 2
 
 
@@ -118,7 +121,13 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
-. Architekturmechanismus 1
+. Sicherheit
+. Eingabelogik
+. Persistenz
+. Zugriffsschutz
+. Verschlüsselung
+. Session Managment
+. Error Managment
 . Architekturmechanismus 2
 
 
