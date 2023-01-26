@@ -23,6 +23,13 @@ Diese Schnittstelle muss in Kalendarform realisiert werden und in die
 bestehende Website integriert werden. Deshalb muss die Architektur nur
 auf die relevanten Komponenten, für die Schnittstelle, bezogen sein und durch Übersichtlichkeit und Verständlichkeit für hohe Nutzerfreundlichkeit sorgen.
 
+Weitere Ziele sind:
+
+* leichte Erweiterbarkeit des Codes bspw:
+** hinzufügen einer weiteren Kalendar API
+** hinzufügen/bearbeiten von Funktionalitäten, welche mit dem Kalender interagieren
+** für Änderung des Entwicklerteams
+* Sicherheit der Daten
 
 == Annahmen und Abhängigkeiten
 //[List the assumptions and dependencies that drive architectural decisions. This could include sensitive or critical areas, dependencies on legacy interfaces, the skill and experience of the team, the availability of important resources, and so forth]
@@ -44,13 +51,11 @@ Nutzer:
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
 Über die systemweiten funktionalen und nichtfunktionalen Anforderungen kann im Dokument zu den systemweiten Anforderungen nachgelesen werden.
 
-
 * *SWFA-1:* Das System muss sicherstellen, dass der Benutzer authentifiziert ist.
 * *SWFA-2:* Das System muss in der Lage sein, Tage mit Terminen, hervorzuheben. 
 * *SWFA-3:* Das System muss die Login-Daten der Nutzer vor Diebstahl schützen.
 * *SWFA-4:* Das System muss die Zugangsdaten und sonstige Dateninhalte des Nutzers dauerhaft speichern.
 * *SWFA-5:* Das System muss die gesammelten Daten auf geeignete Weise exportieren können. 
- 
 
 
 * *UC01*: Login
@@ -68,26 +73,26 @@ Nutzer:
 
 |UC02
 |Webanwendung, Weboberfläche, API
-|(Informationsaustausch, Zugriffschutz)
+|Informationsaustausch, Zugriffschutz
 
 |UC03
 |Webanwendung, Weboberfläche, API
 |Eingabelogik, Sicherheit, Zugriffsschutz
 
 |UC04
-|Webanwendung, Weboberfläche, (API)
-|Eingabelogik, Sicherheit, (Informationsaustausch, Error Managment)
+|Webanwendung, Weboberfläche, API
+|Eingabelogik, Sicherheit, Informationsaustausch, Error Managment
 
 |SWFA-1
 |Webanwendung
-|Session Managment
+|Session Managment, Zugriffsschutz
 
 |SWFA-2
-|spa
-|apu
+|Webanwendung
+|Darstellung
 
 |SWFA-3
-|(Webanwendung)
+|Webanwendung
 |Sicherheit, Zugriffsschutz, Verschlüsselung
 
 |SWFA-4
@@ -98,16 +103,17 @@ Nutzer:
 |Webanwendung
 |Informationsaustausch
 |===
+
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
 . Weiterverwendung folgender Aspekte aufgrund von Schnittstellenentwicklung:
 .. Sprache
 .. Framework
-.. (Datenbank)
+.. Datenbank
 
 . Verwendung von Google Cloud Project
-.. Grund: wird (aktuell) für Google API benötigt
+.. Grund: wird für Google API benötigt
 
 . Einführung von Codekommentierung
 .. Grund: leichteres und schnelleres Verständnis für Nachfolge-Entwickler
@@ -122,39 +128,55 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
 
-. Eingabelogik
-* +++<u>Zustand</u>+++:
-* +++<u>Zweck</u>+++: Spezifiziert und prüft nach Korrektheit von Eingaben
-* +++<u>Eigenschaften</u>+++:
-* +++<u>Funktion</u>+++:
-. Persistenz
-* +++<u>Zustand</u>+++:
-* +++<u>Zweck</u>+++: Art der Datenspeicherung
-* +++<u>Eigenschaften</u>+++: sinnvoll, verlustsicher
-* +++<u>Funktion</u>+++:
-. Zugriffsschutz
-* +++<u>Zustand</u>+++:
-* +++<u>Zweck</u>+++: 
+. *Eingabelogik*
+* _Zustand_: Implementation
+* _Zweck_: 
+** Spezifizieren der Eingaben nach bestimmten Vorgaben
+** Prüfen der Korrektheit von Eingaben
+* _Eigenschaften_: intuitiv, nicht fehleranfällig, klar strukturiert
+* _Funktion_:
+** mithilfe von Drop-Downs, Radio Buttons, Text Feldern,...
+** weitere Prüfung von z.B. Zeichen in Zeichenfolge, Länge der Zeichenfolge
+. *Persistenz*
+* _Zustand_: Analyse
+* _Zweck_: 
+** Art der Datenspeicherung
+* _Eigenschaften_: 
+** sinnvoll, verlustsicher
+* _Funktion_:
+** nicht flüchtiges Speichermedium wählen(DB)
+. *Zugriffsschutz*
+* _Zustand_: Implemenation
+* _Zweck_: 
+** Verhinderung von unrechtmäßigen Zugriffen
+* _Eigenschaften_: Art/Form des Zugriffes, sicher
+* _Funktion_:
 ** Prüfen von Zeige-/Bearbeitungsrechten
-** Verhindern von Hacking über Formularfelder(z.B. Injection)
-* +++<u>Eigenschaften</u>+++:
-* +++<u>Funktion</u>+++:
-. Verschlüsselung
-* +++<u>Zustand</u>+++:
-* +++<u>Zweck</u>+++:
-* +++<u>Eigenschaften</u>+++:
-* +++<u>Funktion</u>+++:
-. Session Managment
-* +++<u>Zustand</u>+++:
-* +++<u>Zweck</u>+++:
-* +++<u>Eigenschaften</u>+++:
-* +++<u>Funktion</u>+++:
-. Error Managment
-* +++<u>Zustand</u>+++:
-* +++<u>Zweck</u>+++:
-* +++<u>Eigenschaften</u>+++:
-* +++<u>Funktion</u>+++:
-
+** Verhindern von Hacking über Formularfelder(z.B. Injections)
+. *Verschlüsselung*
+* _Zustand_: Implemenation
+* _Zweck_:
+** Daten unlesbar und sicher speicherbar machen
+* _Eigenschaften_: sicher, nicht auslesbar
+* _Funktion_: -
+. *Session Managment*
+* _Zustand_: Implementation
+* _Zweck_: nutzerspezifische Informationen und Zugänge bleiben während korrekter Anmeldung bestehen
+* _Eigenschaften_: semipersistent
+* _Funktion_:
+** Session ID wird bei Anmeldung vergeben, dient zur Erkennung des Nutzers, wird bei Abmeldung vernichtet 
+. *Error Managment*
+* _Zustand_: Implementation
+* _Zweck_: Entscheidung, welche Maßnahmen bei Fehler ergriffen werden
+* _Eigenschaften_: sinnvoll, vollständig
+* _Funktion_:
+** zweckmäßige Maßnahmen
+. *Informationsaustausch*
+* _Zustand_: Analysis
+* _Zweck_: Übergabe von Daten zwischen zwei Schnittstellen
+* _Eigenschaften_: fehlerfrei, verständlich, vollständig
+* _Funktion_:
+** z.B. Übergabe von Einträgen: Kalendar API -> Kalendar 
 
 
 == Wesentliche Abstraktionen
@@ -164,22 +186,27 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 ** *Google:* Kalender mithilfe von Google API
 ** *Microsoft:* Kalender mit Outlook-Kalender API
 ** *Methoden:*
-*** +++<u>zeigenKalender</u>+++: Anzeigen von gewählten Kalender
-*** +++<u>aktualisierenKalender</u>+++: Kalender wird über API neu geladen
-*** +++<u>bearbeitenNotizfeld</u>+++: Nutzer kann in Formular Notizfeld bearbeiten
-*** +++<u>hinzufügenEintrag/e</u>+++: automatische Erstellung bei Datenübergabe von make/save conference site
-*** +++<u>suchenEintrag/e</u>+++:  Suche über Eingabefeld und Anzeige durch Entfernen unrelevanter Einträge im Kalender bzw. nach dem Prinzip von Strg+F
-*** +++<u>löschenEintrag/e</u>+++: Löschen eines Eintrages durch Nutzer
+*** _zeigenKalender_: Anzeigen von gewählten Kalender
+*** _aktualisierenKalender_: Kalender wird über API neu geladen
+*** _bearbeitenNotizfeld_: Nutzer kann in Formular Notizfeld bearbeiten
+*** _hinzufügenEintrag/e_: automatische Erstellung bei Datenübergabe von make/save conference site
+*** _suchenEintrag/e_:  Suche über Eingabefeld und Anzeige durch Entfernen unrelevanter Einträge im Kalender bzw. nach dem Prinzip von Strg+F
+*** _löschenEintrag/e_: Löschen eines Eintrages durch Nutzer
 * *Bind*: Google/Microsoft Konto mit SpeechMind Konto verknüpfen
 
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
+*Model-View-Controller(MVC)*
 
+* *Model* = Datenschicht (Django, Google, Microsoft Server)
+* *View* = Nutzerschicht (sichtbar für Nutzer)
+* *Controller* = Funktionsschicht (Funktionen und Methoden der Kalendar Klasse)
 
 == Architektursichten (Views)
 //[Describe the architectural views that you will use to describe the software architecture. This illustrates the different perspectives that you will make available to review and to document architectural decisions.]
 
 //Folgende Sichten werden empfohlen:
+
 
 === Logische Sicht
 //Beschreibt die Struktur und das Verhalten Systemteilen, die hohen Einfluss auf die Architektur haben. Dies kann die Paketstruktur, kritische Schnittstellen, wichtige Klassen und Subsysteme sowie die Beziehungen zwischen diesen Elementen enthalten. Zudem sollten die physische und logische Sicht persistenter Daten beschrieben werden, wenn es diesen Aspekt im System gibt. Dies ist ein hier dokumentierter Teilaspekt des Entwurfs.
