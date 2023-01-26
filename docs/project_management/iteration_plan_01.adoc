@@ -125,11 +125,12 @@ Phuong Anh Nguyen
 [%header, cols="2,1,3"]
 |===
 | Abgearbeitet | Verschoben | Hinzugekommen
+
 | Fertigstellen systemweite Aufgaben | Use-Case Wireframes: sobald alle Use-Cases indentifiziert und abgenommen sind | Finale Prüfung Glossar in der Letzten Iteration
-| Indentifizierung der Use-Cases| x | Überprüfung der Grammatik in der Letzten Iteration
-| Glossar für I3 aktuellisieren | x | x
-| Fertigstellen technische Spezifikationen| x | x
-| LCO Meilenstein | x | x
+| Indentifizierung der Use-Cases| --- | Überprüfung der Grammatik in der Letzten Iteration
+| Glossar für I3 aktuellisieren | --- | ---
+| Fertigstellen technische Spezifikationen| --- | ---
+| LCO Meilenstein | --- | ---
 |===
 
 * Beurteilung im Vergleich zu den Bewertungskriterien
