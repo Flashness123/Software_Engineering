@@ -13,6 +13,8 @@ In diesem Dokument werden die systemweiten Anforderungen für das Projekt E1 Kal
 
 NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern mit dem System ergeben, sind als Use Cases in einem separaten Dokument festgehalten. <<#use-case_model, Use-Case Model>>
 
+xref:use-case_model.adoc[Use-Case Model]
+
 // Verknüpfung zum laufen bringen 
 
 == Systemweite funktionale Anforderungen
