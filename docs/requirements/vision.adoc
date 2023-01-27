@@ -115,7 +115,7 @@ Beispiel Produkt:
 | Arbeiten mit dem Tool
 
 | Gesetzgeber
-| 
+| ---
 | Gibt Vorschriften für Datenschutz u.ä.
 
 | Projektteam

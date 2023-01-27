@@ -87,7 +87,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 === Organisatorische Randbedingungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
 
-* Das System muss unbefugte Dateeinsichtnahme wirksam verhindern. 
+* Das System muss unbefugte Dateneinsichtnahme wirksam verhindern. 
 
 === Rechtliche Anforderungen
 * Der Kunde muss über eine mögliche Speicherung von Nutzungsdaten informiert werden.

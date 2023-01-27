@@ -25,7 +25,7 @@ auf die relevanten Komponenten, für die Schnittstelle, bezogen sein und durch �
 
 Weitere Ziele sind:
 
-* leichte Erweiterbarkeit des Codes bspw:
+* leichte Erweiterbarkeit des Codes bspw.:
 ** hinzufügen einer weiteren Kalendar API
 ** hinzufügen/bearbeiten von Funktionalitäten, welche mit dem Kalender interagieren
 ** für Änderung des Entwicklerteams
@@ -46,7 +46,7 @@ Nutzer:
 * Besitz von Microsoft oder Google Konto
 * Jeder Nutzer erlaubt JavaScript
 
-
+<<<
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
 Über die systemweiten funktionalen und nichtfunktionalen Anforderungen kann im Dokument zu den systemweiten Anforderungen nachgelesen werden.
