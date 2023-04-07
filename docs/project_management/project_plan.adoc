@@ -43,13 +43,13 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele festzuhalten um bei
 |20
 |
 * Bachelorstudent Informatik
-|Entwicklung
+|Entwicklung, Stellvertretender Projektleiter
 
 |Luc Sowodniok
 |21
 |
 * Bachelorstudent Witschaftsinformatik
-| Stellvertreter Projektleiter / Projektleiter im 2. Semester
+| Projektleiter 
 
 |Lukas Kouba
 |20
@@ -68,6 +68,12 @@ In dem Projektplan sind Organisation, Arbeitsweise und Ziele festzuhalten um bei
 |
 * Diplomstudent Wirtschaftsinformatik
 |Test
+
+|Jamal Alkharrat
+|24
+|
+* Wirtschaftsinformatik
+| Implementation
 |=== 
 
 
