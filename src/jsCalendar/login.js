@@ -101,11 +101,11 @@ function handleSignoutClick() {
         google.accounts.oauth2.revoke(token.access_token);
         gapi.client.setToken('');
 
-        window.location.href = "index.html";
         /*document.getElementById('content').innerText = '';
         document.getElementById('authorize_button').innerText = 'Authorize';
         document.getElementById('signout_button').style.visibility = 'hidden';*/
     }
+    window.location.href = "index.html";
 }
 
 
