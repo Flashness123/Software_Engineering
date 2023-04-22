@@ -72,20 +72,24 @@ function handleAuthClick() {
         if (resp.error !== undefined) {
             throw (resp);
         }
-        document.getElementById('signout_button').style.visibility = 'visible';
+        /*document.getElementById('signout_button').style.visibility = 'visible';
         document.getElementById('authorize_button').innerText = 'Refresh';
-        await listUpcomingEvents();
+        await listUpcomingEvents();*/
     };
 
     if (gapi.client.getToken() === null) {
         // Prompt the user to select a Google Account and ask for consent to share their data
         // when establishing a new session.
         tokenClient.requestAccessToken({prompt: 'consent'});
+        NewPage();
     } else {
         // Skip display of account chooser and consent dialog for an existing session.
         tokenClient.requestAccessToken({prompt: ''});
     }
-    window.location.href="index2.html";
+}
+
+function NewPage() {
+    window.location.href = "index2.html";
 }
 
 /**
@@ -96,10 +100,12 @@ function handleSignoutClick() {
     if (token !== null) {
         google.accounts.oauth2.revoke(token.access_token);
         gapi.client.setToken('');
-        document.getElementById('content').innerText = '';
+
+        /*document.getElementById('content').innerText = '';
         document.getElementById('authorize_button').innerText = 'Authorize';
-        document.getElementById('signout_button').style.visibility = 'hidden';
+        document.getElementById('signout_button').style.visibility = 'hidden';*/
     }
+    window.location.href = "index.html";
 }
 
 
