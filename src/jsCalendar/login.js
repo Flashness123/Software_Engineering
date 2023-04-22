@@ -9,24 +9,23 @@ const CLIENT_ID = '966425262226-nflro5si4ftpk7c3c4hq57ngrcr70hsn.apps.googleuser
 const API_KEY = 'AIzaSyCSEoZIXZoR9SOyNUnAIpMnWStJQRN41Cc';
 
 // Discovery doc URL for APIs used by the quickstart
-const DISCOVERY_DOCS = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
-
+const DISCOVERY_DOC = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest', 'https://people.googleapis.com/$discovery/rest?version=v1'];
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
-const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
+const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile';
 
 let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-document.getElementById('authorize_button').style.visibility = 'hidden';
-document.getElementById('signout_button').style.visibility = 'hidden';
+//document.getElementById('authorize_button').style.visibility = 'hidden';
+//document.getElementById('signout_button').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
  */
 function gapiLoaded() {
-    gapi.load('client', initializeGapiClient);
+    gapi.load('client:auth2', initializeGapiClient); console.log("gapi loaded");
 }
 
 /**
@@ -36,8 +35,9 @@ function gapiLoaded() {
 async function initializeGapiClient() {
     await gapi.client.init({
         apiKey: API_KEY,
-        discoveryDocs: [DISCOVERY_DOC],
+        discoveryDoc: [DISCOVERY_DOC],
     });
+    console.log("gapi initiated");
     gapiInited = true;
     maybeEnableButtons();
 }
@@ -67,35 +67,29 @@ function maybeEnableButtons() {
 /**
  *  Sign in the user upon button click.
  */
-function handleAuthClick() {
-    tokenClient.callback = async (resp) => {
-        NewPage();
-        if (resp.error !== undefined) {
-            throw (resp);
-        }
-        /*document.getElementById('signout_button').style.visibility = 'visible';
+async function handleAuthClick() {
+    const auth2 = gapi.auth2.getAuthInstance();
+
+    if (auth2.isSignedIn.get()) {
+        document.getElementById('signout_button').style.visibility = 'visible';
         document.getElementById('authorize_button').innerText = 'Refresh';
-        await listUpcomingEvents();*/
-        /*const response = await gapi.client.people.people.get({
-            resourceName: 'people/me',
-            personFields: 'emailAddresses'
-        });*/
 
-        //const email = response.result.emailAddresses[0].value;
+        const email = auth2.currentUser.get().getBasicProfile().getEmail();
         console.log(email);
-        window.email = email;
-
-    };
-
-    if (gapi.client.getToken() === null) {
-        // Prompt the user to select a Google Account and ask for consent to share their data
-        // when establishing a new session.
-        tokenClient.requestAccessToken({prompt: 'consent'});
+        NewPage();
     } else {
-        // Skip display of account chooser and consent dialog for an existing session.
-        tokenClient.requestAccessToken({prompt: ''});
+        auth2.signIn().then(async () => {
+            document.getElementById('signout_button').style.visibility = 'visible';
+            document.getElementById('authorize_button').innerText = 'Refresh';
+
+            const email = auth2.currentUser.get().getBasicProfile().getEmail();
+            console.log(email);
+            NewPage();
+        });
     }
 }
+
+
 
 function NewPage() {
     window.location.href = "index2.html";
