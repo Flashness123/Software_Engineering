@@ -9,7 +9,7 @@ const CLIENT_ID = '966425262226-nflro5si4ftpk7c3c4hq57ngrcr70hsn.apps.googleuser
 const API_KEY = 'AIzaSyCSEoZIXZoR9SOyNUnAIpMnWStJQRN41Cc';
 
 // Discovery doc URL for APIs used by the quickstart
-const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
+const DISCOVERY_DOCS = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
@@ -76,6 +76,15 @@ function handleAuthClick() {
         /*document.getElementById('signout_button').style.visibility = 'visible';
         document.getElementById('authorize_button').innerText = 'Refresh';
         await listUpcomingEvents();*/
+        /*const response = await gapi.client.people.people.get({
+            resourceName: 'people/me',
+            personFields: 'emailAddresses'
+        });*/
+
+        //const email = response.result.emailAddresses[0].value;
+        console.log(email);
+        window.email = email;
+
     };
 
     if (gapi.client.getToken() === null) {
