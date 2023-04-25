@@ -12,19 +12,20 @@ include::../_includes/default-attributes.inc.adoc[]
 |===
 | Meilenstein | Datum
 
-| Beginn der Iteration | 27.03.2023
-| Meeting mit Betreuer| 31.03.2023
-| Teammeeting | 05.04.2023
-| Ende der Iteration | 08.04.2023
+| Beginn der Iteration | 10.04.2023
+| Teammeeting | 12.04.2023
+| Teammeeting | 19.04.2023
+| Teammeeting | 22.04.2023
+| Ende der Iteration | 23.04.2023
 |===
 
 
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
-* Ziel 1: Wiedereinarbeitung in das Projekt
-* Ziel 2: Verstehen des Codes des Prototypen
-* Ziel 3: Fehlerbehebung
+* Ziel 1: Ziele aus letzter Iteration erreichen
+* Ziel 2: Vertraut mit ESSENCE-Navigator machen
+* Ziel 3: Erstellen eines dynamischen Iframe-Links
 
 
 == Aufgabenzuordnung
@@ -99,7 +100,7 @@ Jamal Alkharrat
 |===
 | Assessment Ziel | Das kann die gesamte Iteration oder eine spezifische Komponente sein
 
-| Assessment Datum | 09.04.2023
+| Assessment Datum | 23.04.2023
 | Teilnehmer | Luc Sowodniok
 | Projektstatus	| gelb
 |===
@@ -116,7 +117,7 @@ Jamal Alkharrat
 |===
 | Abgearbeitet | Verschoben | Hinzugekommen
 
-| Wiedereinarbeitung in das Projekt | Finale Prüfung der Wireframes | Einarbeitung eines neuen Teammitgliedes
+| Wiedereinarbeitung in das Projekt | Finale Prüfung der Wireframes (Grund: Urlaub des Auftraggebers) | Einarbeitung eines neuen Teammitgliedes
 | Verstehen des Codes des Prototypen| --- | ---
 | Fehlerbehebung | --- | ---
 | Architektur im Beleg vervollständigen | --- | ---
