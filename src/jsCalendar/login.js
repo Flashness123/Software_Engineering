@@ -19,8 +19,8 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-document.getElementById('authorize_button').style.visibility = 'hidden';
-document.getElementById('signout_button').style.visibility = 'hidden';
+//document.getElementById('authorize_button').style.visibility = 'hidden';
+//document.getElementById('signout_button').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
@@ -55,7 +55,7 @@ gisInited = true;
 maybeEnableButtons();
 }
 
-/**
+/*
  * Enables user interaction after all libraries are loaded.
  */
 function maybeEnableButtons() {
@@ -64,17 +64,18 @@ if (gapiInited && gisInited) {
 }
 }
 
-/**
- *  Sign in the user upon button click.
- */
+
+function NewSite() {
+    window.location.replace("index2.html")
+}
+
+
 function handleAuthClick() {
 tokenClient.callback = async (resp) => {
     if (resp.error !== undefined) {
     throw (resp);
     }
-    document.getElementById('signout_button').style.visibility = 'visible';
-    document.getElementById('authorize_button').innerText = 'Refresh';
-    await listUpcomingEvents();
+    NewSite();
 };
 
 if (gapi.client.getToken() === null) {
@@ -83,8 +84,7 @@ if (gapi.client.getToken() === null) {
     tokenClient.requestAccessToken({prompt: 'consent'});
 } else {
     // Skip display of account chooser and consent dialog for an existing session.
-    tokenClient.requestAccessToken({prompt: ''});
-}
+    tokenClient.requestAccessToken({prompt: ''});}
 }
 
 /**
@@ -95,10 +95,13 @@ const token = gapi.client.getToken();
 if (token !== null) {
     google.accounts.oauth2.revoke(token.access_token);
     gapi.client.setToken('');
+
+/*
     document.getElementById('content').innerText = '';
     document.getElementById('authorize_button').innerText = 'Authorize';
-    document.getElementById('signout_button').style.visibility = 'hidden';
+    document.getElementById('signout_button').style.visibility = 'hidden';*/
 }
+window.location.replace("index.html");
 }
 
 

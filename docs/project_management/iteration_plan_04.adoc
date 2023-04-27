@@ -1,0 +1,141 @@
+= Iteration Plan I5: {project-name}
+Marc-Oliver Tittel <s82452@htw-dresden.de>; Charlotte Geißler <s82397@htw-dresden.de>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+== Meilensteine
+//Meilensteine zeigen den Ablauf der Iteration, wie z.B. den Beginn und das Ende, Zwischen-Meilensteine, Synchronisation mit anderen Teams, Demos usw.
+
+[%header, cols="3,1"]
+|===
+| Meilenstein | Datum
+
+| Beginn der Iteration | 10.04.2023
+| Teammeeting | 12.04.2023
+| Teammeeting | 19.04.2023
+| Teammeeting | 22.04.2023
+| Ende der Iteration | 23.04.2023
+|===
+
+
+== Wesentliche Ziele
+//Nennen Sie 1-5 wesentliche Ziele für die Iteration.
+
+* Ziel 1: Ziele aus letzter Iteration erreichen
+* Ziel 2: Vertraut mit ESSENCE-Navigator machen
+* Ziel 3: Erstellen eines dynamischen Iframe-Links
+
+
+== Aufgabenzuordnung
+//Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
+
+Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt.
+
+_alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
+[%header, cols="3,1,1,1,2"]
+|===
+| Aufgabe bzw. Beschreibung | Priorität (Skala 1-5 1= höchste Prio)| Schätzung der Größe (1-5 5= höchste Aufwand) |geplante Fertigstellung | Zugewiesen (Name) 
+
+| Wiedereinarbeitung in das Projekt
+| 3
+| 3
+| 08.04.2023
+| Luc Sowodniok +
+Phuong Anh Nguyen +
+Manuel Hartmann +
+Lukas Kouba +
+Jamal Alkharrat
+
+| Verstehen des Codes des Prototypen
+| 5
+| 4
+| 08.04.2023
+| Luc Sowodniok +
+Phuong Anh Nguyen +
+Manuel Hartmann +
+Lukas Kouba +
+Jamal Alkharrat
+
+| Fehlerbehebung
+| 3
+| 3
+| 05.04.2023
+| Luc Sowodniok +
+Phuong Anh Nguyen +
+Manuel Hartmann +
+Lukas Kouba +
+Jamal Alkharrat
+
+| Einarbeitung neues Teammitglied
+| 5
+| 2
+| 05.04.2023
+| Luc Sowodniok +
+Phuong Anh Nguyen +
+Manuel Hartmann +
+Lukas Kouba +
+Jamal Alkharrat
+|===
+
+
+
+
+== Bewertungskriterien
+//Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
+
+* offene Aufgaben aus I4 zu 100% vollständig
+* Jeder weiß wieder soweit wo wir sind bzw. was unser Projekt ist
+* Jeder hat den Code von unserem Prototypen verstanden
+* Fehler wurden behoben
+* Aufgaben aus I5 zu mindestens 80% erfüllt
+
+
+
+== Assessment
+//In diesem Abschnitt werden die Ergebnisse und Maßnahmen der Bewertung erfasst und kommuniziert. Die Bewertung wird üblicherweise am Ende jeder Iteration durchgeführt. Wenn Sie diese Bewertungen nicht machen, ist das Team möglicherweise nicht in der Lage, die eigene Arbeitsweise ("Way of Working") zu verbessern.
+
+[%header, cols="1,3"]
+|===
+| Assessment Ziel | Das kann die gesamte Iteration oder eine spezifische Komponente sein
+
+| Assessment Datum | 23.04.2023
+| Teilnehmer | Luc Sowodniok
+| Projektstatus	| gelb
+|===
+
+* Beurteilung im Vergleich zu den Zielen
+//Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
+** Ziel 1 erfüllt
+** Ziel 2 zu 90% erfüllt
+** Ziel 3 erfüllt
+
+* Geplante vs. erledigte Aufgaben
+//Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
+[%header, cols="2,1,3"]
+|===
+| Abgearbeitet | Verschoben | Hinzugekommen
+
+| Wiedereinarbeitung in das Projekt | Finale Prüfung der Wireframes (Grund: Urlaub des Auftraggebers) | Einarbeitung eines neuen Teammitgliedes
+| Verstehen des Codes des Prototypen| --- | ---
+| Fehlerbehebung | --- | ---
+| Architektur im Beleg vervollständigen | --- | ---
+
+|===
+
+* Beurteilung im Vergleich zu den Bewertungskriterien
+//Document whether you met the evaluation criteria as specified in the Iteration Plan.
+//Geben Sie an, ob Sie die o.g. Bewertungskriterien erfüllt haben. Das kann z.B. folgende Informationen enthalten: “Demo for Department X was well-received, with some concerns raised around usability,” or “495 test cases were automated with a 98% pass rate. 9 test cases were deferred because the corresponding Work Items were postponed.”
+** Ziel 1: entsprechend der Bewertungskriterien zu mind. 80% erfüllt
+** Ziel 2: entsprechend der Bewertungskriterien zu mind. 80% erfüllt; weiteres Verständnis wird in Praxisarbeit gesammelt
+** Ziel 3: entsprechend der Bewertungskriterien zu mind. 80% erfüllt
+
+// * Ziel 1: Wiedereinarbeitung in das Projekt
+// * Ziel 2: Verstehen des Codes des Prototypen
+// * Ziel 3: Fehlerbehebung
+
+* Andere Belange und Abweichungen
+//Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
+** Aufgrund von Urlaub des Auftraggebers konnten die Wireframes noch nicht mit dem Auftraggeber abgeglichen werden
+** ein neues Teammitglied wurde erfoglreich eingearbeitet

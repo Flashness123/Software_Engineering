@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Calendar API Quickstart</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <p>Google Calendar</p>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+        
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+    <div id="calendar"></div>
+    <script src="calFunc.js"></script>
+    <script src="login.js"></script>
+    <script src="calender.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+  </body>
+</html>
+
+
+<!-- <iframe src="https://calendar.google.com/calendar/embed?src="+EMAIL+"&ctz=Berlin" style="border:solid 1px #777" width="1000" height="800" frameborder="0" scrolling="no"></iframe> -->
+<!-- <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&bgcolor=%23EF6C00&ctz=Europe%2FBerlin&showDate=1&title=SE%20E1%20Kalenderintegration&src=c2ViZWxlZzUxQGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%2333B679" style="border:solid 1px #777" width="1000" height="800" frameborder="0" scrolling="no"></iframe> -->
