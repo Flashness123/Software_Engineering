@@ -1,8 +1,9 @@
-const email = window.email;
+// const email = window.email;
+
+var email = "sebeleg51@gmail.com";
 
 console.log(email);
 
-//var email = "sebeleg51@gmail.com";
 var timezone = "Europe/Berlin";
 var iframeSrc = "https://calendar.google.com/calendar/embed?src=" + email + "&ctz=" + timezone;
 
