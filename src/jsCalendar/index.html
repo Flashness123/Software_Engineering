@@ -9,18 +9,23 @@
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
-    <!-- <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button> -->
-
-    <p><LINK></p>
-    
+    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+ 
+    <input type="text" id="searchValue" placeholder="Search Title">
+    <label for="searchPastDate">Events in past till: </label>
+    <input type="date" id="searchPastDate" placeholder="Search Past Date">
+    <button id="searchEvent">Search</button>
     <pre id="content" style="white-space: pre-wrap;"></pre>
+    <div id="calendar"></div>
+    <!-- <p><LINK></p> -->
+    
     <script src="calFunc.js"></script>
     <script src="login.js"></script>
+    <script src="calender.js"></script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
-
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       document.write(LINK);
-  </script>
+  </script> -->
   </body>
 </html>

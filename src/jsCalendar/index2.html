@@ -9,9 +9,14 @@
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
-        
+    
+    <input type="text" id="searchTitle" placeholder="Search Title">
+    <label for="searchPastDate">Events in past till: </label>
+    <input type="date" id="searchPastDate" placeholder="Search Past Date">
+    <button id="searchEvent" onclick="searchEvent()">Search</button>
     <pre id="content" style="white-space: pre-wrap;"></pre>
-    <div id="calendar"></div>
+
+    <!-- <div id="calendar"></div> -->
     <script src="calFunc.js"></script>
     <script src="login.js"></script>
     <script src="calender.js"></script>
