@@ -1,24 +1,20 @@
 /////////////////////////////////Search////////////////////////////////////////
 //Listener for search button
 var searchButton = document.getElementById("searchEvent");
+var contentT = document.getElementById("content");
 searchButton.addEventListener("click", function () {
 	var searchValue = document.getElementById("searchValue").value;
 	var pastDate = document.getElementById("searchPastDate").value;
   searchEvent(pastDate);
 });
-/**
- * Print the summary and start datetime/date of the next ten events in
- * the authorized user's calendar. If no events are found an
- * appropriate message is printed.
- */
-var contentT = document.getElementById("content");
 
-
+//Function - Search for events with specific parameters and display them in Element(content)
 async function searchEvent(pastDate) {
-	console.log("pastDate:");
+	//Debug
 	console.log(pastDate);
   let response;
   try {
+    // Request Oject
     const request = {
       calendarId: "primary",
       timeMin: (new Date(Date.parse(pastDate))).toISOString(),
@@ -27,16 +23,19 @@ async function searchEvent(pastDate) {
       maxResults: 10,
       orderBy: "startTime",
     };
-    // gapi.client.load("calendar", "v3");
+    // Debug
 		console.log(request);
+    // Send request to Google Calendar API and save as response
     response = await gapi.client.calendar.events.list(request);
   } catch (err) {
+    // Error handling
     contentT.innerHTML = err.message;
 		console.log(err.message);
     return;
   }
-
+  // Save events from response
   const events = response.result.items;
+  // If no events found
   if (!events || events.length == 0) {
     contentT.textContent = "No events found.";
     return;
@@ -47,6 +46,7 @@ async function searchEvent(pastDate) {
       `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
     "Events:\n"
   );
+  // Display events
   contentT.innerHTML = output;
 }
 /////////////////////////////////S////////////////////////////////////////

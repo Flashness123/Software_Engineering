@@ -7,15 +7,21 @@
   <body>
     <p>Google Calendar main</p>
 
-    <!--Add buttons to initiate auth sequence and sign out-->
+    <!--Buttons for Google Login Process-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
- 
+    
+    <!--Search for events-->
     <input type="text" id="searchValue" placeholder="Search Title">
     <label for="searchPastDate">Events from now till: </label>
     <input type="date" id="searchPastDate" placeholder="Search Past Date">
     <button id="searchEvent">Search</button>
+    <!-- <button id="clearSearch">Clear Search</button> -->
+
+    <!-- Displays events -->
     <pre id="content" style="white-space: pre-wrap;"></pre>
+
+    <!-- Displays calendar -->
     <div id="calendar"></div>
     <!-- <p><LINK></p> -->
     
