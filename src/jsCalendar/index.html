@@ -9,14 +9,18 @@
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
-    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+    <!-- <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button> -->
+
+    <p><LINK></p>
     
     <pre id="content" style="white-space: pre-wrap;"></pre>
     <script src="calFunc.js"></script>
     <script src="login.js"></script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+
+    <script type="text/javascript">
+      document.write(LINK);
+  </script>
   </body>
 </html>
-
-
