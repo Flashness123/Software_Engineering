@@ -20,7 +20,7 @@ let gapiInited = false;
 let gisInited = false;
 
 document.getElementById('authorize_button').style.visibility = 'hidden';
-document.getElementById('signout_button').style.visibility = 'hidden';
+document.getElementById('signed_in').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
@@ -76,9 +76,9 @@ function handleAuthClick() {
         throw (resp);
         }
         // NewSite();
-        document.getElementById('signout_button').style.visibility = 'visible';
+        document.getElementById('signed_in').style.visibility = 'visible';
         document.getElementById('authorize_button').innerText = 'Refresh';
-        await searchEvent();
+        // await searchEvent();
     };
 
     if (gapi.client.getToken() === null) {
@@ -102,7 +102,7 @@ function handleSignoutClick() {
     
         document.getElementById('content').innerText = '';
         document.getElementById('authorize_button').innerText = 'Authorize';
-        document.getElementById('signout_button').style.visibility = 'hidden';
+        document.getElementById('signed_in').style.visibility = 'hidden';
     }
     // window.location.replace("index.html");
 }

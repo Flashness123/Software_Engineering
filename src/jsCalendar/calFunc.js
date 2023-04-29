@@ -3,34 +3,36 @@
 var searchButton = document.getElementById("searchEvent");
 var contentT = document.getElementById("content");
 searchButton.addEventListener("click", function () {
-	var searchValue = document.getElementById("searchValue").value;
-	var pastDate = document.getElementById("searchPastDate").value;
-  searchEvent(pastDate);
+  var searchValue = document.getElementById("searchValue").value;
+  var pastDate = document.getElementById("searchPastDate").value;
+  searchEvent(pastDate, searchValue);
 });
 
 //Function - Search for events with specific parameters and display them in Element(content)
-async function searchEvent(pastDate) {
-	//Debug
-	console.log(pastDate);
+async function searchEvent(pastDate, searchValue) {
+  //Debug
+  console.log(pastDate);
+  console.log(searchValue);
   let response;
   try {
     // Request Oject
     const request = {
       calendarId: "primary",
-      timeMin: (new Date(Date.parse(pastDate))).toISOString(),
+      timeMin: new Date(Date.parse(pastDate)).toISOString(),
+      q: searchValue.toString(), //summary, description, location, displayName des Teilnehmers, email des Teilnehmers
       showDeleted: false,
       singleEvents: true,
       maxResults: 10,
       orderBy: "startTime",
     };
     // Debug
-		console.log(request);
+    console.log(request);
     // Send request to Google Calendar API and save as response
     response = await gapi.client.calendar.events.list(request);
   } catch (err) {
     // Error handling
     contentT.innerHTML = err.message;
-		console.log(err.message);
+    console.log(err.message);
     return;
   }
   // Save events from response
@@ -50,3 +52,4 @@ async function searchEvent(pastDate) {
   contentT.innerHTML = output;
 }
 /////////////////////////////////S////////////////////////////////////////
+
