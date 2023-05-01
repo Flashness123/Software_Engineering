@@ -26,6 +26,7 @@ let gisInited = false;
  * Callback after api.js is loaded.
  */
 function gapiLoaded() {
+console.log("Gapi Loaded");
 gapi.load('client', initializeGapiClient);
 }
 
@@ -39,6 +40,7 @@ await gapi.client.init({
     discoveryDocs: [DISCOVERY_DOC],
 });
 gapiInited = true;
+console.log("gapi initiated");
 maybeEnableButtons();
 }
 
