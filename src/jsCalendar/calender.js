@@ -1,5 +1,5 @@
 // const email = window.email;
-
+//general information about the calendar(iframe)
 var email = "sebeleg51@gmail.com";
 
 console.log(email);

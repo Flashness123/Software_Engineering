@@ -1,79 +1,55 @@
-/**
- * Print the summary and start datetime/date of the next ten events in
- * the authorized user's calendar. If no events are found an
- * appropriate message is printed.
- */
-async function listUpcomingEvents() {
-    let response;
-    try {
-        const request = {
-        'calendarId': 'primary',
-        'timeMin': (new Date()).toISOString(),
-        'showDeleted': false,
-        'singleEvents': true,
-        'maxResults': 10,
-        'orderBy': 'startTime',
-        };
-        response = await gapi.client.calendar.events.list(request);
-    } catch (err) {
-        document.getElementById('content').innerText = err.message;
-        return;
-    }
-    
-    const events = response.result.items;
-    if (!events || events.length == 0) {
-        document.getElementById('content').innerText = 'No events found.';
-        return;
-    }
-    // Flatten to string to display
-    const output = events.reduce(
-        (str, event) => `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
-        'Events:\n');
-    document.getElementById('content').innerText = output;
-    }
+/////////////////////////////////Search////////////////////////////////////////
+//Listener for search button
+var searchButton = document.getElementById("searchEvent");
+var contentT = document.getElementById("content");
+searchButton.addEventListener("click", function () {
+  var searchValue = document.getElementById("searchValue").value;
+  var pastDate = document.getElementById("searchPastDate").value;
+  searchEvent(pastDate, searchValue);
+});
 
+//Function - Search for events with specific parameters and display them in Element(content)
+async function searchEvent(pastDate, searchValue) {
+  //Debug
+  console.log(pastDate);
+  console.log(searchValue);
+  let response;
+  try {
+    // Request Oject
+    const request = {
+      calendarId: "primary",
+      timeMin: new Date(Date.parse(pastDate)).toISOString(),
+      q: searchValue.toString(), //summary, description, location, displayName des Teilnehmers, email des Teilnehmers
+      showDeleted: false,
+      singleEvents: true,
+      maxResults: 10,
+      orderBy: "startTime",
+    };
+    // Debug
+    console.log(request);
+    // Send request to Google Calendar API and save as response
+    response = await gapi.client.calendar.events.list(request);
+  } catch (err) {
+    // Error handling
+    contentT.innerHTML = err.message;
+    console.log(err.message);
+    return;
+  }
+  // Save events from response
+  const events = response.result.items;
+  // If no events found
+  if (!events || events.length == 0) {
+    contentT.textContent = "No events found.";
+    return;
+  }
+  // Flatten to string to display
+  const output = events.reduce(
+    (str, event) =>
+      `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
+    "Events:\n"
+  );
+  // Display events
+  contentT.innerHTML = output;
+}
+/////////////////////////////////S////////////////////////////////////////
 
-
-
-// Refer to the JavaScript quickstart on how to setup the environment:
-// https://developers.google.com/calendar/quickstart/js
-// Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
-// stored credentials.
-
-const event = {
-    'summary': 'Google I/O 2015',
-    'location': '800 Howard St., San Francisco, CA 94103',
-    'description': 'A chance to hear more about Google\'s developer products.',
-    'start': {
-      'dateTime': '2015-05-28T09:00:00-07:00',
-      'timeZone': 'America/Los_Angeles'
-    },
-    'end': {
-      'dateTime': '2015-05-28T17:00:00-07:00',
-      'timeZone': 'America/Los_Angeles'
-    },
-    'recurrence': [
-      'RRULE:FREQ=DAILY;COUNT=2'
-    ],
-    'attendees': [
-      {'email': 'lpage@example.com'},
-      {'email': 'sbrin@example.com'}
-    ],
-    'reminders': {
-      'useDefault': false,
-      'overrides': [
-        {'method': 'email', 'minutes': 24 * 60},
-        {'method': 'popup', 'minutes': 10}
-      ]
-    }
-  };
-  
-  const request = gapi.client.calendar.events.insert({
-    'calendarId': 'primary',
-    'resource': event
-  });
-  
-  request.execute(function(event) {
-    appendPre('Event created: ' + event.htmlLink);
-  });
-  
