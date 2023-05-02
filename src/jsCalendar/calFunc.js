@@ -53,6 +53,32 @@ async function searchEvent(pastDate, searchValue) {
 }
 /////////////////////////////////S////////////////////////////////////////
 
+/////////////////////////////////delete Event////////////////////////////////////////
+var deleteEventButton = document.getElementById("deleteEvent");
+deleteEventButton.addEventListener("click", function () {
+  console.log("delete Event");
+
+  var NumberId = document.getElementById("getNumberId").value;
+  console.log("NumberId: ");
+  console.log(NumberId);
+
+  var params = {
+    calendarId: 'primary',
+    eventId: NumberId,
+  };
+
+  const deleteRequest = gapi.client.calendar.events.delete(params, function(err) {
+    console.log('deleteRequest entered');
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+    console.log('Event deleted.');
+    
+  });
+});
+
+//https://stackoverflow.com/questions/36961422/deleting-events-in-google-calander-api
 
 /////////////////////////////////create Event////////////////////////////////////////
 //Listener for createEvent button
