@@ -19,15 +19,14 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-//document.getElementById('authorize_button').style.visibility = 'hidden';
-//document.getElementById('signout_button').style.visibility = 'hidden';
+document.getElementById('authorize_button').style.visibility = 'hidden';
+document.getElementById('signed_in').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
  */
 function gapiLoaded() {
-console.log("Gapi Loaded");
-gapi.load('client', initializeGapiClient);
+    gapi.load('client', initializeGapiClient);
 }
 
 /**
@@ -35,75 +34,77 @@ gapi.load('client', initializeGapiClient);
  * discovery doc to initialize the API.
  */
 async function initializeGapiClient() {
-await gapi.client.init({
-    apiKey: API_KEY,
-    discoveryDocs: [DISCOVERY_DOC],
-});
-gapiInited = true;
-console.log("gapi initiated");
-maybeEnableButtons();
+    await gapi.client.init({
+        apiKey: API_KEY,
+        discoveryDocs: [DISCOVERY_DOC],
+    });
+    gapiInited = true;
+    maybeEnableButtons();
 }
 
 /**
  * Callback after Google Identity Services are loaded.
  */
 function gisLoaded() {
-tokenClient = google.accounts.oauth2.initTokenClient({
-    client_id: CLIENT_ID,
-    scope: SCOPES,
-    callback: '', // defined later
-});
-gisInited = true;
-maybeEnableButtons();
+    tokenClient = google.accounts.oauth2.initTokenClient({
+        client_id: CLIENT_ID,
+        scope: SCOPES,
+        callback: '', // defined later
+    });
+    gisInited = true;
+    maybeEnableButtons();
 }
 
 /*
  * Enables user interaction after all libraries are loaded.
  */
 function maybeEnableButtons() {
-if (gapiInited && gisInited) {
-    document.getElementById('authorize_button').style.visibility = 'visible';
-}
-}
-
-
-function NewSite() {
-    window.location.replace("index2.html")
-}
-
-
-function handleAuthClick() {
-tokenClient.callback = async (resp) => {
-    if (resp.error !== undefined) {
-    throw (resp);
+    if (gapiInited && gisInited) {
+        document.getElementById('authorize_button').style.visibility = 'visible';
     }
-    NewSite();
-};
+}
 
-if (gapi.client.getToken() === null) {
-    // Prompt the user to select a Google Account and ask for consent to share their data
-    // when establishing a new session.
-    tokenClient.requestAccessToken({prompt: 'consent'});
-} else {
-    // Skip display of account chooser and consent dialog for an existing session.
-    tokenClient.requestAccessToken({prompt: ''});}
+//Redirects to the main page after Login.
+// function NewSite() {
+//     window.location.replace("index2.html")
+// }
+
+//Sign in the user upon button click.
+function handleAuthClick() {
+    tokenClient.callback = async (resp) => {
+        if (resp.error !== undefined) {
+        throw (resp);
+        }
+        // NewSite();
+        document.getElementById('signed_in').style.visibility = 'visible';
+        document.getElementById('authorize_button').innerText = 'Refresh';
+        // await searchEvent();
+    };
+
+    if (gapi.client.getToken() === null) {
+        // Prompt the user to select a Google Account and ask for consent to share their data
+        // when establishing a new session.
+        tokenClient.requestAccessToken({prompt: 'consent'});
+    } else {
+        // Skip display of account chooser and consent dialog for an existing session.
+        tokenClient.requestAccessToken({prompt: ''});}
 }
 
 /**
  *  Sign out the user upon button click.
  */
 function handleSignoutClick() {
-const token = gapi.client.getToken();
-if (token !== null) {
-    google.accounts.oauth2.revoke(token.access_token);
-    gapi.client.setToken('');
+    const token = gapi.client.getToken();
+    if (token !== null) {
+        google.accounts.oauth2.revoke(token.access_token);
+        gapi.client.setToken('');
 
-/*
-    document.getElementById('content').innerText = '';
-    document.getElementById('authorize_button').innerText = 'Authorize';
-    document.getElementById('signout_button').style.visibility = 'hidden';*/
-}
-window.location.replace("index.html");
+    
+        document.getElementById('content').innerText = '';
+        document.getElementById('authorize_button').innerText = 'Authorize';
+        document.getElementById('signed_in').style.visibility = 'hidden';
+    }
+    // window.location.replace("index.html");
 }
 
 

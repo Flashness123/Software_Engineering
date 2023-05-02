@@ -6,21 +6,40 @@
   </head>
   <body>
     <p>Google Calendar main</p>
-
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
-    <!-- <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button> -->
-
-    <p><LINK></p>
     
-    <pre id="content" style="white-space: pre-wrap;"></pre>
+    <!--Buttons for Google Login Process-->
+    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+    <div id="signed_in">
+      <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+      
+      <!--Search for events-->
+      <input type="text" id="searchValue" placeholder="Search summary, description, location">
+      <label for="searchPastDate">Events from now till: </label>
+      <input type="date" id="searchPastDate" placeholder="Search Past Date">
+      <button id="searchEvent">Search</button>
+      <!-- <button id="clearSearch">Clear Search</button> -->
+
+      <!-- Displays events -->
+      <pre id="content" style="white-space: pre-wrap;"></pre>
+
+      <!-- create events -->
+      <input type="text" id="createTitel" placeholder="Titel">
+      <input type="date" id="createDate" placeholder="Date">
+      <input type="time" id="createTime" placeholder="Time">
+      <button id="createEvent">create Event</button>
+
+      <!-- Displays calendar -->
+      <div id="calendar"></div>
+    </div>
+    <!-- <p><LINK></p> -->
+    
     <script src="calFunc.js"></script>
     <script src="login.js"></script>
+    <script src="calender.js"></script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
-
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       document.write(LINK);
-  </script>
+  </script> -->
   </body>
 </html>
