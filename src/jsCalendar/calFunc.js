@@ -58,12 +58,21 @@ async function searchEvent(pastDate, searchValue) {
 //Listener for createEvent button
 var createEventButton = document.getElementById("createEvent");
 createEventButton.addEventListener("click", function () {
+  console.log("create Event");
+  
+  var createTitel = document.getElementById("createTitel").value;
+  var createDate = document.getElementById("createDate").value;
+  var createTime = document.getElementById("createTime").value;
+  
+  
+  console.log("event mit Titel:"+createTime+" Datum und Uhrzeit: "+createDate+" "+createTime);
+
   const event = {
-    'summary': 'Meeting',
-    'location': 'HTW-Dresden',
-    'description': 'Meeting',
+    'summary': createTitel,
+    // 'location': 'HTW-Dresden',
+    // 'description': 'Meeting',
     'start': {
-      'dateTime': '2023-05-03T15:00:00+02:00',
+      'dateTime': createDate+'T'+createTime+':00+02:00',
       'timeZone': 'Europe/Berlin'
     },
     'end': {
@@ -93,8 +102,10 @@ createEventButton.addEventListener("click", function () {
   });
 
   request.execute(function(event) {
+    console.log("request.execute");
     // appendPre('Event created: ' + event.htmlLink);
   });
+
   
 });
 
