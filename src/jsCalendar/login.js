@@ -18,9 +18,10 @@ const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 let tokenClient;
 let gapiInited = false;
 let gisInited = false;
+let userEmail = "";
 
-//document.getElementById('authorize_button').style.visibility = 'hidden';
-//document.getElementById('signout_button').style.visibility = 'hidden';
+document.getElementById('authorize_button').style.visibility = 'hidden';
+document.getElementById('signout_button').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
@@ -77,6 +78,7 @@ tokenClient.callback = async (resp) => {
     if (resp.error !== undefined) {
     throw (resp);
     }
+    userEmail = gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getEmail();
     NewSite();
 };
 
@@ -106,4 +108,4 @@ if (token !== null) {
 window.location.replace("index.html");
 }
 
-
+export { userEmail };

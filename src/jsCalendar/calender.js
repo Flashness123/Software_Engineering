@@ -1,8 +1,10 @@
-const email = window.email;
+// const email = window.email;
+import { userEmail } from "./login";
 
-console.log(email);
+console.log(userEmail);
 
-//var email = "sebeleg51@gmail.com";
+// var email = "sebeleg51@gmail.com";
+var email = userEmail;
 var timezone = "Europe/Berlin";
 var iframeSrc = "https://calendar.google.com/calendar/embed?src=" + email + "&ctz=" + timezone;
 
