@@ -65,7 +65,7 @@ createEventButton.addEventListener("click", function () {
   var createTime = document.getElementById("createTime").value;
   
   
-  console.log("event mit Titel:"+createTime+" Datum und Uhrzeit: "+createDate+" "+createTime);
+  console.log("event mit Titel:"+createTitel+" Datum und Uhrzeit: "+createDate+" "+createTime);
 
   const event = {
     'summary': createTitel,
