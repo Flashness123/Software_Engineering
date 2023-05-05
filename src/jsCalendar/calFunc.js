@@ -8,6 +8,7 @@ searchButton.addEventListener("click", function () {
   var searchValue = document.getElementById("searchValue").value;
   var pastDate = document.getElementById("searchPastDate").value;
   searchEvent(pastDate, searchValue);
+  showEdit();
 });
 
 //Function - Search for events with specific parameters and display them in Element(content)
@@ -136,3 +137,11 @@ createEventButton.addEventListener("click", function () {
 
 
 /////////////////////////////////E////////////////////////////////////////
+
+
+/////////////////////////////////change Event////////////////////////////////////////
+
+function showEdit() {
+  document.getElementById('editEvents').style.visibility = 'visible';
+}
+

@@ -21,6 +21,7 @@ let gisInited = false;
 
 document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signed_in').style.visibility = 'hidden';
+document.getElementById('editEvents').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
