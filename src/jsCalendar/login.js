@@ -21,6 +21,7 @@ let gisInited = false;
 
 document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signed_in').style.visibility = 'hidden';
+document.getElementById('editEvents').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
@@ -103,6 +104,7 @@ function handleSignoutClick() {
         document.getElementById('content').innerText = '';
         document.getElementById('authorize_button').innerText = 'Authorize';
         document.getElementById('signed_in').style.visibility = 'hidden';
+        document.getElementById('editEvents').style.visibility = 'hidden';
     }
     // window.location.replace("index.html");
 }
