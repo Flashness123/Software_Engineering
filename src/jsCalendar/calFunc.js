@@ -2,6 +2,8 @@
 //Listener for search button
 var searchButton = document.getElementById("searchEvent");
 var contentT = document.getElementById("content");
+var output = [];
+
 searchButton.addEventListener("click", function () {
   var searchValue = document.getElementById("searchValue").value;
   var pastDate = document.getElementById("searchPastDate").value;
@@ -50,13 +52,17 @@ async function searchEvent(pastDate, searchValue) {
   //   "Events:\n"
   // );
 
-  // initialize const output
-  const output = [];
+  // remove all childs and array "outout"
+  while (contentT.firstChild) {
+    contentT.removeChild(contentT.firstChild);
+  }
+  output.length = 0;
 
+// right events in "output" array
   events.forEach(function(event) {
   output.push(event.summary + ' (' + (event.start.dateTime || event.start.date) + ')\n');
 });
-  // Display events
+  // Display events + make output clickable
   console.log(output);
   for (var i = 0; i < output.length; i++) {
     var div = document.createElement('div');
@@ -67,7 +73,7 @@ async function searchEvent(pastDate, searchValue) {
       // Hier können Sie den Code hinzufügen, der bei Klick auf eine Zeile ausgeführt werden soll
       console.log('Zeile ' + index + ' wurde geklickt');
     });
-    contentT.appendChild(div);
+  contentT.appendChild(div);
   }
 }
 /////////////////////////////////S////////////////////////////////////////
