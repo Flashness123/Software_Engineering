@@ -75,16 +75,15 @@ function parseDateTime(dateTimeString) {
   const dateTime = new Date(dateTimeString);
   const date = dateTime.toLocaleDateString();
   const time = dateTime.toLocaleTimeString();
-  const timeZone = dateTime.toLocaleTimeString([], { timeZoneName: 'short' });
-  return [date, time, timeZone];
+  return [date, time];
 }
 
   events.forEach(function(event) {
     const summary = checkValue(event.summary);
-    const [startDate, startTime, startTimeZone] = checkValue(parseDateTime(event.start.dateTime));
-    const [endDate, endTime, endTimeZone] = checkValue(parseDateTime(event.end.dateTime));
+    const [startDate, startTime] = checkValue(parseDateTime(event.start.dateTime));
+    const [endDate, endTime] = checkValue(parseDateTime(event.end.dateTime));
   
-    const eventArray = [summary, startDate, startTime, startTimeZone, endDate, endTime, endTimeZone];
+    const eventArray = [summary, startDate, startTime, endDate, endTime];
     output.push(eventArray);
   });
 
@@ -124,6 +123,7 @@ for (var i = 0; i < output.length; i++) {
     var index = parseInt(this.getAttribute('data-index'));
     // Hier können Sie den Code hinzufügen, der bei Klick auf eine Zeile ausgeführt werden soll
     console.log('Zeile ' + index + ' wurde geklickt');
+    Editor(output[index][0], output[index][1], output[index][2], output[index][3], output[index][4]);
   });
   
   contentT.appendChild(div);
@@ -194,11 +194,35 @@ createEventButton.addEventListener("click", function () {
 
 /////////////////////////////////change Event////////////////////////////////////////
 
-function Editor(Stelle, Array) {
+// [summary, startDate, startTime, endDate, endTime]
+
+function Editor(summary, startDate, startTime, endDate, endTime) {
   document.getElementById('editEvents').style.visibility = 'visible';
-  const ort = document.getElementById("summary");
-  const input = Array[Stelle];
+  // const ort = ["summary", "startDate", "startTime", "endDate", "endTime"];
+  const ort = document.getElementById("startTime");
+  const input = [summary, startDate, startTime, endDate, endTime];
   console.log(input);
-  ort.value = input;
+  // ort.value = input[2];
+  ort.value = convertToTime(input[2]);
+  // for(let i = 0; i < length.input; i++) {
+  //   document.getElementById(ort[i]).value = input[i];
+  // }
 }
 
+function convertToDate(referDate) {
+  const dateString = referDate;
+  const [day, month, year] = dateString.split(".");
+  const date = new Date(`${year}-${month}-${day}`);
+  const isoDateString = date.toISOString().substring(0, 10);
+  console.log(isoDateString);
+  return isoDateString;
+}
+
+function convertToTime(referTime) {
+  const timeParts = referTime.split(':');
+  const hours = timeParts[0];
+  const minutes = timeParts[1];
+  const formattedTime = `${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}`;
+  console.log(formattedTime);
+  return formattedTime;
+}
