@@ -2,11 +2,8 @@
 //Listener for search button
 var searchButton = document.getElementById("searchEvent");
 var contentT = document.getElementById("content");
-<<<<<<< HEAD
-=======
 var output = [];
 
->>>>>>> ProgLuc
 searchButton.addEventListener("click", function () {
   var searchValue = document.getElementById("searchValue").value;
   var pastDate = document.getElementById("searchPastDate").value;
@@ -30,10 +27,6 @@ async function searchEvent(pastDate, searchValue) {
       maxResults: 10,
       orderBy: "startTime",
     };
-<<<<<<< HEAD
-=======
-
->>>>>>> ProgLuc
     // Debug
     console.log(request);
     // Send request to Google Calendar API and save as response
@@ -52,15 +45,6 @@ async function searchEvent(pastDate, searchValue) {
     return;
   }
   // Flatten to string to display
-<<<<<<< HEAD
-  const output = events.reduce(
-    (str, event) =>
-      `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
-    "Events:\n"
-  );
-  // Display events
-  contentT.innerHTML = output;
-=======
   // const output = events.reduce(
   //   (str, event) =>
   //     `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
@@ -90,7 +74,6 @@ async function searchEvent(pastDate, searchValue) {
     });
   contentT.appendChild(div);
   }
->>>>>>> ProgLuc
 }
 /////////////////////////////////S////////////////////////////////////////
 
