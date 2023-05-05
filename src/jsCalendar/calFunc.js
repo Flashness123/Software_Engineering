@@ -25,6 +25,7 @@ async function searchEvent(pastDate, searchValue) {
       maxResults: 10,
       orderBy: "startTime",
     };
+
     // Debug
     console.log(request);
     // Send request to Google Calendar API and save as response
@@ -43,13 +44,31 @@ async function searchEvent(pastDate, searchValue) {
     return;
   }
   // Flatten to string to display
-  const output = events.reduce(
-    (str, event) =>
-      `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
-    "Events:\n"
-  );
+  // const output = events.reduce(
+  //   (str, event) =>
+  //     `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
+  //   "Events:\n"
+  // );
+
+  // initialize const output
+  const output = [];
+
+  events.forEach(function(event) {
+  output.push(event.summary + ' (' + (event.start.dateTime || event.start.date) + ')\n');
+});
   // Display events
-  contentT.innerHTML = output;
+  console.log(output);
+  for (var i = 0; i < output.length; i++) {
+    var div = document.createElement('div');
+    div.setAttribute('data-index', i);
+    div.innerHTML = output[i];
+    div.addEventListener('click', function() {
+      var index = parseInt(this.getAttribute('data-index'));
+      // Hier können Sie den Code hinzufügen, der bei Klick auf eine Zeile ausgeführt werden soll
+      console.log('Zeile ' + index + ' wurde geklickt');
+    });
+    contentT.appendChild(div);
+  }
 }
 /////////////////////////////////S////////////////////////////////////////
 
