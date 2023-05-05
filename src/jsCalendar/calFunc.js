@@ -78,14 +78,34 @@ function parseDateTime(dateTimeString) {
   return [date, time];
 }
 
+  // events.forEach(function(event) {
+  //   const summary = checkValue(event.summary);
+  //   const [startDate, startTime] = checkValue(parseDateTime(event.start.dateTime));
+  //   const [endDate, endTime] = checkValue(parseDateTime(event.end.dateTime));
+  
+  //   const eventArray = [summary, startDate, startTime, endDate, endTime];
+  //   output.push(eventArray);
+  // });
+
+
   events.forEach(function(event) {
     const summary = checkValue(event.summary);
-    const [startDate, startTime] = checkValue(parseDateTime(event.start.dateTime));
-    const [endDate, endTime] = checkValue(parseDateTime(event.end.dateTime));
-  
+    
+    let startDate, startTime, endDate, endTime;
+    if (event.start.dateTime && event.end.dateTime) {
+      [startDate, startTime] = checkValue(parseDateTime(event.start.dateTime));
+      [endDate, endTime] = checkValue(parseDateTime(event.end.dateTime));
+    } else {
+      startDate = checkValue(event.start.date);
+      endDate = checkValue(event.end.date);
+      startTime = "ganztägig";
+      endTime = "ganztägig";
+    }
+    
     const eventArray = [summary, startDate, startTime, endDate, endTime];
     output.push(eventArray);
   });
+
 
 //   Display events + make output clickable
   console.table(output);
@@ -122,8 +142,19 @@ for (var i = 0; i < output.length; i++) {
   div.addEventListener('click', function() {
     var index = parseInt(this.getAttribute('data-index'));
     // Hier können Sie den Code hinzufügen, der bei Klick auf eine Zeile ausgeführt werden soll
+
+    const mySection = document.getElementById('editEvents');
+    const inputs = mySection.getElementsByTagName('input');
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].value = '';
+    }
     console.log('Zeile ' + index + ' wurde geklickt');
-    Editor(output[index][0], output[index][1], output[index][2], output[index][3], output[index][4]);
+    if (output[index][2] === "ganztägig" && output[index][4] === "ganztägig") {
+      Editor(output[index][0], output[index][1], "00:00:00", output[index][3], "00:00:00");
+    } else {
+      Editor(output[index][0], output[index][1], output[index][2], output[index][3], output[index][4]);
+    }
+    
   });
   
   contentT.appendChild(div);
@@ -194,19 +225,18 @@ createEventButton.addEventListener("click", function () {
 
 /////////////////////////////////change Event////////////////////////////////////////
 
-// [summary, startDate, startTime, endDate, endTime]
-
 function Editor(summary, startDate, startTime, endDate, endTime) {
   document.getElementById('editEvents').style.visibility = 'visible';
-  // const ort = ["summary", "startDate", "startTime", "endDate", "endTime"];
-  const ort = document.getElementById("startTime");
-  const input = [summary, startDate, startTime, endDate, endTime];
-  console.log(input);
-  // ort.value = input[2];
-  ort.value = convertToTime(input[2]);
-  // for(let i = 0; i < length.input; i++) {
-  //   document.getElementById(ort[i]).value = input[i];
-  // }
+  const fields = [
+    { field: "summary", value: summary },
+    { field: "startDate", value: startDate.includes(".") ? convertToDate(startDate) : startDate },
+    { field: "startTime", value: convertToTime(startTime) },
+    { field: "endDate", value: endDate.includes(".") ? convertToDate(endDate) : endDate },
+    { field: "endTime", value: convertToTime(endTime) },
+  ];
+  fields.forEach(({ field, value }) => {
+    document.getElementById(field).value = value;
+  });
 }
 
 function convertToDate(referDate) {
