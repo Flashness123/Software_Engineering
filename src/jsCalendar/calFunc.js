@@ -2,6 +2,11 @@
 //Listener for search button
 var searchButton = document.getElementById("searchEvent");
 var contentT = document.getElementById("content");
+<<<<<<< HEAD
+=======
+var output = [];
+
+>>>>>>> ProgLuc
 searchButton.addEventListener("click", function () {
   var searchValue = document.getElementById("searchValue").value;
   var pastDate = document.getElementById("searchPastDate").value;
@@ -25,6 +30,10 @@ async function searchEvent(pastDate, searchValue) {
       maxResults: 10,
       orderBy: "startTime",
     };
+<<<<<<< HEAD
+=======
+
+>>>>>>> ProgLuc
     // Debug
     console.log(request);
     // Send request to Google Calendar API and save as response
@@ -43,6 +52,7 @@ async function searchEvent(pastDate, searchValue) {
     return;
   }
   // Flatten to string to display
+<<<<<<< HEAD
   const output = events.reduce(
     (str, event) =>
       `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
@@ -50,6 +60,37 @@ async function searchEvent(pastDate, searchValue) {
   );
   // Display events
   contentT.innerHTML = output;
+=======
+  // const output = events.reduce(
+  //   (str, event) =>
+  //     `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
+  //   "Events:\n"
+  // );
+
+  // remove all childs and array "outout"
+  while (contentT.firstChild) {
+    contentT.removeChild(contentT.firstChild);
+  }
+  output.length = 0;
+
+// right events in "output" array
+  events.forEach(function(event) {
+  output.push(event.summary + ' (' + (event.start.dateTime || event.start.date) + ')\n');
+});
+  // Display events + make output clickable
+  console.log(output);
+  for (var i = 0; i < output.length; i++) {
+    var div = document.createElement('div');
+    div.setAttribute('data-index', i);
+    div.innerHTML = output[i];
+    div.addEventListener('click', function() {
+      var index = parseInt(this.getAttribute('data-index'));
+      // Hier können Sie den Code hinzufügen, der bei Klick auf eine Zeile ausgeführt werden soll
+      console.log('Zeile ' + index + ' wurde geklickt');
+    });
+  contentT.appendChild(div);
+  }
+>>>>>>> ProgLuc
 }
 /////////////////////////////////S////////////////////////////////////////
 
