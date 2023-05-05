@@ -8,7 +8,6 @@ searchButton.addEventListener("click", function () {
   var searchValue = document.getElementById("searchValue").value;
   var pastDate = document.getElementById("searchPastDate").value;
   searchEvent(pastDate, searchValue);
-  showEdit();
 });
 
 //Function - Search for events with specific parameters and display them in Element(content)
@@ -60,23 +59,77 @@ async function searchEvent(pastDate, searchValue) {
   output.length = 0;
 
 // right events in "output" array
-  events.forEach(function(event) {
-  output.push(event.summary + ' (' + (event.start.dateTime || event.start.date) + ')\n');
-});
-  // Display events + make output clickable
-  console.log(output);
-  for (var i = 0; i < output.length; i++) {
-    var div = document.createElement('div');
-    div.setAttribute('data-index', i);
-    div.innerHTML = output[i];
-    div.addEventListener('click', function() {
-      var index = parseInt(this.getAttribute('data-index'));
-      // Hier können Sie den Code hinzufügen, der bei Klick auf eine Zeile ausgeführt werden soll
-      console.log('Zeile ' + index + ' wurde geklickt');
-    });
-  contentT.appendChild(div);
+//   events.forEach(function(event) {
+//   output.push(event.summary + ' (' + (event.start.dateTime || event.start.date) + ')\n');
+// });
+
+function checkValue(value) {
+  if (value === undefined || value === "Invalid Date") {
+    return "unbesetzt";
+  } else {
+    return value;
   }
 }
+
+function parseDateTime(dateTimeString) {
+  const dateTime = new Date(dateTimeString);
+  const date = dateTime.toLocaleDateString();
+  const time = dateTime.toLocaleTimeString();
+  const timeZone = dateTime.toLocaleTimeString([], { timeZoneName: 'short' });
+  return [date, time, timeZone];
+}
+
+  events.forEach(function(event) {
+    const summary = checkValue(event.summary);
+    const [startDate, startTime, startTimeZone] = checkValue(parseDateTime(event.start.dateTime));
+    const [endDate, endTime, endTimeZone] = checkValue(parseDateTime(event.end.dateTime));
+  
+    const eventArray = [summary, startDate, startTime, startTimeZone, endDate, endTime, endTimeZone];
+    output.push(eventArray);
+  });
+
+//   Display events + make output clickable
+  console.table(output);
+//   for (var i = 0; i < output.length; i++) {
+//     var div = document.createElement('div');
+//     div.setAttribute('data-index', i);
+//     div.innerHTML = output[i];
+//     div.addEventListener('click', function() {
+//       var index = parseInt(this.getAttribute('data-index'));
+//       // Hier können Sie den Code hinzufügen, der bei Klick auf eine Zeile ausgeführt werden soll
+//       Editor(i, output);
+//       console.log('Zeile ' + index + ' wurde geklickt');
+//     });
+//   contentT.appendChild(div);
+//   }
+// }
+
+// for (let i = 0; i < output.length; i++) {
+//   for (let j = 0; j < output.length; i++) {
+//     console.log(output[i][j]);
+//   }
+// }
+
+for (var i = 0; i < output.length; i++) {
+  var div = document.createElement('div');
+  div.setAttribute('data-index', i);
+  
+  // Hier den Inhalt des inneren Arrays in das div-Element einfügen
+  var innerArray = output[i];
+  for (var j = 0; j < innerArray.length; j++) {
+    div.innerHTML = div.innerHTML + " " + innerArray[j];
+  }
+  
+  div.addEventListener('click', function() {
+    var index = parseInt(this.getAttribute('data-index'));
+    // Hier können Sie den Code hinzufügen, der bei Klick auf eine Zeile ausgeführt werden soll
+    console.log('Zeile ' + index + ' wurde geklickt');
+  });
+  
+  contentT.appendChild(div);
+}
+}
+
 /////////////////////////////////S////////////////////////////////////////
 
 
@@ -141,7 +194,11 @@ createEventButton.addEventListener("click", function () {
 
 /////////////////////////////////change Event////////////////////////////////////////
 
-function showEdit() {
+function Editor(Stelle, Array) {
   document.getElementById('editEvents').style.visibility = 'visible';
+  const ort = document.getElementById("summary");
+  const input = Array[Stelle];
+  console.log(input);
+  ort.value = input;
 }
 
