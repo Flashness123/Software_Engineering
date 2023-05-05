@@ -10,10 +10,15 @@ Google Cloud Project:
 Google API Quickstart:
 https://developers.google.com/calendar/api/quickstart/js?hl=de
 
+<<<<<<< HEAD
 ESSENCE Navigator:
 https://sg.sim4seed.org/
 ben.-Name: HTWDD04_E1@htw-dresden.de
 PW: luTHIMpEREno
+=======
+Google API Interaction Basics:
+https://developers.google.com/calendar/api/v3/reference/events/list?hl=de
+>>>>>>> main
 
 Python2: python -m SimpleHTTPServer 8000
 Python3: python3 -m http.server 8000

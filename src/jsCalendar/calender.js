@@ -1,10 +1,18 @@
 // const email = window.email;
+<<<<<<< HEAD
 import { userEmail } from "./login";
+=======
+//general information about the calendar(iframe)
+var email = "sebeleg51@gmail.com";
+>>>>>>> main
 
 console.log(userEmail);
 
+<<<<<<< HEAD
 // var email = "sebeleg51@gmail.com";
 var email = userEmail;
+=======
+>>>>>>> main
 var timezone = "Europe/Berlin";
 var iframeSrc = "https://calendar.google.com/calendar/embed?src=" + email + "&ctz=" + timezone;
 

@@ -21,15 +21,14 @@ let gapiInited = false;
 let gisInited = false;
 const userEmail = "";
 
-document.getElementById('authorize_button').style.visibility = 'hidden';
-document.getElementById('signout_button').style.visibility = 'hidden';
+//document.getElementById('authorize_button').style.visibility = 'hidden';
+//document.getElementById('signout_button').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
  */
 function gapiLoaded() {
-console.log("Gapi Loaded");
-gapi.load('client:auth2', initializeGapiClient);
+    gapi.load('client:auth2', initializeGapiClient); console.log("gapi loaded");
 }
 
 /**
@@ -37,17 +36,13 @@ gapi.load('client:auth2', initializeGapiClient);
  * discovery doc to initialize the API.
  */
 async function initializeGapiClient() {
-await gapi.client.init({
-    apiKey: API_KEY,
-    discoveryDocs: [DISCOVERY_DOC],
-});
-await gapi.auth2.init({
-    client_id: CLIENT_ID,
-    scope: SCOPES,
-});
-gapiInited = true;
-console.log("gapi initiated");
-maybeEnableButtons();
+    await gapi.client.init({
+        apiKey: API_KEY,
+        discoveryDoc: [DISCOVERY_DOC],
+    });
+    console.log("gapi initiated");
+    gapiInited = true;
+    maybeEnableButtons();
 }
 
 /**
@@ -72,28 +67,35 @@ if (gapiInited && gisInited) {
 }
 }
 
+/**
+ *  Sign in the user upon button click.
+ */
+async function handleAuthClick() {
+    const auth2 = gapi.auth2.getAuthInstance();
 
-function NewSite() {
-    window.location.replace("index2.html")
+    if (auth2.isSignedIn.get()) {
+        document.getElementById('signout_button').style.visibility = 'visible';
+        document.getElementById('authorize_button').innerText = 'Refresh';
+
+        const email = auth2.currentUser.get().getBasicProfile().getEmail();
+        console.log(email);
+        NewPage();
+    } else {
+        auth2.signIn().then(async () => {
+            document.getElementById('signout_button').style.visibility = 'visible';
+            document.getElementById('authorize_button').innerText = 'Refresh';
+
+            const email = auth2.currentUser.get().getBasicProfile().getEmail();
+            console.log(email);
+            NewPage();
+        });
+    }
 }
 
 
-function handleAuthClick() {
-tokenClient.callback = async (resp) => {
-    if (resp.error !== undefined) {
-    throw (resp);
-    }
-    userEmail = gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getEmail();
-    NewSite();
-};
 
-if (gapi.client.getToken() === null) {
-    // Prompt the user to select a Google Account and ask for consent to share their data
-    // when establishing a new session.
-    tokenClient.requestAccessToken({prompt: 'consent'});
-} else {
-    // Skip display of account chooser and consent dialog for an existing session.
-    tokenClient.requestAccessToken({prompt: ''});}
+function NewPage() {
+    window.location.href = "index2.html";
 }
 
 /**
@@ -105,11 +107,10 @@ if (token !== null) {
     google.accounts.oauth2.revoke(token.access_token);
     gapi.client.setToken('');
 
-/*
-    document.getElementById('content').innerText = '';
-    document.getElementById('authorize_button').innerText = 'Authorize';
-    document.getElementById('signout_button').style.visibility = 'hidden';*/
-}
-window.location.replace("index.html");
+        /*document.getElementById('content').innerText = '';
+        document.getElementById('authorize_button').innerText = 'Authorize';
+        document.getElementById('signout_button').style.visibility = 'hidden';*/
+    }
+    window.location.href = "index.html";
 }
 
