@@ -1,3 +1,4 @@
+// export { userEmail };
 
 /* exported gapiLoaded */
 /* exported gisLoaded */
@@ -18,7 +19,7 @@ const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 let tokenClient;
 let gapiInited = false;
 let gisInited = false;
-let userEmail = "";
+const userEmail = "";
 
 document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signout_button').style.visibility = 'hidden';
@@ -28,7 +29,7 @@ document.getElementById('signout_button').style.visibility = 'hidden';
  */
 function gapiLoaded() {
 console.log("Gapi Loaded");
-gapi.load('client', initializeGapiClient);
+gapi.load('client:auth2', initializeGapiClient);
 }
 
 /**
@@ -39,6 +40,10 @@ async function initializeGapiClient() {
 await gapi.client.init({
     apiKey: API_KEY,
     discoveryDocs: [DISCOVERY_DOC],
+});
+await gapi.auth2.init({
+    client_id: CLIENT_ID,
+    scope: SCOPES,
 });
 gapiInited = true;
 console.log("gapi initiated");
@@ -108,4 +113,3 @@ if (token !== null) {
 window.location.replace("index.html");
 }
 
-export { userEmail };
