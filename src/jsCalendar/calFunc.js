@@ -213,12 +213,6 @@ function convertToTime(referTime) {
   return formattedTime;
 }
 
-// searchButton.addEventListener("click", function () {
-//   var searchValue = document.getElementById("searchValue").value;
-//   var pastDate = document.getElementById("searchPastDate").value;
-//   searchEvent(pastDate, searchValue);
-// });
-
 editButton.addEventListener("click", function() {
   eventID = output[indexSave][0];
   summary = document.getElementById("summary").value;
@@ -255,7 +249,6 @@ function updateEvent(eventId, summary, startDate, endDate, startTime, endTime) {
     'eventId': eventId,
     'resource': event
   });
-  // console.log(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse());
   request.execute(function(event) {
     console.log('Event updated: ' + event.htmlLink);
   });
