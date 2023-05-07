@@ -71,8 +71,8 @@ function parseDateTime(dateTimeString) {
       [startDate, startTime] = parseDateTime(event.start.dateTime);
       [endDate, endTime] = parseDateTime(event.end.dateTime);
     } else {
-      startDate = checkValue(event.start.date);
-      endDate = checkValue(event.end.date);
+      startDate = event.start.date;
+      endDate = event.end.date;
       startTime = "ganztägig";
       endTime = "ganztägig";
     }
