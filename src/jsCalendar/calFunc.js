@@ -48,31 +48,12 @@ async function searchEvent(pastDate, searchValue) {
     contentT.textContent = "No events found.";
     return;
   }
-  // Flatten to string to display
-  // const output = events.reduce(
-  //   (str, event) =>
-  //     `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
-  //   "Events:\n"
-  // );
 
   // remove all childs and array "outout"
   while (contentT.firstChild) {
     contentT.removeChild(contentT.firstChild);
   }
   output.length = 0;
-
-// right events in "output" array
-//   events.forEach(function(event) {
-//   output.push(event.summary + ' (' + (event.start.dateTime || event.start.date) + ')\n');
-// });
-
-function checkValue(value) {
-  if (value === undefined || value === "Invalid Date") {
-    return "unbesetzt";
-  } else {
-    return value;
-  }
-}
 
 function parseDateTime(dateTimeString) {
   const dateTime = new Date(dateTimeString);
@@ -81,24 +62,14 @@ function parseDateTime(dateTimeString) {
   return [date, time];
 }
 
-  // events.forEach(function(event) {
-  //   const summary = checkValue(event.summary);
-  //   const [startDate, startTime] = checkValue(parseDateTime(event.start.dateTime));
-  //   const [endDate, endTime] = checkValue(parseDateTime(event.end.dateTime));
-  
-  //   const eventArray = [summary, startDate, startTime, endDate, endTime];
-  //   output.push(eventArray);
-  // });
-
-
   events.forEach(function(event) {
-    const eventID = checkValue(event.id);
-    const summary = checkValue(event.summary);
+    const eventID = event.id;
+    const summary = event.summary;
     
     let startDate, startTime, endDate, endTime;
     if (event.start.dateTime && event.end.dateTime) {
-      [startDate, startTime] = checkValue(parseDateTime(event.start.dateTime));
-      [endDate, endTime] = checkValue(parseDateTime(event.end.dateTime));
+      [startDate, startTime] = parseDateTime(event.start.dateTime);
+      [endDate, endTime] = parseDateTime(event.end.dateTime);
     } else {
       startDate = checkValue(event.start.date);
       endDate = checkValue(event.end.date);
@@ -110,28 +81,7 @@ function parseDateTime(dateTimeString) {
     output.push(eventArray);
   });
 
-
-//   Display events + make output clickable
   console.table(output);
-//   for (var i = 0; i < output.length; i++) {
-//     var div = document.createElement('div');
-//     div.setAttribute('data-index', i);
-//     div.innerHTML = output[i];
-//     div.addEventListener('click', function() {
-//       var index = parseInt(this.getAttribute('data-index'));
-//       // Hier können Sie den Code hinzufügen, der bei Klick auf eine Zeile ausgeführt werden soll
-//       Editor(i, output);
-//       console.log('Zeile ' + index + ' wurde geklickt');
-//     });
-//   contentT.appendChild(div);
-//   }
-// }
-
-// for (let i = 0; i < output.length; i++) {
-//   for (let j = 0; j < output.length; i++) {
-//     console.log(output[i][j]);
-//   }
-// }
 
 for (var i = 0; i < output.length; i++) {
   var div = document.createElement('div');
@@ -152,10 +102,11 @@ for (var i = 0; i < output.length; i++) {
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].value = '';
     }
+    
     console.log('Zeile ' + index + ' wurde geklickt');
     indexSave = index;
     console.log(output[index][0]);
-    if (output[index][2] === "ganztägig" && output[index][4] === "ganztägig") {
+    if (output[index][3] === "ganztägig" && output[index][5] === "ganztägig") {
       Editor(output[index][1], output[index][2], "00:00:00", output[index][4], "00:00:00");
     } else {
       Editor(output[index][1], output[index][2], output[index][3], output[index][4], output[index][5]);
