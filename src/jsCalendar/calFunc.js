@@ -1,8 +1,10 @@
 /////////////////////////////////Search////////////////////////////////////////
 //Listener for search button
 var searchButton = document.getElementById("searchEvent");
+var editButton = document.getElementById("editEvent");
 var contentT = document.getElementById("content");
 var output = [];
+var indexSave;
 
 searchButton.addEventListener("click", function () {
   var searchValue = document.getElementById("searchValue").value;
@@ -38,6 +40,7 @@ async function searchEvent(pastDate, searchValue) {
     console.log(err.message);
     return;
   }
+  console.log(response.result.items);
   // Save events from response
   const events = response.result.items;
   // If no events found
@@ -89,6 +92,7 @@ function parseDateTime(dateTimeString) {
 
 
   events.forEach(function(event) {
+    const eventID = checkValue(event.id);
     const summary = checkValue(event.summary);
     
     let startDate, startTime, endDate, endTime;
@@ -102,7 +106,7 @@ function parseDateTime(dateTimeString) {
       endTime = "ganztägig";
     }
     
-    const eventArray = [summary, startDate, startTime, endDate, endTime];
+    const eventArray = [eventID, summary, startDate, startTime, endDate, endTime];
     output.push(eventArray);
   });
 
@@ -135,7 +139,7 @@ for (var i = 0; i < output.length; i++) {
   
   // Hier den Inhalt des inneren Arrays in das div-Element einfügen
   var innerArray = output[i];
-  for (var j = 0; j < innerArray.length; j++) {
+  for (var j = 1; j < innerArray.length; j++) {
     div.innerHTML = div.innerHTML + " " + innerArray[j];
   }
   
@@ -149,10 +153,12 @@ for (var i = 0; i < output.length; i++) {
       inputs[i].value = '';
     }
     console.log('Zeile ' + index + ' wurde geklickt');
+    indexSave = index;
+    console.log(output[index][0]);
     if (output[index][2] === "ganztägig" && output[index][4] === "ganztägig") {
-      Editor(output[index][0], output[index][1], "00:00:00", output[index][3], "00:00:00");
+      Editor(output[index][1], output[index][2], "00:00:00", output[index][4], "00:00:00");
     } else {
-      Editor(output[index][0], output[index][1], output[index][2], output[index][3], output[index][4]);
+      Editor(output[index][1], output[index][2], output[index][3], output[index][4], output[index][5]);
     }
     
   });
@@ -255,4 +261,52 @@ function convertToTime(referTime) {
   const formattedTime = `${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}`;
   console.log(formattedTime);
   return formattedTime;
+}
+
+// searchButton.addEventListener("click", function () {
+//   var searchValue = document.getElementById("searchValue").value;
+//   var pastDate = document.getElementById("searchPastDate").value;
+//   searchEvent(pastDate, searchValue);
+// });
+
+editButton.addEventListener("click", function() {
+  eventID = output[indexSave][0];
+  summary = document.getElementById("summary").value;
+  startDate = document.getElementById("startDate").value;
+  endDate = document.getElementById("endDate").value;
+  startTime = document.getElementById("startTime").value;
+  endTime = document.getElementById("endTime").value;
+
+  const testArray = [eventID, summary, startDate, endDate, startTime, endTime];
+  console.log(testArray);
+
+  updateEvent(eventID, summary, startDate, endDate, startTime, endTime);
+});
+
+
+function updateEvent(eventId, summary, startDate, endDate, startTime, endTime) {
+  const startDateTime = new Date(startDate + "T" + startTime + ":00");
+  const endDateTime = new Date(endDate + "T" + endTime + ":00");
+
+  const event = {
+    summary: summary,
+    start: {
+      dateTime: startDateTime.toISOString(),
+      timeZone: 'Europe/Berlin'
+    },
+    end: {
+      dateTime: endDateTime.toISOString(),
+      timeZone: 'Europe/Berlin'
+    },
+  };
+
+  const request = gapi.client.calendar.events.patch({
+    'calendarId': 'primary',
+    'eventId': eventId,
+    'resource': event
+  });
+  // console.log(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse());
+  request.execute(function(event) {
+    console.log('Event updated: ' + event.htmlLink);
+  });
 }
