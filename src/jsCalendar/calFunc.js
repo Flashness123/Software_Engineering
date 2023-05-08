@@ -53,8 +53,32 @@ async function searchEvent(pastDate, searchValue) {
 }
 /////////////////////////////////S////////////////////////////////////////
 
+/////////////////////////////////delete Event////////////////////////////////////////
+var deleteEventButton = document.getElementById("deleteEvent");
+deleteEventButton.addEventListener("click", function () {
+  console.log("delete Event");
 
-/////////////////////////////////create Event////////////////////////////////////////
+  var NumberId = document.getElementById("getNumberId").value;
+  console.log("NumberId: ");
+  console.log(NumberId);
+
+  var params = {
+    calendarId: 'primary',
+    eventId: NumberId,
+  };
+
+  const deleteRequest = gapi.client.calendar.events.delete(params, function(err) {
+    console.log('deleteRequest entered');
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+    console.log('Event deleted.');
+
+  });
+});
+
+////////////////////////////////create Event//////////////////////////////
 //Listener for createEvent button
 var createEventButton = document.getElementById("createEvent");
 createEventButton.addEventListener("click", function () {
@@ -64,8 +88,10 @@ createEventButton.addEventListener("click", function () {
   var createDate = document.getElementById("createDate").value;
   var createTime = document.getElementById("createTime").value;
   
+  var endTime=parseInt(createTime[0]+createTime[1])+1;
+  endTime=endTime+":00";
   
-  console.log("event mit Titel:"+createTime+" Datum und Uhrzeit: "+createDate+" "+createTime);
+  console.log("event mit Titel:"+createTitel+" Datum: "+createDate+"und Uhrzeit: "+createTime+"bis: "+endTime);
 
   const event = {
     'summary': createTitel,
@@ -76,7 +102,7 @@ createEventButton.addEventListener("click", function () {
       'timeZone': 'Europe/Berlin'
     },
     'end': {
-      'dateTime': '2023-05-03T16:00:00+02:00',
+      'dateTime': createDate+'T'+endTime+':00+02:00',
       'timeZone': 'Europe/Berlin'
     }
     // 'recurrence': [
@@ -110,4 +136,4 @@ createEventButton.addEventListener("click", function () {
 });
 
 
-/////////////////////////////////E////////////////////////////////////////
+////////////////////////////////E//////////////////////////////
