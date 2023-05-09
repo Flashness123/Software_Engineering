@@ -119,19 +119,49 @@ for (var i = 0; i < output.length; i++) {
 
 /////////////////////////////////S////////////////////////////////////////
 
+/////////////////////////////////delete Event////////////////////////////////////////
+var deleteEventButton = document.getElementById("deleteEvent");
+deleteEventButton.addEventListener("click", function () {
+  console.log("delete Event");
 
-/////////////////////////////////create Event////////////////////////////////////////
+  var NumberId = document.getElementById("getNumberId").value;
+  console.log("NumberId: ");
+  console.log(NumberId);
+
+  var params = {
+    calendarId: 'primary',
+    eventId: NumberId,
+  };
+
+  const deleteRequest = gapi.client.calendar.events.delete(params, function(err) {
+    console.log('deleteRequest entered');
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return;
+    }
+    console.log('Event deleted.');
+
+  });
+});
+
+////////////////////////////////create Event//////////////////////////////
 //Listener for createEvent button
-var createEventButton = document.getElementById("createEvent");
+var createEventButton = document.getElementById("bcreateEvent");
 createEventButton.addEventListener("click", function () {
   console.log("create Event");
   
   var createTitel = document.getElementById("createTitel").value;
-  var createDate = document.getElementById("createDate").value;
-  var createTime = document.getElementById("createTime").value;
+  var createDate = document.getElementById("startDate").value;
+  var endDate=document.getElementById("endDate").value;
+  var createTime = document.getElementById("startTime").value;
+  var endTime = document.getElementById("endTime").value;
+
   
-  
-  console.log("event mit Titel:"+createTime+" Datum und Uhrzeit: "+createDate+" "+createTime);
+  console.log("create event mit Titel:"+createTitel+" Start: "+createDate+" "+createTime+"bis: "+endDate+" "+endTime);
+
+  if(createTitel==""){console.log("createTitel gleich null");}
+  if(createTime==""){console.log("createTime gleich null");}
+  if(endTime==""){console.log("endTime gleich null");}
 
   const event = {
     'summary': createTitel,
@@ -142,23 +172,9 @@ createEventButton.addEventListener("click", function () {
       'timeZone': 'Europe/Berlin'
     },
     'end': {
-      'dateTime': '2023-05-03T16:00:00+02:00',
+      'dateTime': endDate+'T'+endTime+':00+02:00',
       'timeZone': 'Europe/Berlin'
     }
-    // 'recurrence': [
-    //   'RRULE:FREQ=DAILY;COUNT=2'
-    // ],
-    // 'attendees': [
-    //   {'email': 'lpage@example.com'},
-    //   {'email': 'sbrin@example.com'}
-    // ],
-    // 'reminders': {
-    //   'useDefault': false,
-    //   'overrides': [
-    //     {'method': 'email', 'minutes': 24 * 60},
-    //     {'method': 'popup', 'minutes': 10}
-    //   ]
-    // }
   };
   
  
@@ -177,79 +193,3 @@ createEventButton.addEventListener("click", function () {
 
 
 /////////////////////////////////E////////////////////////////////////////
-
-
-/////////////////////////////////change Event////////////////////////////////////////
-
-function Editor(summary, startDate, startTime, endDate, endTime) {
-  document.getElementById('editEvents').style.visibility = 'visible';
-  const fields = [
-    { field: "summary", value: summary },
-    { field: "startDate", value: startDate.includes(".") ? convertToDate(startDate) : startDate },
-    { field: "startTime", value: convertToTime(startTime) },
-    { field: "endDate", value: endDate.includes(".") ? convertToDate(endDate) : endDate },
-    { field: "endTime", value: convertToTime(endTime) },
-  ];
-  fields.forEach(({ field, value }) => {
-    document.getElementById(field).value = value;
-  });
-}
-
-function convertToDate(referDate) {
-  const dateString = referDate;
-  const [day, month, year] = dateString.split(".");
-  const date = new Date(`${year}-${month}-${day}`);
-  const isoDateString = date.toISOString().substring(0, 10);
-  console.log(isoDateString);
-  return isoDateString;
-}
-
-function convertToTime(referTime) {
-  const timeParts = referTime.split(':');
-  const hours = timeParts[0];
-  const minutes = timeParts[1];
-  const formattedTime = `${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}`;
-  console.log(formattedTime);
-  return formattedTime;
-}
-
-editButton.addEventListener("click", function() {
-  eventID = output[indexSave][0];
-  summary = document.getElementById("summary").value;
-  startDate = document.getElementById("startDate").value;
-  endDate = document.getElementById("endDate").value;
-  startTime = document.getElementById("startTime").value;
-  endTime = document.getElementById("endTime").value;
-
-  const testArray = [eventID, summary, startDate, endDate, startTime, endTime];
-  console.log(testArray);
-
-  updateEvent(eventID, summary, startDate, endDate, startTime, endTime);
-});
-
-
-function updateEvent(eventId, summary, startDate, endDate, startTime, endTime) {
-  const startDateTime = new Date(startDate + "T" + startTime + ":00");
-  const endDateTime = new Date(endDate + "T" + endTime + ":00");
-
-  const event = {
-    summary: summary,
-    start: {
-      dateTime: startDateTime.toISOString(),
-      timeZone: 'Europe/Berlin'
-    },
-    end: {
-      dateTime: endDateTime.toISOString(),
-      timeZone: 'Europe/Berlin'
-    },
-  };
-
-  const request = gapi.client.calendar.events.patch({
-    'calendarId': 'primary',
-    'eventId': eventId,
-    'resource': event
-  });
-  request.execute(function(event) {
-    console.log('Event updated: ' + event.htmlLink);
-  });
-}
