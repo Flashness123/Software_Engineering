@@ -197,3 +197,79 @@ createEventButton.addEventListener("click", function () {
 
 
 /////////////////////////////////E////////////////////////////////////////
+
+
+/////////////////////////////////change Event////////////////////////////////////////
+
+function Editor(summary, startDate, startTime, endDate, endTime) {
+  document.getElementById('editEvents').style.visibility = 'visible';
+  const fields = [
+    { field: "summary", value: summary },
+    { field: "startDate", value: startDate.includes(".") ? convertToDate(startDate) : startDate },
+    { field: "startTime", value: convertToTime(startTime) },
+    { field: "endDate", value: endDate.includes(".") ? convertToDate(endDate) : endDate },
+    { field: "endTime", value: convertToTime(endTime) },
+  ];
+  fields.forEach(({ field, value }) => {
+    document.getElementById(field).value = value;
+  });
+}
+
+function convertToDate(referDate) {
+  const dateString = referDate;
+  const [day, month, year] = dateString.split(".");
+  const date = new Date(`${year}-${month}-${day}`);
+  const isoDateString = date.toISOString().substring(0, 10);
+  console.log(isoDateString);
+  return isoDateString;
+}
+
+function convertToTime(referTime) {
+  const timeParts = referTime.split(':');
+  const hours = timeParts[0];
+  const minutes = timeParts[1];
+  const formattedTime = `${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}`;
+  console.log(formattedTime);
+  return formattedTime;
+}
+
+editButton.addEventListener("click", function() {
+  eventID = output[indexSave][0];
+  summary = document.getElementById("summary").value;
+  startDate = document.getElementById("startDate").value;
+  endDate = document.getElementById("endDate").value;
+  startTime = document.getElementById("startTime").value;
+  endTime = document.getElementById("endTime").value;
+
+  const testArray = [eventID, summary, startDate, endDate, startTime, endTime];
+  console.log(testArray);
+
+  updateEvent(eventID, summary, startDate, endDate, startTime, endTime);
+});
+
+
+function updateEvent(eventId, summary, startDate, endDate, startTime, endTime) {
+  const startDateTime = new Date(startDate + "T" + startTime + ":00");
+  const endDateTime = new Date(endDate + "T" + endTime + ":00");
+
+  const event = {
+    summary: summary,
+    start: {
+      dateTime: startDateTime.toISOString(),
+      timeZone: 'Europe/Berlin'
+    },
+    end: {
+      dateTime: endDateTime.toISOString(),
+      timeZone: 'Europe/Berlin'
+    },
+  };
+
+  const request = gapi.client.calendar.events.patch({
+    'calendarId': 'primary',
+    'eventId': eventId,
+    'resource': event
+  });
+  request.execute(function(event) {
+    console.log('Event updated: ' + event.htmlLink);
+  });
+}
