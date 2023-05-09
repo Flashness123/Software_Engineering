@@ -18,6 +18,10 @@ async function searchEvent(pastDate, searchValue) {
   console.log(pastDate);
   console.log(searchValue);
   let response;
+  // Check if pastDate is empty
+  if (pastDate == "") {
+    pastDate = new Date();
+  }
   try {
     // Request Oject
     const request = {
