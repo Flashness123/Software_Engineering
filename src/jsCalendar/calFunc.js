@@ -80,18 +80,22 @@ deleteEventButton.addEventListener("click", function () {
 
 ////////////////////////////////create Event//////////////////////////////
 //Listener for createEvent button
-var createEventButton = document.getElementById("createEvent");
+var createEventButton = document.getElementById("bcreateEvent");
 createEventButton.addEventListener("click", function () {
   console.log("create Event");
   
   var createTitel = document.getElementById("createTitel").value;
-  var createDate = document.getElementById("createDate").value;
-  var createTime = document.getElementById("createTime").value;
+  var createDate = document.getElementById("startDate").value;
+  var endDate=document.getElementById("endDate").value;
+  var createTime = document.getElementById("startTime").value;
+  var endTime = document.getElementById("endTime").value;
+
   
-  var endTime=parseInt(createTime[0]+createTime[1])+1;
-  endTime=endTime+":00";
-  
-  console.log("event mit Titel:"+createTitel+" Datum: "+createDate+"und Uhrzeit: "+createTime+"bis: "+endTime);
+  console.log("create event mit Titel:"+createTitel+" Start: "+createDate+" "+createTime+"bis: "+endDate+" "+endTime);
+
+  if(createTitel==""){console.log("createTitel gleich null");}
+  if(createTime==""){console.log("createTime gleich null");}
+  if(endTime==""){console.log("endTime gleich null");}
 
   const event = {
     'summary': createTitel,
@@ -102,23 +106,9 @@ createEventButton.addEventListener("click", function () {
       'timeZone': 'Europe/Berlin'
     },
     'end': {
-      'dateTime': createDate+'T'+endTime+':00+02:00',
+      'dateTime': endDate+'T'+endTime+':00+02:00',
       'timeZone': 'Europe/Berlin'
     }
-    // 'recurrence': [
-    //   'RRULE:FREQ=DAILY;COUNT=2'
-    // ],
-    // 'attendees': [
-    //   {'email': 'lpage@example.com'},
-    //   {'email': 'sbrin@example.com'}
-    // ],
-    // 'reminders': {
-    //   'useDefault': false,
-    //   'overrides': [
-    //     {'method': 'email', 'minutes': 24 * 60},
-    //     {'method': 'popup', 'minutes': 10}
-    //   ]
-    // }
   };
   
  
