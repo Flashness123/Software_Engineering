@@ -55,6 +55,7 @@ async function fetchDates(today){
   const events = response.result.items;
   // Flatten events into an array of objects
   eventsArray = events.map(event => ({
+    id: event.id,
     title: event.summary,
     start: event.start.dateTime || event.start.date,
     end: event.end.dateTime || event.end.date
