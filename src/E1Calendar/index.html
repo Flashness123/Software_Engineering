@@ -19,6 +19,30 @@
         eventSources: eventsSource,
         datesSet: function (dateInfo) {
           onClick();
+        },
+        eventClick: function (info) {
+          alert('Event: ' + info.event.title);
+          alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+          alert('View: ' + info.view.type);
+
+          // change the border color just for fun
+          info.el.style.borderColor = 'red';
+        },
+        customButtons: {
+          myCustomButton: {
+            text: 'custom!',
+            click: function () {
+              alert('clicked the custom button!');
+            }
+          }
+        },
+        headerToolbar: {
+          left: 'prev,next today myCustomButton',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        },
+        dateClick: function() {
+          alert('a day has been clicked!');
         }
       });
       calendar.render();
@@ -26,7 +50,6 @@
 
     // Listen for the loginSuccess event
     document.addEventListener('loginSuccess', initCalendar);
-
     // Fetch the events for the calendar and render them
     export async function onClick() {
       await calendar.getEventSources().forEach(function (eventSource) {
@@ -53,7 +76,6 @@
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
 
     <!-- Displays events -->
-    <button id="fetchButton">fetch events</button>
     <pre id="content" style="white-space: pre-wrap;"></pre>
     <!-- Displays calendar -->
     <div id="calendar"></div>

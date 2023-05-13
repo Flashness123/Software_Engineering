@@ -1,45 +1,18 @@
-function formatDate(date) {
-  var d = new Date(date),
-    month = '' + (d.getMonth() + 1),
-    day = '' + d.getDate(),
-    year = d.getFullYear();
-
-  if (month.length < 2) month = '0' + month;
-  if (day.length < 2) day = '0' + day;
-
-  return [year, month, day].join('-');
-}
-
 var eventsArray;
-var today = new Date();
-// extract end and start date from today
-var startDate = new Date(today.getFullYear(), today.getMonth(), 1); // today -1 month
-startDate.setDate(startDate.getDate() - 14); // Subtract 2 weeks
-var startDateFormatted = formatDate(startDate);
-
-var endDate = new Date(today.getFullYear(), today.getMonth() + 2, 1); // today +2 month
-endDate.setDate(endDate.getDate() + 14); // Add 2 weeks
-var endDateFormatted = formatDate(endDate);
-
-var fetchButton = document.getElementById("fetchButton");
-fetchButton.addEventListener("click", function () {
-  fetchDates(startDate, endDate);
-});
 
 async function fetchDates(startDate, endDate) {
-  let _Startdate = new Date(startDate);
-  let _Enddate = new Date(endDate);
-  let startDateFormatted = _Startdate.toISOString().split('T')[0];
-  let endDateFormatted = _Enddate.toISOString().split('T')[0];
+  let _endDate = new Date(endDate);
+  _endDate.setDate(_endDate.getDate() + 1);
+  endDate = _endDate.toISOString();
   // debug
-  console.log("fetchDates: " + startDateFormatted + " - " + endDateFormatted);
+  console.log("fetchDates: " + startDate + " - " + endDate);
   let response;
   try {
     // Request Oject
     const request = {
       calendarId: "primary",
-      timeMin: new Date(Date.parse(startDateFormatted)).toISOString(),
-      timeMax: new Date(Date.parse(endDateFormatted)).toISOString(),
+      timeMin: new Date(Date.parse(startDate)).toISOString(),
+      timeMax: new Date(Date.parse(endDate)).toISOString(),
       showDeleted: false,
       singleEvents: true,
       maxResults: 999,
