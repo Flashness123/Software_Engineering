@@ -21,7 +21,6 @@ let gisInited = false;
 
 document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signed_in').style.visibility = 'hidden';
-
 /**
  * Callback after api.js is loaded.
  */
@@ -75,10 +74,12 @@ function handleAuthClick() {
         if (resp.error !== undefined) {
         throw (resp);
         }
-        // NewSite();
+        //console.log(resp);
         document.getElementById('signed_in').style.visibility = 'visible';
         document.getElementById('authorize_button').innerText = 'Refresh';
-        // await searchEvent();
+        // Dispatch a custom event after successful login
+        const event = new CustomEvent('loginSuccess');
+        document.dispatchEvent(event);
     };
 
     if (gapi.client.getToken() === null) {

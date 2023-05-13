@@ -12,22 +12,25 @@ function formatDate(date) {
 
 var eventsArray;
 var today = new Date();
+// extract end and start date from today
+var startDate = new Date(today.getFullYear(), today.getMonth(), 1); // today -1 month
+startDate.setDate(startDate.getDate() - 14); // Subtract 2 weeks
+var startDateFormatted = formatDate(startDate);
+
+var endDate = new Date(today.getFullYear(), today.getMonth() + 2, 1); // today +2 month
+endDate.setDate(endDate.getDate() + 14); // Add 2 weeks
+var endDateFormatted = formatDate(endDate);
 
 var fetchButton = document.getElementById("fetchButton");
-var contentT = document.getElementById("content");
 fetchButton.addEventListener("click", function () {
-  fetchDates(today);
+  fetchDates(startDate, endDate);
 });
 
-async function fetchDates(today){
-  // extract end and start date from today
-  var startDate = new Date(today.getFullYear(), today.getMonth(), 1); // today -1 month
-  startDate.setDate(startDate.getDate() - 14); // Subtract 2 weeks
-  var startDateFormatted = formatDate(startDate);
-
-  var endDate = new Date(today.getFullYear(), today.getMonth() + 2, 1); // today +2 month
-  endDate.setDate(endDate.getDate() + 14); // Add 2 weeks
-  var endDateFormatted = formatDate(endDate);
+async function fetchDates(startDate, endDate) {
+  let _Startdate = new Date(startDate);
+  let _Enddate = new Date(endDate);
+  let startDateFormatted = _Startdate.toISOString().split('T')[0];
+  let endDateFormatted = _Enddate.toISOString().split('T')[0];
   // debug
   console.log("fetchDates: " + startDateFormatted + " - " + endDateFormatted);
   let response;
