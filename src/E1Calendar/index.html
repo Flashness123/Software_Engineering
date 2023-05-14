@@ -4,6 +4,14 @@
 <head>
   <title>E1 Calendar</title>
   <meta charset="utf-8" />
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Add Bootstrap JS and its dependencies -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
   <script type="module"> // Use type="module" attribute
     import { fetchDates } from "./fetchDates.js";
@@ -21,9 +29,15 @@
           onClick();
         },
         eventClick: function (info) {
-          alert('Event: ' + info.event.title);
-          alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-          alert('View: ' + info.view.type);
+          // Fill in the modal with the event details
+          $('#eventModalBody').html(`
+          <p>Event: ${info.event.title}</p>
+          <p>Coordinates: ${info.jsEvent.pageX}, ${info.jsEvent.pageY}</p>
+          <p>View: ${info.view.type}</p>
+          `);
+
+          // Show the modal
+          $('#eventModal').modal();
 
           // change the border color just for fun
           info.el.style.borderColor = 'red';
@@ -41,7 +55,7 @@
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
-        dateClick: function() {
+        dateClick: function () {
           alert('a day has been clicked!');
         }
       });
@@ -74,6 +88,27 @@
   <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
   <div id="signed_in">
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+
+    <div class="modal" tabindex="-1" role="dialog" id="eventModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Event Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="eventModalBody">
+            <!-- Event details will be added here -->
+          </div>
+          <div class="modal-footer">
+            <!-- Add buttons here -->
+            <button type="button" class="btn btn-primary">Do Something</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Displays events -->
     <pre id="content" style="white-space: pre-wrap;"></pre>
