@@ -23,6 +23,11 @@ document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signed_in').style.visibility = 'hidden';
 document.getElementById('editEvents').style.visibility = 'hidden';
 
+window.onload = () => {
+    loadSession();
+};
+
+
 /**
  * Callback after api.js is loaded.
  */
@@ -65,21 +70,16 @@ function maybeEnableButtons() {
     }
 }
 
-//Redirects to the main page after Login.
-// function NewSite() {
-//     window.location.replace("index2.html")
-// }
-
 //Sign in the user upon button click.
-function handleAuthClick() {
+async function handleAuthClick() {
     tokenClient.callback = async (resp) => {
         if (resp.error !== undefined) {
-        throw (resp);
+            throw (resp);
         }
-        // NewSite();
-        document.getElementById('signed_in').style.visibility = 'visible';
+        saveSession(resp);
         document.getElementById('authorize_button').innerText = 'Refresh';
-        // await searchEvent();
+        document.getElementById('signed_in').style.visibility = 'visible';
+        // Add other actions to handle the session here
     };
 
     if (gapi.client.getToken() === null) {
@@ -106,7 +106,31 @@ function handleSignoutClick() {
         document.getElementById('signed_in').style.visibility = 'hidden';
         document.getElementById('editEvents').style.visibility = 'hidden';
     }
-    // window.location.replace("index.html");
 }
+
+// Save the session state to the local storage.
+function saveSession(token) {
+    localStorage.setItem('access_token', token.access_token);
+    localStorage.setItem('token_type', token.token_type);
+    localStorage.setItem('expires_in', token.expires_in);
+    // Add other relevant data here
+}
+
+// Load the session state from the local storage.
+function loadSession() {
+    const token = {
+        access_token: localStorage.getItem('access_token'),
+        token_type: localStorage.getItem('token_type'),
+        expires_in: localStorage.getItem('expires_in'),
+        // Add other relevant data here
+    };
+    if (token.access_token !== null) {
+        gapi.client.setToken(token);
+        document.getElementById('authorize_button').innerText = 'Refresh';
+        document.getElementById('signed_in').style.visibility = 'visible';
+        // Add other actions to restore the session here
+    }
+}
+
 
 
