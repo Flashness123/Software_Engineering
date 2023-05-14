@@ -50,6 +50,7 @@ function gisLoaded() {
         scope: SCOPES,
         callback: '', // defined later
     });
+
     gisInited = true;
     maybeEnableButtons();
 }
@@ -86,6 +87,9 @@ function handleAuthClick() {
         // Prompt the user to select a Google Account and ask for consent to share their data
         // when establishing a new session.
         tokenClient.requestAccessToken({prompt: 'consent'});
+        // Save tokens to localStorage
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('refreshToken', refreshToken);
     } else {
         // Skip display of account chooser and consent dialog for an existing session.
         tokenClient.requestAccessToken({prompt: ''});}
