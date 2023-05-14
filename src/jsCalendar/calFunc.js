@@ -6,11 +6,36 @@ var contentT = document.getElementById("content");
 var output = [];
 var indexSave;
 
-searchButton.addEventListener("click", function () {
-  var searchValue = document.getElementById("searchValue").value;
-  var pastDate = document.getElementById("searchPastDate").value;
-  searchEvent(pastDate, searchValue);
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
+  };
+}
+
+var searchInput = document.getElementById("searchValue");
+var pastDateInput = document.getElementById("searchPastDate");
+var debouncedSearchEvent = debounce(searchEvent, 300);
+
+searchInput.addEventListener("keyup", function () {
+  var searchValue = searchInput.value;
+  var pastDate = pastDateInput.value;
+  debouncedSearchEvent(pastDate, searchValue);
 });
+
+// searchInput.addEventListener("keyup", function () {
+//   var searchValue = searchInput.value;
+//   var pastDate = pastDateInput.value;
+//   searchEvent(pastDate, searchValue);
+// });
+
+// searchButton.addEventListener("click", function () {
+//   var searchValue = document.getElementById("searchValue").value;
+//   var pastDate = document.getElementById("searchPastDate").value;
+//   searchEvent(pastDate, searchValue);
+// });
 
 //Function - Search for events with specific parameters and display them in Element(content)
 async function searchEvent(pastDate, searchValue) {
