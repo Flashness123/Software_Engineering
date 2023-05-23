@@ -1,4 +1,5 @@
 id=0;
+
 function displayEvent(event){
 
     //führende null hinzufügen
@@ -26,15 +27,12 @@ function displayEvent(event){
 }
 
 function updateEvent(){
-    // let eventId="50g61gmekgdg641c4pgalnjhj8";
-
     console.log("update Event");
+
     let startdate=document.getElementById("startdate").value;
     let enddate=document.getElementById("enddate").value;  
     let starttime=document.getElementById("starttime").value;
     let endtime=document.getElementById("endtime").value;  
-    // console.log(startdate+enddate+starttime+endtime);
-    
     // 2018-06-01T12:30:00-05:00
     // let start=startdate+"T"+starttime+"+02:00";
     // let end=enddate+"T"+endtime+"+02:00";
