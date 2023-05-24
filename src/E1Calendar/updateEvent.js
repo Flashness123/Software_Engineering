@@ -2,46 +2,50 @@ id=0;
 
 function displayEvent(event){
 
-    //führende null hinzufügen
-    if(event.start.getMonth() < 10)
-         {startmonth = "0"+event.start.getMonth();}
-    else {startmonth =     event.start.getMonth();}
-
-    if(event.start.getDate() < 10)
-         {startdate = "0"+event.start.getDate();}
-    else {startdate =     event.start.getDate();}
-
-    if(event.end.getMonth() < 10)
-         {endmonth = "0"+event.end.getMonth();}
-    else {endmonth =     event.end.getMonth();}
-
-    if(event.end.getDate() < 10)
-         {enddate = "0"+event.end.getDate();}
-    else {enddate =     event.end.getDate();}
-
-    document.getElementById("startdate").value=event.start.getFullYear()+"-"+startmonth+"-"+startdate;
-    document.getElementById("enddate")  .value=event.end  .getFullYear()+"-"+endmonth+"-"+enddate;
-    document.getElementById("starttime").value=event.start.getHours()+":"+event.start.getMinutes();
-    document.getElementById("endtime")  .value=event.end  .getHours()+":"+event.end  .getMinutes();
+    let startDate = formatDate(event.start);
+    let endDate = formatDate(event.end);
+    let startTime = formatTime(event.start);
+    let endTime = formatTime(event.end);
+    document.getElementById("startdate").value=startDate;
+    document.getElementById("enddate")  .value=endDate;
+    document.getElementById("starttime").value=startTime;
+    document.getElementById("endtime")  .value=endTime;
     id=event.id;
 }
 
-function updateEvent(){
+function formatDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('-');
+}
+function formatTime(date) {
+  var d = new Date(date),
+      hours = '' + d.getHours(),
+      minutes = '' + d.getMinutes();
+
+  if (hours.length < 2) 
+      hours = '0' + hours;
+  if (minutes.length < 2) 
+      minutes = '0' + minutes;
+
+  return [hours, minutes].join(':');
+}
+
+async function updateEvent(){
     console.log("update Event");
 
     let startdate=document.getElementById("startdate").value;
     let enddate=document.getElementById("enddate").value;  
     let starttime=document.getElementById("starttime").value;
     let endtime=document.getElementById("endtime").value;  
-    // 2018-06-01T12:30:00-05:00
-    // let start=startdate+"T"+starttime+"+02:00";
-    // let end=enddate+"T"+endtime+"+02:00";
-    // let pevent=calendar.getEventById(id);
-    // console.log("start: "+start+"\nend: "+end);
-    // pevent.setStart(start);
-    // pevent.setEnd(end);
-    // console.log(pevent);
-    // calendar.addEvent( pevent );
 
     const startDateTime = new Date(startdate + "T" + starttime + ":00");
     const endDateTime = new Date(enddate + "T" + endtime + ":00");
@@ -64,5 +68,8 @@ function updateEvent(){
     });
     request.execute(function(event) {
       console.log('Event updated: ' + event.htmlLink);
+      const a = new CustomEvent('updateEvent');
+      document.dispatchEvent(a);
     });
-  }
+   
+}

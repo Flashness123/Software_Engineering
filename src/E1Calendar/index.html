@@ -69,6 +69,7 @@
       calendar.render();
     }
 
+    document.addEventListener('updateEvent', onClick);
     // Listen for the loginSuccess event
     document.addEventListener('loginSuccess', initCalendar);
     // Fetch the events for the calendar and render them
@@ -90,7 +91,6 @@
 
 <body>
   <p>E1 Calendar</p>
-
   <!--Buttons for Google Login Process-->
   <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
   <div id="signed_in">
@@ -110,7 +110,7 @@
           </div>
           <div class="modal-footer">
             <!-- Add buttons here -->
-            <button type="button" class="btn btn-primary" id="btnupdateEvent" onclick="updateEvent()" >update</button>
+            <button type="button" class="btn btn-primary" id="btnupdateEvent" onclick="updateEvent()" data-dismiss="modal">update</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
