@@ -32,10 +32,17 @@
           // Fill in the modal with the event details
           $('#eventModalBody').html(`
           <p>Event: ${info.event.title}</p>
-          <p>Coordinates: ${info.jsEvent.pageX}, ${info.jsEvent.pageY}</p>
-          <p>View: ${info.view.type}</p>
+          <label>von: </label>
+          <input type = "date"  id = "startdate">
+          <input type = "time"  id = "starttime">
+          <p></p>
+          <label>bis: </label>
+          <input type = "date"  id = "enddate">
+          <input type = "time"  id = "endtime">
           `);
-
+          
+          displayEvent(info.event);
+          console.log("event: "+calendar.getEventById( info.event.id ));
           // Show the modal
           $('#eventModal').modal();
 
@@ -62,6 +69,7 @@
       calendar.render();
     }
 
+    document.addEventListener('updateEvent', onClick);
     // Listen for the loginSuccess event
     document.addEventListener('loginSuccess', initCalendar);
     // Fetch the events for the calendar and render them
@@ -83,7 +91,6 @@
 
 <body>
   <p>E1 Calendar</p>
-
   <!--Buttons for Google Login Process-->
   <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
   <div id="signed_in">
@@ -103,7 +110,7 @@
           </div>
           <div class="modal-footer">
             <!-- Add buttons here -->
-            <button type="button" class="btn btn-primary">Do Something</button>
+            <button type="button" class="btn btn-primary" id="btnupdateEvent" onclick="updateEvent()" data-dismiss="modal">update</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -119,6 +126,7 @@
 
   <!-- <script type="module" src="calFunc.js"></script> -->
   <script src="login.js"></script>
+  <script src="updateEvent.js"></script>
   <script type="module" src="fetchDates.js"></script>
   <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
   <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
