@@ -1,10 +1,6 @@
 var eventsArray;
 
 async function fetchDates(startDate, endDate) {
-  let _endDate = new Date(endDate);
-  _endDate.setDate(_endDate.getDate() + 1);
-  endDate = _endDate.toISOString();
-  // debug
   console.log("fetchDates: " + startDate + " - " + endDate);
   let response;
   try {
