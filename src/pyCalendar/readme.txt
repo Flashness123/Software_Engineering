@@ -1,0 +1,3 @@
+set OAUTHLIB_INSECURE_TRANSPORT=1
+python app.py
+
