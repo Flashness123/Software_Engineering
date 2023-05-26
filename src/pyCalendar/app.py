@@ -1,7 +1,7 @@
 import os
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template, jsonify
 from flask_dance.contrib.google import make_google_blueprint, google
 
 app = Flask(__name__)
@@ -23,6 +23,19 @@ def index():
     
 
     return render_template('calendar.html', events=events)
+
+
+
+@app.route("/fetch_events")
+def fetch_events():
+    if not google.authorized:
+        return redirect(url_for("google.login"))
+    resp = google.get("/calendar/v3/calendars/primary/events")
+    assert resp.ok, resp.text
+    events = resp.json()["items"]
+    events = [event for event in events if 'start' in event]
+    return jsonify(events)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
