@@ -19,14 +19,12 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-document.getElementById('authorize_button').style.visibility = 'hidden';
-document.getElementById('signed_in').style.visibility = 'hidden';
-// document.getElementById('editEvents').style.visibility = 'hidden';
+// document.getElementById('authorize_button').style.visibility = 'hidden';
+// document.getElementById('signed_in').style.visibility = 'hidden';
 
 window.onload = () => {
     loadSession();
 };
-
 
 /**
  * Callback after api.js is loaded.
@@ -77,7 +75,7 @@ async function handleAuthClick() {
             throw (resp);
         }
         saveSession(resp);
-        document.getElementById('authorize_button').innerText = 'Refresh';
+        document.getElementById('authorize_button').style.visibility = 'hidden';
         document.getElementById('signed_in').style.visibility = 'visible';
         // Add other actions to handle the session here
         const event = new CustomEvent('loginSuccess');
@@ -101,12 +99,8 @@ function handleSignoutClick() {
     if (token !== null) {
         google.accounts.oauth2.revoke(token.access_token);
         gapi.client.setToken('');
-
-    
-        document.getElementById('content').innerText = '';
-        document.getElementById('authorize_button').innerText = 'Authorize';
+        document.getElementById('authorize_button').style.visibility = 'visible';
         document.getElementById('signed_in').style.visibility = 'hidden';
-        // document.getElementById('editEvents').style.visibility = 'hidden';
     }
 }
 
@@ -115,6 +109,7 @@ function saveSession(token) {
     localStorage.setItem('access_token', token.access_token);
     localStorage.setItem('token_type', token.token_type);
     localStorage.setItem('expires_in', token.expires_in);
+    localStorage.setItem('timestamp', Date.now());  // Save the current timestamp
     // Add other relevant data here
 }
 
@@ -126,13 +121,36 @@ function loadSession() {
         expires_in: localStorage.getItem('expires_in'),
         // Add other relevant data here
     };
-    if (token.access_token !== null) {
+    
+    const savedTimestamp = localStorage.getItem('timestamp');
+    const currentTimestamp = Date.now();
+
+    // Check if the token has expired
+    if (token.access_token !== null && (savedTimestamp + token.expires_in*1000 > currentTimestamp)) {
         gapi.client.setToken(token);
-        document.getElementById('authorize_button').innerText = 'Refresh';
-        document.getElementById('signed_in').style.visibility = 'visible';
+        showCalendar();
+        // Dispatch the loginSuccess event to initialize the calendar
+        const event = new CustomEvent('loginSuccess');
+        document.dispatchEvent(event);
         // Add other actions to restore the session here
+    } else {
+        // The token has expired or does not exist, show the landing page
+        hideCalendar()
+        // document.getElementById('authorize_button').style.visibility = 'visible';
+        // document.getElementById('signed_in').style.visibility = 'hidden';
     }
 }
 
+function showCalendar(){
+    document.getElementById('authorize_button').style.visibility = 'hidden';
+    console.log('Authorize hidden')
+    document.getElementById('signed_in').style.visibility = 'visible';
+    console.log('Calendar visible')
+}
 
-
+function hideCalendar(){
+    document.getElementById('authorize_button').style.visibility = 'visible';
+    console.log('Authorize visible')
+    document.getElementById('signed_in').style.visibility = 'hidden';
+    console.log('Calendar hidden')
+}
