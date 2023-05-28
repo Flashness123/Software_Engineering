@@ -60,17 +60,28 @@ function gisLoaded() {
 }
 
 /*
- * Enables user interaction after all libraries are loaded.
+ * Enables user interaction after all libraries are loaded and the API client is initialized.
+ * Access token is null if the user is not signed in.
  */
 function maybeEnableButtons() {
-    if (gapiInited && gisInited) {
+    const token = {
+        access_token: localStorage.getItem('access_token'),
+        token_type: localStorage.getItem('token_type'),
+        expires_in: localStorage.getItem('expires_in'),
+        // Add other relevant data here
+    };
+    if (gapiInited && gisInited && token.access_token !== null) {
+        document.getElementById('authorize_button').style.visibility = 'hidden';
+        const e = new CustomEvent('renderEvents');
+        document.dispatchEvent(e);
+    } else if (gapiInited && gisInited && token.access_token === null) {
         document.getElementById('authorize_button').style.visibility = 'visible';
     }
 }
 
 //Sign in the user upon button click.
 async function handleAuthClick() {
-    tokenClient.callback = async (resp) => {
+    tokenClient.callback = async (resp) => { // tokenClient.callback is called when the user finishes the OAuth flow.
         if (resp.error !== undefined) {
             throw (resp);
         }
@@ -115,6 +126,7 @@ function saveSession(token) {
 
 // Load the session state from the local storage.
 function loadSession() {
+
     const token = {
         access_token: localStorage.getItem('access_token'),
         token_type: localStorage.getItem('token_type'),
@@ -126,19 +138,22 @@ function loadSession() {
     const currentTimestamp = Date.now();
 
     // Check if the token has expired
-    if (token.access_token !== null && (savedTimestamp + token.expires_in*1000 > currentTimestamp)) {
-        gapi.client.setToken(token);
-        showCalendar();
-        // Dispatch the loginSuccess event to initialize the calendar
-        const event = new CustomEvent('loginSuccess');
-        document.dispatchEvent(event);
-        // Add other actions to restore the session here
-    } else {
-        // The token has expired or does not exist, show the landing page
-        hideCalendar()
-        // document.getElementById('authorize_button').style.visibility = 'visible';
-        // document.getElementById('signed_in').style.visibility = 'hidden';
+    if (token.access_token !== null && token.expires_in !== null && savedTimestamp !== null) {
+        if (currentTimestamp - savedTimestamp < token.expires_in * 1000) {
+            // The token is valid, so we can use it
+            gapi.client.setToken(token); // Restore the saved token
+            document.getElementById('authorize_button').style.visibility = 'hidden';
+            document.getElementById('signed_in').style.visibility = 'visible';
+            const event = new CustomEvent('loginSuccess'); // Notify the app that the session has been restored
+            document.dispatchEvent(event);
+        } else {
+            // The token has expired, clear the session
+            localStorage.clear();
+            document.getElementById('authorize_button').style.visibility = 'visible';
+            document.getElementById('signed_in').style.visibility = 'hidden';
+        }
     }
+
 }
 
 function showCalendar(){

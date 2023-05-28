@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>E1 Calendar</title>
+    <meta charset="utf-8" />
 
-<head>
-  <title>E1 Calendar</title>
-  <meta charset="utf-8" />
+    <!-- Add js files -->
+    <script src="login.js"></script>
+    <script src="changeEvent.js"></script>
+    <script type="module" src="fetchEvents.js"></script>
 
-  <!-- Add js files -->
-  <!-- <script type="module" src="calFunc.js"></script> -->
-  <script src="login.js"></script>
-  <script src="updateEvent.js"></script>
-  <script type="module" src="fetchDates.js"></script>
+    <!-- Add Google API setup -->
+    <script
+      async
+      defer
+      src="https://apis.google.com/js/api.js"
+      onload="gapiLoaded()"
+    ></script>
+    <script
+      async
+      defer
+      src="https://accounts.google.com/gsi/client"
+      onload="gisLoaded()"
+    ></script>
 
-  <!-- Add Google API setup -->
-  <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-  <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+    <!-- Add Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
 
-  <!-- Add Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Add Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  <!-- Add Bootstrap JS and its dependencies -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Add fullcalendar -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js"></script>
 
-  <!-- Add fullcalendar -->
-  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
+    <!-- Calendar Script -->
+    <script type="module">
+      // Use type="module" attribute
+      import { fetchEvents } from "./fetchEvents.js";
 
-  <!-- Calendar Script -->
-  <script type="module"> // Use type="module" attribute
-    import { fetchDates } from "./fetchDates.js";
-
-    var calendar;
-    var eventsSource = [];
-
-    // Create the calendar
-    function initCalendar() {
-      var calendarEl = document.getElementById('calendar');
-      calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        eventSources: eventsSource,
-        datesSet: function (dateInfo) {
-          onClick();
-        },
-        eventClick: function (info) {
-          // Fill in the modal with the event details
-          $('#eventModalBody').html(`
+      var calendar;
+      var eventsSource = [];
+      var calendarInitialized = false;
+      // Create the calendar
+      async function initCalendar() {
+        var calendarEl = document.getElementById("calendar");
+        calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+          eventSources: eventsSource,
+          datesSet: function (dateInfo) {
+            onClick();
+          },
+          eventClick: function (info) {
+            // when event is clicked
+            // Fill in the modal with the event details
+            $("#eventModalBody").html(`
           <p>Event: ${info.event.title}</p>
           <label>von: </label>
           <input type = "date"  id = "startdate">
@@ -54,98 +67,138 @@
           <input type = "date"  id = "enddate">
           <input type = "time"  id = "endtime">
           `);
-          
-          displayEvent(info.event);
-          console.log("event: "+calendar.getEventById( info.event.id ));
-          // Show the modal
-          $('#eventModal').modal();
 
-          // change the border color just for fun
-          info.el.style.borderColor = 'red';
-        },
-        customButtons: {
-          myCustomButton: {
-            text: 'custom!',
-            click: function () {
-              alert('clicked the custom button!');
-            }
+            displayChangeEvent(info.event);
+            console.log("event: " + calendar.getEventById(info.event.id));
+            // Show the modal
+            $("#eventModal").modal();
+
+            // change the border color just for fun
+            info.el.style.borderColor = "red";
+          },
+          customButtons: {
+            myCustomButton: {
+              text: "custom!",
+              click: function () {
+                alert("clicked the custom button!");
+              },
+            },
+          },
+          headerToolbar: {
+            left: "prev,next today myCustomButton",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
+          },
+          dateClick: function () {
+            alert("a day has been clicked!");
+          },
+        });
+        calendar.render();
+        calendarInitialized = true;
+      }
+
+      document.addEventListener("loginSuccess",()  => {
+          initCalendar();
+          console.log(calendarInitialized);
+          if (calendarInitialized){
+            console.log(calendar)
+            console.log(calendar.getEventSources())
+            document.addEventListener("renderEvents", onClick);
           }
-        },
-        headerToolbar: {
-          left: 'prev,next today myCustomButton',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-        },
-        dateClick: function () {
-          alert('a day has been clicked!');
-        }
-      });
-      calendar.render();
-    }
+        });
+      //document.addEventListener('calendarLoaded', onClick); // update calendar after login
+      document.addEventListener("changeEventSuccess", onClick); // update calendar after event is changed
 
-    document.addEventListener('loginSuccess', initCalendar);
-    document.addEventListener('updateEvent', onClick);
-  
-    // Fetch the events for the calendar and render them
-    export async function onClick() {
-      await calendar.getEventSources().forEach(function (eventSource) {
-        eventSource.remove();
-      });
-      //var date = calendar.getDate();
-      var view = calendar.view;
-      var startDate = view.activeStart;
-      var endDate = view.activeEnd;
-      eventsSource = await fetchDates(startDate, endDate);
-      calendar.addEventSource(eventsSource);
-      console.log(calendar.getEventSources());
-      calendar.refetchEvents();
-    }
+      // Fetch the events for the calendar
+      async function updateEvents() {
+        var view = calendar.view;
+        var startDate = view.activeStart;
+        var endDate = view.activeEnd;
+        eventsSource = await fetchEvents(startDate, endDate);
+      }
 
-  </script>
+      // Render the events on the calendar
+      function renderEvents() {
+        calendar.getEventSources().forEach(function (eventSource) {
+          eventSource.remove();
+        });
+        calendar.addEventSource(eventsSource);
+        calendar.refetchEvents();
+      }
 
-</head>
+      // Call both functions when necessary
+      async function onClick() {
+        await updateEvents();
+        renderEvents();
+      }
+    </script>
+  </head>
 
-<!-- ----------body---------- -->
-<body>
-  <p>E1 Calendar</p>
-  <!-- style="visibility: hidden;" -->
-  <!--Buttons for Google Login Process-->
-  <button id="authorize_button" style="visibility: hidden;" onclick="handleAuthClick()">Login</button>
+  <!-- ----------body---------- -->
+  <body>
+    <p>E1 Calendar</p>
+    <!-- style="visibility: hidden;" -->
+    <!--Buttons for Google Login Process-->
+    <button
+      id="authorize_button"
+      style="visibility: hidden"
+      onclick="handleAuthClick()"
+    >
+      Login
+    </button>
 
-  <div id="signed_in" style="visibility: hidden;">
-    <button id="signout_button"  onclick="handleSignoutClick()">Sign Out</button>
-  
-    <!-- Displays events -->
-    <!-- not used -->
-    <pre id="content" style="white-space: pre-wrap;"></pre>
+    <div id="signed_in" style="visibility: hidden">
+      <button id="signout_button" onclick="handleSignoutClick()">
+        Sign Out
+      </button>
 
-    <!-- Displays calendar -->
-    <div id="calendar"></div>
+      <!-- Displays events -->
+      <!-- not used -->
+      <pre id="content" style="white-space: pre-wrap"></pre>
 
-    <!-- updateEvent popup -->
-    <div class="modal" tabindex="-1" role="dialog" id="eventModal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Event Details</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="eventModalBody">
-            <!-- Event details will be added here -->
-          </div>
-          <div class="modal-footer">
-            <!-- Add buttons here -->
-            <button type="button" class="btn btn-primary" id="btnupdateEvent" onclick="updateEvent()" data-dismiss="modal">update</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <!-- Displays calendar -->
+      <div id="calendar"></div>
+
+      <!-- updateEvent popup -->
+      <div class="modal" tabindex="-1" role="dialog" id="eventModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Event Details</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="eventModalBody">
+              <!-- Event details will be added here -->
+            </div>
+            <div class="modal-footer">
+              <!-- Add buttons here -->
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="btnupdateEvent"
+                onclick="changeEvent()"
+                data-dismiss="modal"
+              >
+                update
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-  </div>
-
-</body>
-
+  </body>
 </html>
