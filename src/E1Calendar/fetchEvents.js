@@ -1,3 +1,9 @@
+/* 
+ * Fetches events from Google Calendar API
+ * Author: Jamal Alkharrat, s82035@htw-dresden.de
+ * Date: 2023-05-28
+ */
+
 var eventsArray;
 var MAX_RESULTS = 999;
 
