@@ -4,11 +4,11 @@
 /* exported handleAuthClick */
 /* exported handleSignoutClick */
 
-// TODO(developer): Set to client ID and API key from the Developer Console
+// Client ID and API key from the Developer Console
 const CLIENT_ID = '966425262226-nflro5si4ftpk7c3c4hq57ngrcr70hsn.apps.googleusercontent.com';
 const API_KEY = 'AIzaSyCSEoZIXZoR9SOyNUnAIpMnWStJQRN41Cc';
 
-// Discovery doc URL for APIs used by the quickstart
+// Discovery doc URL for Google Calendar API.
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 
 // Authorization scopes required by the API; multiple scopes can be
@@ -18,9 +18,6 @@ const SCOPES = 'https://www.googleapis.com/auth/calendar';
 let tokenClient;
 let gapiInited = false;
 let gisInited = false;
-
-// document.getElementById('authorize_button').style.visibility = 'hidden';
-// document.getElementById('signed_in').style.visibility = 'hidden';
 
 window.onload = () => {
     loadSession();
@@ -43,7 +40,7 @@ async function initializeGapiClient() {
         discoveryDocs: [DISCOVERY_DOC],
     });
     gapiInited = true;
-    maybeEnableButtons();
+    checkSignedIn();
 }
 
 /**
@@ -56,30 +53,30 @@ function gisLoaded() {
         callback: '', // defined later
     });
     gisInited = true;
-    maybeEnableButtons();
+    checkSignedIn();
 }
 
-/*
- * Enables user interaction after all libraries are loaded and the API client is initialized.
- * Access token is null if the user is not signed in.
+/* 
+ * check if Google Identity Services and Google API Client are loaded and if the user is signed in 
  */
-function maybeEnableButtons() {
-    const token = {
+function checkSignedIn() {
+    const token = { // get the access token from the session
         access_token: localStorage.getItem('access_token'),
         token_type: localStorage.getItem('token_type'),
         expires_in: localStorage.getItem('expires_in'),
-        // Add other relevant data here
     };
+    /* If the user is signed in, hide the sign-in button and render the events in the calendar. */
     if (gapiInited && gisInited && token.access_token !== null) {
         document.getElementById('authorize_button').style.visibility = 'hidden';
         const e = new CustomEvent('renderEvents');
         document.dispatchEvent(e);
+    /* If the user is not signed in, display the sign-in button. */
     } else if (gapiInited && gisInited && token.access_token === null) {
         document.getElementById('authorize_button').style.visibility = 'visible';
     }
 }
 
-//Sign in the user upon button click.
+// Sign in the user upon button click.
 async function handleAuthClick() {
     tokenClient.callback = async (resp) => { // tokenClient.callback is called when the user finishes the OAuth flow.
         if (resp.error !== undefined) {
@@ -156,6 +153,7 @@ function loadSession() {
 
 }
 
+// Show or hide the calendar
 function showCalendar(){
     document.getElementById('authorize_button').style.visibility = 'hidden';
     console.log('Authorize hidden')

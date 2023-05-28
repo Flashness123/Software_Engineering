@@ -39,7 +39,6 @@
 
     <!-- Calendar Script -->
     <script type="module">
-      // Use type="module" attribute
       import { fetchEvents } from "./fetchEvents.js";
 
       var calendar;
@@ -97,16 +96,13 @@
         calendarInitialized = true;
       }
 
+      // When the Google API is loaded and login is successful, load the calendar
       document.addEventListener("loginSuccess",()  => {
           initCalendar();
-          console.log(calendarInitialized);
-          if (calendarInitialized){
-            console.log(calendar)
-            console.log(calendar.getEventSources())
-            document.addEventListener("renderEvents", onClick);
+          if (calendarInitialized){ 
+            document.addEventListener("renderEvents", onClick);  // Called when Google API Client is loaded AND if the user is signed in 
           }
         });
-      //document.addEventListener('calendarLoaded', onClick); // update calendar after login
       document.addEventListener("changeEventSuccess", onClick); // update calendar after event is changed
 
       // Fetch the events for the calendar
@@ -126,11 +122,11 @@
         calendar.refetchEvents();
       }
 
-      // Call both functions when necessary
-      async function onClick() {
+      async function onClick() { // when calendar is clicked
         await updateEvents();
         renderEvents();
       }
+
     </script>
   </head>
 
@@ -152,14 +148,10 @@
         Sign Out
       </button>
 
-      <!-- Displays events -->
-      <!-- not used -->
-      <pre id="content" style="white-space: pre-wrap"></pre>
-
       <!-- Displays calendar -->
       <div id="calendar"></div>
 
-      <!-- updateEvent popup -->
+      <!-- changeEvent popup -->
       <div class="modal" tabindex="-1" role="dialog" id="eventModal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
