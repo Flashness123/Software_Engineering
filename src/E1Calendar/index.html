@@ -57,7 +57,7 @@
         var calendarEl = document.getElementById("calendar");
         calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: "dayGridMonth",
-          //themeSystem: 'bootstrap5',
+          themeSystem: 'bootstrap',
           height: "auto",
           eventSources: eventsSource,
           datesSet: function (dateInfo) {
@@ -186,9 +186,7 @@
           <div class="col">
             <!-- Displays calendar -->
             <div id="calendar"></div>
-            
           </div>
-
         </div>
       </div>
 
