@@ -3,6 +3,7 @@
   <head>
     <title>E1 Calendar</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Add js files -->
     <script src="login.js"></script>
@@ -28,6 +29,8 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <!-- Add Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 
     <!-- Add Bootstrap JS and its dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -132,24 +135,56 @@
 
   <!-- ----------body---------- -->
   <body>
-    <p>E1 Calendar</p>
-    <!-- style="visibility: hidden;" -->
-    <!--Buttons for Google Login Process-->
-    <button
-      id="authorize_button"
-      style="visibility: hidden"
-      onclick="handleAuthClick()"
-    >
-      Login
-    </button>
+    <nav class="navbar">
+      <div class="container-fluid text-center">
+        <div class="row align-items-start">
+          <a class="navbar-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+              <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+              <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+            Calendar
+          </a>
+        </div>
+        <div class="row align-items-end justify-content-end">
+          <div class="btn-container" style="position: relative;">
+            <!--Buttons for Google Login Process-->
+            <button
+            id="authorize_button"
+            type="button"
+            class="btn btn-primary"
+            style="position: absolute; right: 0; visibility: hidden;"
+            onclick="handleAuthClick()">
+                Login
+            </button>
+    
+            <button 
+            id="signout_button" 
+            type="button"
+            class="btn btn-primary"
+            style="visibility: hidden"
+            onclick="handleSignoutClick()">
+                Sign Out
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <div id="signed_in" style="visibility: hidden">
-      <button id="signout_button" onclick="handleSignoutClick()">
-        Sign Out
-      </button>
 
-      <!-- Displays calendar -->
-      <div id="calendar"></div>
+
+      <div class="container-fluid">
+        <div class="row align-items-start">
+          <div class="col">
+            <!-- Displays calendar -->
+            <div id="calendar"></div>
+            
+          </div>
+
+        </div>
+      </div>
+
 
       <!-- changeEvent popup -->
       <div class="modal" tabindex="-1" role="dialog" id="eventModal">

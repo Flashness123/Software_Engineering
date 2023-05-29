@@ -83,8 +83,7 @@ async function handleAuthClick() {
             throw (resp);
         }
         saveSession(resp);
-        document.getElementById('authorize_button').style.visibility = 'hidden';
-        document.getElementById('signed_in').style.visibility = 'visible';
+        showCalendar();
         // Add other actions to handle the session here
         const event = new CustomEvent('loginSuccess');
         document.dispatchEvent(event);
@@ -107,8 +106,7 @@ function handleSignoutClick() {
     if (token !== null) {
         google.accounts.oauth2.revoke(token.access_token);
         gapi.client.setToken('');
-        document.getElementById('authorize_button').style.visibility = 'visible';
-        document.getElementById('signed_in').style.visibility = 'hidden';
+        hideCalendar();
     }
 }
 
@@ -139,15 +137,13 @@ function loadSession() {
         if (currentTimestamp - savedTimestamp < token.expires_in * 1000) {
             // The token is valid, so we can use it
             gapi.client.setToken(token); // Restore the saved token
-            document.getElementById('authorize_button').style.visibility = 'hidden';
-            document.getElementById('signed_in').style.visibility = 'visible';
+            showCalendar();
             const event = new CustomEvent('loginSuccess'); // Notify the app that the session has been restored
             document.dispatchEvent(event);
         } else {
             // The token has expired, clear the session
             localStorage.clear();
-            document.getElementById('authorize_button').style.visibility = 'visible';
-            document.getElementById('signed_in').style.visibility = 'hidden';
+            hideCalendar();
         }
     }
 
@@ -156,14 +152,12 @@ function loadSession() {
 // Show or hide the calendar
 function showCalendar(){
     document.getElementById('authorize_button').style.visibility = 'hidden';
-    console.log('Authorize hidden')
     document.getElementById('signed_in').style.visibility = 'visible';
-    console.log('Calendar visible')
+    document.getElementById('signout_button').style.visibility = 'visible';
 }
 
 function hideCalendar(){
     document.getElementById('authorize_button').style.visibility = 'visible';
-    console.log('Authorize visible')
     document.getElementById('signed_in').style.visibility = 'hidden';
-    console.log('Calendar hidden')
+    document.getElementById('signout_button').style.visibility = 'hidden';
 }
