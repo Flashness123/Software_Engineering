@@ -15,6 +15,8 @@ Creating the project:
 installing npm libs:
 npm install @fullcalendar/core 
 npm install @fullcalendar/vue3
+...npm install (((all used fullcalendar libs)))
+npm install -S vue3-google-signin
 
 
 

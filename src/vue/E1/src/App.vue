@@ -1,6 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import HelloWorld from './components/vue/HelloWorld.vue'
-import authorize_button from './components/vue/login.vue'
+// import auth_button from './components/vue/login.vue'
+import login from './components/vue/loginGapi.vue'
 </script>
 
-<template><HelloWorld/><authorize_button/></template>
+<template>
+  <login/>
+  <HelloWorld/>
+</template>

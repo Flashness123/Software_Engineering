@@ -83,6 +83,8 @@ async function handleAuthClick() {
             throw (resp);
         }
         saveSession(resp);
+        console.log(tokenClient);
+        console.log(resp);
         showCalendar();
         // Add other actions to handle the session here
         const event = new CustomEvent('loginSuccess');

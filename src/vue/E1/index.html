@@ -7,6 +7,15 @@
     <title>Vite + Vue</title>
   </head>
   <body>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div
+      id="g_id_onload"
+      data-client_id="966425262226-nflro5si4ftpk7c3c4hq57ngrcr70hsn.apps.googleusercontent.com"
+      data-callback="handleCredentialResponse"
+    ></div>
+    <div class="g_id_signin" data-type="standard"></div>
+
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
