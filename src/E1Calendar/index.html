@@ -8,6 +8,7 @@
     <!-- Add js files -->
     <script src="login.js"></script>
     <script src="changeEvent.js"></script>
+    <script src="searchEvent.js"></script>
     <script type="module" src="fetchEvents.js"></script>
 
     <!-- Add Google API setup -->
@@ -184,6 +185,13 @@
       <div class="container-fluid">
         <div class="row align-items-start">
           <div class="col">
+
+            <!-- search Events -->
+            <div class="input-group">
+              <input id="search" type="search" class="form-control rounded-sm" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+              <button type="button" lass="btn btn-outline-primary" onclick="searchEvent(document.getElementById('search').value)">search</button>
+            </div>
+            
             <!-- Displays calendar -->
             <div id="calendar"></div>
             
