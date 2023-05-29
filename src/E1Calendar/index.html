@@ -55,10 +55,17 @@
             click: function () {
               alert('clicked the custom button!');
             }
+          },
+          myCustomButton2: {
+            text: 'json',
+            click: function () {              
+              console.log("json");
+              fjson();
+            }
           }
         },
         headerToolbar: {
-          left: 'prev,next today myCustomButton',
+          left: 'prev,next today myCustomButton myCustomButton2',
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },

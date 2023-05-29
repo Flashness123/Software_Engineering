@@ -1,0 +1,27 @@
+{
+    "text":[],
+    "text_segment_id":[],
+    "sent_nr":[],
+    "speaker_index":[],
+    "result":
+    {
+        "result_text":
+            ["Der Sprecher ist ein Projektleiter, der jetzt in der Projektsteuerung arbeitet und Bauprojekte im Maßstab von 100-300 Millionen Euro betreut.",
+            "Etwa 80% seiner Zeit verbringt er in Meetings und protokolliert viele davon.",
+            "Er wünscht sich ein Tool, das ihm hilft, Gespräche zusammenzufassen und Informationen leichter zugänglich zu machen.",
+            "Die Sprecher von SpeechMind ist Maschinenbauer und hat ein Tool entwickelt, das automatisch Zusammenfassungen von Gesprächen erstellt und Informationen durchsuchbar macht.",
+            "SpeechMind ist eine Ausgründung der TU Dresden.",
+            "Das Startup bietet eine Software an, die Gespräche aufzeichnet und transkribiert.",
+            "Es gibt eine Funktion zur Erstellung von Zusammenfassungen und Aufgaben, die in verschiedene Formate exportiert werden können.",
+            "Die Daten werden auf Microsoft-Servern in Frankfurt verarbeitet, aber es gibt eine Minimierungstechnik, um die Privatsphäre zu schützen.",
+            "Das Pricing-Modell basiert auf Stundenpaketen und es gibt keine Beschränkung nach oben.",
+            "Die Software wird von Unternehmen und Personalberatern genutzt, um Wissen zu speichern und zu durchsuchen.",
+            "Die beiden Sprecher diskutieren über ein neues Projekt und sind sich unsicher, wie es umgesetzt werden soll.",
+            "Sie beschließen, es zu testen und später im Team zu besprechen.",
+            "Ein Treffen wird für den 9. Juni vereinbart.",
+            "Einer der Sprecher ist ab Mitte übernächster Woche im Urlaub.",
+            "Sie planen, die Vorteile des Projekts den Kollegen zu erklären."],
+        "result_text_segment_id":[],
+        "result_sent_nr":[]
+    }
+}
