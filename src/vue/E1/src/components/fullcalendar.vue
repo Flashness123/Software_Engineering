@@ -1,22 +1,34 @@
+<template>
+  <div>
+    <FullCalendar :options="calendarOptions" ref="fullCalendar" />
+    <EventPopup :show="showPopup" :event="selectedEvent" @close="closePopup" />
+  </div>
+</template>
+
 <script>
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import { nextTick, watch } from 'vue';
+import { nextTick, watch, ref } from 'vue';
 import store from '../store/index.js';
 import { fetchEvents } from '../services/fetchEvents.js';
+import EventPopup from './eventPopup.vue';
 
 export default {
   components: {
-    FullCalendar // make the <FullCalendar> tag available
+    FullCalendar, // make the <FullCalendar> tag available
+    EventPopup
   },
   data() {
     return {
       calendarApi: null, // a reference to the FullCalendar instance
+      showPopup: false,
+      selectedEvent: null,
       calendarOptions: {
         plugins: [dayGridPlugin, interactionPlugin],
         initialView: 'dayGridMonth',
         height: "auto",
+        selectable: true,
         events: [],
         datesSet: async function (info) {
           const start = info.startStr; // The start date of the current view
@@ -24,8 +36,19 @@ export default {
           // Call a method to fetch events for this date range
           const events = await fetchEvents(store.state.accessToken, start, end);
           store.commit('setCalendarEvents', events); // commit events to store
+        },
+        eventClick(info) {
+          console.log(info);
+          this.selectedEvent = info.event._def;
+          console.log(this.selectedEvent);
+          this.showPopup = true;
         }
       }
+    }
+  },
+  methods: {
+    closePopup() {
+      this.showPopup = false;
     }
   },
   mounted() {
@@ -61,6 +84,3 @@ export default {
   }
 }
 </script>
-<template>
-  <FullCalendar ref="fullCalendar" :options="calendarOptions" />
-</template>
