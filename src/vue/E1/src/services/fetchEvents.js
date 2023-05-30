@@ -1,4 +1,7 @@
 export async function fetchEvents(accessToken, start, end) {
+    if (!accessToken) {
+      throw new Error('Access token is required');
+    }
     const startISOString = new Date(start).toISOString();
     const endISOString = new Date(end).toISOString();
     const url = `https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=${startISOString}&timeMax=${endISOString}`;
@@ -22,7 +25,7 @@ export async function fetchEvents(accessToken, start, end) {
           }
         }
       }).filter(Boolean);
-  
+      console.log(events); // eslint-disable-line no-console
       return events;
     }
   

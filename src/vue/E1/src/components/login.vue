@@ -15,8 +15,15 @@ import { fetchEvents } from '../services/fetchEvents.js';
   // This function is called when the user successfully signs in, and the access token is returned
   const handleOnSuccess = async (response: AuthCodeFlowSuccessResponse) =>{
     console.log("Access Token: ", response.access_token);
-    const events = await fetchEvents(response.access_token, '2023-01-01', '2023-12-31'); // test fetchEvents function with 2023 dates
-    store.commit('setCalendarEvents', events); // commit events to store
+    store.commit('setAccessToken', response.access_token); // commit access token to store, so we can use it later
+    // Start date is 4 weeks ago
+    const startDate = new Date();
+    startDate.setDate(startDate.getDate() - 28);
+    // End date is 4 weeks from now
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 28);
+    const events = await fetchEvents(response.access_token, startDate, endDate); // fetch events after login, so we can display them
+    store.commit('setCalendarEvents', events);
   };
 
   // This function is called when the user fails to sign in, or if there is an error

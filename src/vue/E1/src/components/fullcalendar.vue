@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { nextTick, watch } from 'vue';
 import store from '../store/index.js';
+import { fetchEvents } from '../services/fetchEvents.js';
 
 export default {
   components: {
@@ -16,7 +17,14 @@ export default {
         plugins: [dayGridPlugin, interactionPlugin],
         initialView: 'dayGridMonth',
         height: "auto",
-        events: []
+        events: [],
+        datesSet: async function (info) {
+          const start = info.startStr; // The start date of the current view
+          const end = info.endStr; // The end date of the current view
+          // Call a method to fetch events for this date range
+          const events = await fetchEvents(store.state.accessToken, start, end);
+          store.commit('setCalendarEvents', events); // commit events to store
+        }
       }
     }
   },
@@ -34,12 +42,14 @@ export default {
         // When the events change, update them on the FullCalendar instance
         if (this.calendarApi) {
           // Remove old events
-          oldEvents.forEach(event => {
-            const existingEvent = this.calendarApi.getEventById(event.id);
-            if (existingEvent) {
-              existingEvent.remove();
-            }
-          });
+          if (oldEvents) {
+            oldEvents.forEach(event => {
+              const existingEvent = this.calendarApi.getEventById(event.id);
+              if (existingEvent) {
+                existingEvent.remove();
+              }
+            });
+          }
           // Add new events
           newEvents.forEach(event => {
             this.calendarApi.addEvent(event);
