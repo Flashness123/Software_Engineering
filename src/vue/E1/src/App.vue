@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import HelloWorld from './components/vue/HelloWorld.vue'
+import FullCalendar from './components/vue/fullcalendar.vue'
 // import auth_button from './components/vue/login.vue'
-import login from './components/vue/loginGapi.vue'
+import auth_button from './components/vue/login.vue'
 </script>
 
 <template>
-  <login/>
-  <HelloWorld/>
+  <auth_button/>
+  <FullCalendar/>
 </template>
