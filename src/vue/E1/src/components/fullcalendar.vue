@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { nextTick, watch } from 'vue';
-import store from '../../store/index.js';
+import store from '../store/index.js';
 
 export default {
   components: {

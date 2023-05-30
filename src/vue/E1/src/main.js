@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './components/css/style.css'
+import './assets/styles/global.css'
 import App from './App.vue'
 import GoogleSignInPlugin from "vue3-google-signin"
 import store from './store/index.js'
