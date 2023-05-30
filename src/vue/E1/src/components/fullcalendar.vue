@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div id="fullcalendar_popup">
     <FullCalendar :options="calendarOptions" ref="fullCalendar" />
-    <EventPopup :show="showPopup" :event="selectedEvent" @close="closePopup" />
+    <transition name="fade">
+      <EventPopup :event="selectedEvent" @close="closePopup" />
+    </transition>
   </div>
 </template>
 
@@ -42,6 +44,7 @@ export default {
           this.selectedEvent = info.event._def;
           console.log(this.selectedEvent);
           this.showPopup = true;
+          console.log(this.showPopup);
         }
       }
     }
@@ -84,3 +87,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+</style>
