@@ -1,19 +1,22 @@
 <template>
-    <div class="popup">
-      <!-- Add more details here -->
-      <button @click="close">Close</button>
+  <dialog id="eventDialog">
+    <div class="dialog-header">
+      <h3>Event</h3>
+      <button class="close" @click="close">X</button>
     </div>
-  </template>
+    <div class="dialog-body">
+    </div>
+  </dialog>
+</template>
   
-  <script>
-  import { defineComponent } from 'vue';
-  
-  export default defineComponent({
-    // props: ['show', 'event'],
-    methods: {
-      close() {
-        this.$emit('close');
-      }
+<script>
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  methods: {
+    close() {
+      this.$emit('close');
     }
-  });
-  </script>
+  }
+});
+</script>

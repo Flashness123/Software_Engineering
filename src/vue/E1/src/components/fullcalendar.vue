@@ -1,9 +1,7 @@
 <template>
   <div id="fullcalendar_popup">
     <FullCalendar :options="calendarOptions" ref="fullCalendar" />
-    <transition name="fade">
-      <EventPopup :event="selectedEvent" @close="closePopup" />
-    </transition>
+    <eventDialog/>
   </div>
 </template>
 
@@ -14,12 +12,12 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { nextTick, watch, ref } from 'vue';
 import store from '../store/index.js';
 import { fetchEvents } from '../services/fetchEvents.js';
-import EventPopup from './eventPopup.vue';
+import eventDialog from './eventPopup.vue';
 
 export default {
   components: {
     FullCalendar, // make the <FullCalendar> tag available
-    EventPopup
+    eventDialog
   },
   data() {
     return {
@@ -43,16 +41,12 @@ export default {
           console.log(info);
           this.selectedEvent = info.event._def;
           console.log(this.selectedEvent);
-          this.showPopup = true;
-          console.log(this.showPopup);
+          eventDialog.showModal();
         }
       }
     }
   },
   methods: {
-    closePopup() {
-      this.showPopup = false;
-    }
   },
   mounted() {
     // After the component is mounted, save a reference to the FullCalendar instance
