@@ -18,6 +18,7 @@ npm install @fullcalendar/vue3
 ...npm install (((all used fullcalendar libs)))
 npm install -S vue3-google-signin
 npm install vuex@next --save
+npm i vuejs-confirm-dialog
 
 
 

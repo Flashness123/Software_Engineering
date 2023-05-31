@@ -1,9 +1,6 @@
 <template>
   <div id="fullcalendar_popup">
     <FullCalendar :options="calendarOptions" ref="fullCalendar" />
-    <transition name="fade">
-      <EventPopup :event="selectedEvent" @close="closePopup" />
-    </transition>
   </div>
 </template>
 
@@ -19,7 +16,6 @@ import EventPopup from './eventPopup.vue';
 export default {
   components: {
     FullCalendar, // make the <FullCalendar> tag available
-    EventPopup
   },
   data() {
     return {
@@ -43,16 +39,11 @@ export default {
           console.log(info);
           this.selectedEvent = info.event._def;
           console.log(this.selectedEvent);
-          this.showPopup = true;
-          console.log(this.showPopup);
         }
       }
     }
   },
   methods: {
-    closePopup() {
-      this.showPopup = false;
-    }
   },
   mounted() {
     // After the component is mounted, save a reference to the FullCalendar instance
@@ -89,10 +80,13 @@ export default {
 </script>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to {
+
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

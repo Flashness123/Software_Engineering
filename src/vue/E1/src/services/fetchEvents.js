@@ -2,12 +2,12 @@ export async function fetchEvents(accessToken, start, end) {
     if (!accessToken) {
       throw new Error('Access token is required');
     }
-    // Start date - 4 weeks
+    // Start date - 8 weeks
     const startDate = new Date(start);
-    startDate.setDate(startDate.getDate() - 28);
-    // End date + 4 weeks
+    startDate.setDate(startDate.getDate() - 56);
+    // End date + 8 weeks
     const endDate = new Date(end);
-    endDate.setDate(endDate.getDate() + 28);
+    endDate.setDate(endDate.getDate() + 56);
     const startISOString = new Date(startDate).toISOString();
     const endISOString = new Date(endDate).toISOString();
     const url = `https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=${startISOString}&timeMax=${endISOString}`;
@@ -19,7 +19,13 @@ export async function fetchEvents(accessToken, start, end) {
     });
   
     const data = await response.json();
-  
+    
+    // Check for error response
+    if (data.error) {
+      throw new Error(data.error.message);
+    }
+
+    // Check for items
     if (data.items) {
       const events = data.items.map(item => {
         if (item.start && item.end) {
@@ -31,7 +37,7 @@ export async function fetchEvents(accessToken, start, end) {
             allDay: !!item.start.date,
           }
         }
-      }).filter(Boolean);
+      }).filter(Boolean); // Remove undefined items
       console.log(events); // eslint-disable-line no-console
       return events;
     }

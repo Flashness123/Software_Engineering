@@ -1,6 +1,6 @@
 <!--This is the login component, which is used to sign in to Google
-// Author: Jamal Alkharrat
-// https://vue3-google-signin.syetalabs.io/composables/use-token-client.html -->
+    Author: Jamal Alkharrat
+    https://vue3-google-signin.syetalabs.io/composables/use-token-client.html -->
 
 <script setup lang="ts">
 import {
@@ -16,12 +16,12 @@ import { fetchEvents } from '../services/fetchEvents.js';
 const handleOnSuccess = async (response: AuthCodeFlowSuccessResponse) => {
   console.log("Access Token: ", response.access_token);
   store.commit('setAccessToken', response.access_token); // commit access token to store, so we can use it later
-  // Start date is 4 weeks ago
+  // Start date is 8 weeks ago
   const startDate = new Date();
-  startDate.setDate(startDate.getDate() - 28);
-  // End date is 4 weeks from now
+  startDate.setDate(startDate.getDate() - 56);
+  // End date is 8 weeks from now
   const endDate = new Date();
-  endDate.setDate(endDate.getDate() + 28);
+  endDate.setDate(endDate.getDate() + 56);
   const events = await fetchEvents(response.access_token, startDate, endDate); // fetch events after login, so we can display them
   store.commit('setCalendarEvents', events);
 };
