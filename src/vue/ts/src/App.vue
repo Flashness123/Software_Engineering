@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import Test from './components/Test.vue'
+import auth_button from './components/login.vue'
 </script>
 
 <template>
+  <auth_button />
   <Test />
   <DialogsWrapper />
 </template>

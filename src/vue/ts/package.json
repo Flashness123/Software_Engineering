@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "vue": "^3.2.47",
+    "vue3-google-signin": "^1.3.0",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

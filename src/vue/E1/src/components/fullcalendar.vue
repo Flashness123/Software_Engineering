@@ -11,12 +11,10 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { nextTick, watch, ref } from 'vue';
 import store from '../store/index.js';
 import { fetchEvents } from '../services/fetchEvents.js';
-import eventDialog from './eventPopup.vue';
 
 export default {
   components: {
     FullCalendar, // make the <FullCalendar> tag available
-    EventPopup
   },
   data() {
     return {
@@ -37,11 +35,8 @@ export default {
           store.commit('setCalendarEvents', events); // commit events to store
         },
         eventClick(info) {
-          console.log(info);
           this.selectedEvent = info.event._def;
           console.log(this.selectedEvent);
-          this.showPopup = true;
-          console.log(this.showPopup);
         }
       }
     }
@@ -81,15 +76,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

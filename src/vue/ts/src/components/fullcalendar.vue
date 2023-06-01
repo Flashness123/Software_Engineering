@@ -9,7 +9,7 @@ import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { nextTick, watch, ref } from 'vue';
-import store from '../store/index.js';
+import store from '../store/store.js';
 import { fetchEvents } from '../services/fetchEvents.js';
 import eventDialog from './eventPopup.vue';
 

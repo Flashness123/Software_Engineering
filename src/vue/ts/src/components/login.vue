@@ -8,7 +8,7 @@ import {
   type AuthCodeFlowSuccessResponse,
   type AuthCodeFlowErrorResponse,
 } from "vue3-google-signin";
-import store from '../store/index.js';
+import store from '../store/store.js';
 import { fetchEvents } from '../services/fetchEvents.js';
 
 

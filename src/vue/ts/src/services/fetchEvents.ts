@@ -6,7 +6,7 @@ interface Event {
     allDay: boolean;
   }
   
-  export async function fetchEvents(accessToken: string, start: string, end: string): Promise<Event[]> {
+  export async function fetchEvents(accessToken: string, start: Date, end: Date): Promise<Event[]> {
     if (!accessToken) {
       throw new Error('Access token is required');
     }
