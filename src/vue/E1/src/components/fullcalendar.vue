@@ -1,6 +1,7 @@
 <template>
   <div id="fullcalendar_popup">
     <FullCalendar :options="calendarOptions" ref="fullCalendar" />
+    <modal :showModal="showModal" />
   </div>
 </template>
 
@@ -11,16 +12,19 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { nextTick, watch, ref } from 'vue';
 import store from '../store/index.js';
 import { fetchEvents } from '../services/fetchEvents.js';
+import modal from './modal.vue'
 
 export default {
   components: {
     FullCalendar, // make the <FullCalendar> tag available
+    modal
   },
   data() {
     return {
       calendarApi: null, // a reference to the FullCalendar instance
       showPopup: false,
       selectedEvent: null,
+      showModal: false,
       calendarOptions: {
         plugins: [dayGridPlugin, interactionPlugin],
         initialView: 'dayGridMonth',
@@ -37,6 +41,8 @@ export default {
         eventClick(info) {
           this.selectedEvent = info.event._def;
           console.log(this.selectedEvent);
+          this.showModal = true;
+          console.log(this.showModal);
         }
       }
     }
