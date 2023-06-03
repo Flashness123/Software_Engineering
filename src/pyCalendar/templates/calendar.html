@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Calendar</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/fetchDates.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/updateEvent.js') }}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var calendarEl = document.getElementById('calendar');
+
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            datesSet: function (dateInfo) {
+              fetchEvents();
+            },
+            events: [
+              {% for event in events %}
+                {
+                  title: '{{ event.summary }}',
+                      {% if 'dateTime' in event.start %}
+                        start: '{{ event.start.dateTime }}',
+                        end: '{{ event.end.dateTime }}'
+                      {% else %}
+                        start: '{{ event.start.date }}',
+                        end: '{{ event.end.date }}'
+                      {% endif %}
+                },
+              {% endfor %}
+            ],
+            eventClick: function (info) {
+              // Fill in the modal with the event details
+              $("#eventModalBody").html(`
+                <p>Event: ${info.event.title}</p>
+                <label>von: </label>
+                <input type = "date"  id = "startdate">
+                <input type = "time"  id = "starttime">
+                <p></p>
+                <label>bis: </label>
+                <input type = "date"  id = "enddate">
+                <input type = "time"  id = "endtime">
+              `);
+  
+              displayEvent(info.event);
+              console.log("event: " + calendar.getEventById(info.event.id));
+              // Show the modal
+              $("#eventModal").modal();
+  
+              // change the border color just for fun
+              info.el.style.borderColor = "red";
+            }
+          });
+
+        calendar.render();
+        });
+
+        async function fetchEvents() {
+          const response = await fetch('/fetch_events');
+          const events = await response.json();
+          console.log(events)
+          if ev
+          calendar.addEventSource(events)
+          calendar.refetchEvents();
+      }
+    </script>
+
+    
+    <script type="module">
+      // Use type="module" attribute
+
+      var calendar;
+      var eventsSource = [];
+
+      // Create the calendar
+      function initCalendar() {
+        var calendarEl = document.getElementById("calendar");
+        calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+          eventSources: eventsSource,
+          datesSet: function (dateInfo) {
+            onClick();
+          },
+          eventClick: function (info) {
+            // Fill in the modal with the event details
+            $("#eventModalBody").html(`
+              <p>Event: ${info.event.title}</p>
+              <label>von: </label>
+              <input type = "date"  id = "startdate">
+              <input type = "time"  id = "starttime">
+              <p></p>
+              <label>bis: </label>
+              <input type = "date"  id = "enddate">
+              <input type = "time"  id = "endtime">
+            `);
+
+            displayEvent(info.event);
+            console.log("event: " + calendar.getEventById(info.event.id));
+            // Show the modal
+            $("#eventModal").modal();
+
+            // change the border color just for fun
+            info.el.style.borderColor = "red";
+          },
+          customButtons: {
+            myCustomButton: {
+              text: "custom!",
+              click: function () {
+                alert("clicked the custom button!");
+              },
+            },
+          },
+          headerToolbar: {
+            left: "prev,next today myCustomButton",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
+          },
+          dateClick: function () {
+            alert("a day has been clicked!");
+          },
+        });
+        calendar.render();
+      }
+
+      document.addEventListener("updateEvent", onClick);
+      // Listen for the loginSuccess event
+      document.addEventListener("loginSuccess", initCalendar);
+      // Fetch the events for the calendar and render them
+      export async function onClick() {
+        await calendar.getEventSources().forEach(function (eventSource) {
+          eventSource.remove();
+        });
+        //var date = calendar.getDate();
+        var view = calendar.view;
+        var startDate = view.activeStart;
+        var endDate = view.activeEnd;
+        eventsSource = await fetchDates(startDate, endDate);
+        calendar.addEventSource(eventsSource);
+        console.log(calendar.getEventSources());
+        calendar.refetchEvents();
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <div id="calendar"></div>
+    <div class="container">
+      <h1>My Events</h1>
+      <ul class="list-group">
+        {% for event in events %}
+        <li class="list-group-item">
+          <h2>{{ event.summary }}</h2>
+          <p>{{ event.start.dateTime }} - {{ event.end.dateTime }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
