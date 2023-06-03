@@ -24,7 +24,7 @@ export async function fetchEvents(accessToken, start, end) {
     if (data.error) {
       throw new Error(data.error.message);
     }
-
+    console.log(data); // eslint-disable-line no-console
     // Check for items
     if (data.items) {
       const events = data.items.map(item => {
