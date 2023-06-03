@@ -2,7 +2,7 @@
   <div id="fullcalendar_popup">
     <FullCalendar :options="calendarOptions" ref="fullCalendar" />
     <button @click="isModalVisible = true">Open</button>
-    <modal :isModalVisible="isModalVisible" :event="selectedEvent"/>
+    <modal :event="selectedEvent"/>
     <button @click="isModalVisible = false">Close</button>
   </div>
 </template>
@@ -36,13 +36,19 @@ export default {
           const start = info.startStr; // The start date of the current view
           const end = info.endStr; // The end date of the current view
           // Call a method to fetch events for this date range
-          const events = await fetchEvents(store.state.accessToken, start, end);
-          store.commit('setCalendarEvents', events); // commit events to store
+          if (store.state.accessToken) {
+            const events = await fetchEvents(store.state.accessToken, start, end);
+            store.commit('setCalendarEvents', events); // commit events to store
+          }
         },
         eventClick: (info) => {
           this.selectedEvent = store.getters.getEventById(info.event._def.publicId);
-          this.isModalVisible = true;
-          console.log(this.selectedEvent);
+          if (store.state.isModalVisible === false) {
+            this.isModalVisible = true;
+            store.commit('setIsModalVisible', this.isModalVisible);
+            console.log(this.isModalVisible);
+            console.log(this.selectedEvent);
+          }
         }
       }
     }
