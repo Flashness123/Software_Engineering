@@ -17,7 +17,6 @@ export default createStore({
     },
     // Store the isModalOpen state in the store, called from the EventModal component
     setIsModalVisible(state, isModalVisible) {
-      console.log('setIsModalVisible', isModalVisible);
       state.isModalVisible = isModalVisible;
     }
   },

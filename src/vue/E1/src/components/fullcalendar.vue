@@ -46,8 +46,6 @@ export default {
           if (store.state.isModalVisible === false) {
             this.isModalVisible = true;
             store.commit('setIsModalVisible', this.isModalVisible);
-            console.log(this.isModalVisible);
-            console.log(this.selectedEvent);
           }
         }
       }
