@@ -1,0 +1,29 @@
+{
+  "hash": "e2361a91",
+  "browserHash": "a8ece2e7",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "e6aceeac",
+      "needsInterop": false
+    },
+    "vue3-google-signin": {
+      "src": "../../node_modules/vue3-google-signin/dist/index.es.js",
+      "file": "vue3-google-signin.js",
+      "fileHash": "7b9822f4",
+      "needsInterop": false
+    },
+    "vuex": {
+      "src": "../../node_modules/vuex/dist/vuex.esm-bundler.js",
+      "file": "vuex.js",
+      "fileHash": "a1064c9a",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-OWZKEKZD": {
+      "file": "chunk-OWZKEKZD.js"
+    }
+  }
+}
