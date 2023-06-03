@@ -12,6 +12,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { nextTick, watch, ref } from 'vue';
 import store from '../store/index.js';
 import { fetchEvents } from '../services/fetchEvents.js';
+import { changeEvent,displayChangeEvent } from '../services/changeEvent.js';
 import modal from './modal.vue'
 
 export default {
@@ -38,9 +39,15 @@ export default {
           const events = await fetchEvents(store.state.accessToken, start, end);
           store.commit('setCalendarEvents', events); // commit events to store
         },
-        eventClick(info) {
-          this.selectedEvent = info.event._def;
-          console.log(this.selectedEvent);
+        eventClick(info) {         
+          // console.log("wichtiger access token: "+store.state.accessToken)
+          let accessToken=store.state.accessToken
+          // this.selectedEvent = info.event._def;
+          // console.log(this.selectedEvent);
+          // console.log("ID: "+this.selectedEvent.publicId)
+          // const id=this.selectedEvent.publicId
+          displayChangeEvent(info.event);
+          // changeEvent(id,accessToken);
           this.showModal = true;
           console.log(this.showModal);
         }
