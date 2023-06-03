@@ -1,7 +1,9 @@
 <template>
   <div id="fullcalendar_popup">
     <FullCalendar :options="calendarOptions" ref="fullCalendar" />
-    <modal :showModal="showModal" />
+    <button @click="isModalVisible = true">Open</button>
+    <modal :isModalVisible="isModalVisible" :event="selectedEvent"/>
+    <button @click="isModalVisible = false">Close</button>
   </div>
 </template>
 
@@ -12,20 +14,18 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { nextTick, watch, ref } from 'vue';
 import store from '../store/index.js';
 import { fetchEvents } from '../services/fetchEvents.js';
-import { changeEvent,displayChangeEvent } from '../services/changeEvent.js';
-import modal from './modal.vue'
+import Modal from './modal.vue'
 
 export default {
   components: {
     FullCalendar, // make the <FullCalendar> tag available
-    modal
+    Modal
   },
   data() {
     return {
       calendarApi: null, // a reference to the FullCalendar instance
-      showPopup: false,
       selectedEvent: null,
-      showModal: false,
+      isModalVisible: false,
       calendarOptions: {
         plugins: [dayGridPlugin, interactionPlugin],
         initialView: 'dayGridMonth',
@@ -39,17 +39,10 @@ export default {
           const events = await fetchEvents(store.state.accessToken, start, end);
           store.commit('setCalendarEvents', events); // commit events to store
         },
-        eventClick(info) {         
-          // console.log("wichtiger access token: "+store.state.accessToken)
-          let accessToken=store.state.accessToken
-          // this.selectedEvent = info.event._def;
-          // console.log(this.selectedEvent);
-          // console.log("ID: "+this.selectedEvent.publicId)
-          // const id=this.selectedEvent.publicId
-          displayChangeEvent(info.event);
-          // changeEvent(id,accessToken);
-          this.showModal = true;
-          console.log(this.showModal);
+        eventClick: (info) => {
+          this.selectedEvent = store.getters.getEventById(info.event._def.publicId);
+          this.isModalVisible = true;
+          console.log(this.selectedEvent);
         }
       }
     }

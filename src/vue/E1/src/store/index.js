@@ -15,4 +15,9 @@ export default createStore({
       state.accessToken = accessToken;
     },
   },
+  getters: {
+    getEventById: (state) => (id) => {
+      return state.calendarEvents.find(event => event.id === id);
+    }
+  },
 })
