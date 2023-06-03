@@ -3,6 +3,8 @@
     <dialog ref="modal">
         <!-- display event info -->
         <pre>{{ event }}</pre>
+        <!-- Add button to delete the event and close the modal -->
+        <button @click="deleteEventClick()">Delete</button>
         <!-- Add close button -->
         <button @click="closeModal()">Close</button>
     </dialog>
