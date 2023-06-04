@@ -1,9 +1,7 @@
 <template>
   <div id="fullcalendar_popup">
     <FullCalendar :options="calendarOptions" ref="fullCalendar" />
-    <button @click="isModalVisible = true">Open</button>
     <modal :event="selectedEvent"/>
-    <button @click="isModalVisible = false">Close</button>
   </div>
 </template>
 
