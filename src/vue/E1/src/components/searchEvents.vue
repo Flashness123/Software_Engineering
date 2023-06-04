@@ -1,3 +1,10 @@
+<!-- 
+* Author: Jamal Alkharrat - s82035@htw-dresden.de
+* This is the searchEvents component, which is used to search for events in Google Calendar
+* 
+* TODO: Add way to display search results
+ -->
+
 <template>
     <div>
         <input type="text" v-model="searchQuery" @input="searchEventsFromQuery" placeholder="Search events..." />

@@ -1,3 +1,17 @@
+/**
+ * Author: Jamal Alkharrat - s82035@htw-dresden.de
+ * Searches the user's calendar for events matching the given query, using the Google Calendar API
+ * 
+ * @param {string} accessToken - Google access token
+ * @param {string} query - Search query
+ * @returns {Array} - Array of events
+ * 
+ * TODO: Deciede how to display the events in the UI
+ * 
+ * for more info, see the Google Calendar API docs:
+ * https://developers.google.com/calendar/v3/reference/events/list
+ */
+
 export async function searchEvents(accessToken, query) {
     // Error checking
     // Check for access token

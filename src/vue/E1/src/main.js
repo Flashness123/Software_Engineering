@@ -1,3 +1,13 @@
+
+/**
+ * Author: Jamal Alkharrat - s82035@htw-dresden.de
+ * This is the main entry point for the app, where the Vue app is created and mounted
+ * 
+ * for more info, see the Vue.js docs:
+ * https://v3.vuejs.org/guide/introduction.html
+ * 
+ */
+
 import { createApp } from 'vue'
 import './assets/styles/global.css'
 import App from './App.vue'

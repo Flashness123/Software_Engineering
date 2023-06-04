@@ -1,3 +1,16 @@
+/**
+ * Author: Jamal Alkharrat - s82035@htw-dresden.de
+ * Updates an event in the user's calendar, using the Google Calendar API
+ * 
+ * @param {string} accessToken - Google access token
+ * @param {string} eventId - ID of the event to update
+ * @param {Object} event - Event object containing the updated event data
+ * @returns {Object} - Updated event object
+ * 
+ * for more info, see the Google Calendar API docs:
+ * https://developers.google.com/calendar/v3/reference/events/patch
+ */
+
 import store from '../store/index.js';
 export async function updateEvent(accessToken, eventId, event) {
     if (!accessToken) {

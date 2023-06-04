@@ -18,7 +18,7 @@
  * }
  * 
  * TODO: add support for recurring events
- * TODO: add support for event description
+ * 
  * 
  * for more info, see the Google Calendar API docs:
  * https://developers.google.com/calendar/v3/reference/events/list
@@ -66,6 +66,7 @@ export async function fetchEvents(accessToken, start, end) {
     const events = await formatEvents(data);
     // commit events to store
     store.commit('setCalendarEvents', events); 
+    console.log(events);
     return events;
   }
   // No events, return empty array

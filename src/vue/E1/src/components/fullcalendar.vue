@@ -1,3 +1,12 @@
+<!-- 
+* Author: Jamal Alkharrat - s82035@htw-dresden.de
+*
+* This is the fullcalendar component, which is used to display the calendar
+* Also, it is used to display the modal, which is used to display event details and to edit or delete events
+*
+* For more information on how to use the fullcalendar component, see here:
+* https://fullcalendar.io/docs/vue
+ -->
 <template>
   <div id="fullcalendar_popup">
     <FullCalendar :options="calendarOptions" ref="fullCalendar" />

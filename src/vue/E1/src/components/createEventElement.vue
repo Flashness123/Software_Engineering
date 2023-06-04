@@ -1,3 +1,9 @@
+<!-- 
+* Author: Jamal Alkharrat - s82035@htw-dresden.de
+*
+* This is the createEventElement component, which is used to create events in Google Calendar
+*
+ -->
 <template>
     <div>
         <button @click="showModal()">Create event</button>

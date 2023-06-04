@@ -1,3 +1,11 @@
+<!-- 
+* Author: Jamal Alkharrat - s82035@htw-dresden.de
+*
+* This is the modal component, which is used to display event info and update/delete events
+*
+* TODO: Fix warning because of format of date in input fields
+*
+ -->
 <template>
     <dialog ref="modal">
         <!-- display event info -->
