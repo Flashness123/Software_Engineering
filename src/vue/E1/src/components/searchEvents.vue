@@ -1,8 +1,8 @@
 <template>
     <div>
-        <input type="text" v-model="searchQuery" @input="searchEventsOnInput" placeholder="Search events..." />
+        <input type="text" v-model="searchQuery" @input="searchEventsFromQuery" placeholder="Search events..." />
         <!-- Add search button -->
-        <button @click="searchEventsClick">Search</button>
+        <button @click="searchEventsFromQuery">Search</button>
     </div>
 </template>
 
@@ -15,22 +15,20 @@ export default {
     setup() {
         const searchQuery = ref('');
 
-        const searchEventsClick = async () => {
-            if (searchQuery.value.length > 0) {
-                const results = await searchEvents(store.state.accessToken, searchQuery.value);
-                console.log(results);
-            }
-        };
-        const searchEventsOnInput = async () => {
-            if (searchQuery.value.length > 0) {
-                const results = await searchEvents(store.state.accessToken, searchQuery.value);
-                console.log(results);
-            }
-        };
+        let debounceTimeout = null;
+
+        const searchEventsFromQuery = async () => {
+            clearTimeout(debounceTimeout);  // clear the timer if it's still running
+            debounceTimeout = setTimeout(async () => {  // start a new timer
+                if (searchQuery.value.length > 0) {
+                    const results = await searchEvents(store.state.accessToken, searchQuery.value);
+                    console.log(results);
+                }
+            }, 250);  // delay of 250ms
+        }
         return {
             searchQuery,
-            searchEventsClick,
-            searchEventsOnInput,
+            searchEventsFromQuery,
         };
     },
 };

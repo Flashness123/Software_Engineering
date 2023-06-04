@@ -18,7 +18,15 @@ export default createStore({
     // Store the isModalOpen state in the store, called from the EventModal component
     setIsModalVisible(state, isModalVisible) {
       state.isModalVisible = isModalVisible;
-    }
+    },
+    // Add an event to the store
+    addEvent(state, event) {
+      state.calendarEvents.push(event);
+    },
+    // remove an event from the store
+    removeEvent(state, eventId) {
+      state.calendarEvents = state.calendarEvents.filter(event => event.id !== eventId);
+    },
   },
   getters: {
     getEventById: (state) => (id) => {

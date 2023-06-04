@@ -20,7 +20,8 @@
  * 
  * for more info, see the Google Calendar API docs:
  * https://developers.google.com/calendar/v3/reference/events/insert  */ 
-
+import store from '../store/index.js'
+import {formatEvents} from './formatEvents.js';
 export async function createEvent(accessToken, event) {
   // Error checking
   // Check for access token
@@ -71,6 +72,9 @@ export async function createEvent(accessToken, event) {
   if (data.error) {
     throw new Error(data.error.message);
   }
+  // format event and add event to store
+  const item = await formatEvents(data);
+  store.commit('addEvent', item);
   // Return the created event
-  return data;
+  return item;
 }

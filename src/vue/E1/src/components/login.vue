@@ -17,7 +17,6 @@ import { fetchEvents } from '../services/fetchEvents.js';
 // This function is called when the user successfully signs in, and the access token is returned
 const handleOnSuccess = async (response: AuthCodeFlowSuccessResponse) => {
   // commit access token to store, so we can use it later
-  console.log("Access Token: ", response.access_token);
   store.commit('setAccessToken', response.access_token); 
 
   // Display the events from Google Calendar after login

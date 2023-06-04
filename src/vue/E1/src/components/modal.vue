@@ -16,6 +16,7 @@
 
 import { ref, watch } from 'vue'
 import store from '../store/index.js'
+import { deleteEvent } from '../services/deleteEvent.js'
 
 
 export default {
@@ -37,6 +38,16 @@ export default {
             modal.value.close()
             store.commit('setIsModalVisible', false);
         }
+        // create a method to delete the event
+        const deleteEventClick = () => {
+            // delete the event
+            if (store.state.accessToken){
+                console.log("delete event" + props.event.id)
+                deleteEvent(store.state.accessToken, props.event.id)
+            }
+            // close the modal
+            closeModal()
+        }
         // watch the isModalVisible in store, and show or close the modal accordingly
         watch(() => store.state.isModalVisible, (newVal) => {
             if (newVal) {
@@ -49,7 +60,8 @@ export default {
         return {
             modal,
             showModal,
-            closeModal
+            closeModal,
+            deleteEventClick
         }
     }
 }

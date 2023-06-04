@@ -38,7 +38,6 @@ export default {
           // Call a method to fetch events for this date range
           if (store.state.accessToken) {
             const events = await fetchEvents(store.state.accessToken, start, end);
-            store.commit('setCalendarEvents', events); // commit events to store
           }
         },
         eventClick: (info) => {

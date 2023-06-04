@@ -24,6 +24,9 @@
  * https://developers.google.com/calendar/v3/reference/events/list
  * 
  */
+import { formatEvents } from './formatEvents.js';
+import store from '../store/index.js';
+
 export async function fetchEvents(accessToken, start, end) {
   // Error checking
   // Check for access token
@@ -60,18 +63,9 @@ export async function fetchEvents(accessToken, start, end) {
   }
   // Check for items
   if (data.items) {
-    const events = data.items.map(item => { // Map through the events and format them
-      if (item.start && item.end) {
-        return {
-          id: item.id,
-          title: item.summary,
-          start: item.start.dateTime || item.start.date,
-          end: item.end.dateTime || item.end.date,
-          allDay: !!item.start.date,
-        }
-      }
-    }).filter(Boolean); // Remove undefined items
-    //console.log(events);
+    const events = await formatEvents(data);
+    // commit events to store
+    store.commit('setCalendarEvents', events); 
     return events;
   }
   // No events, return empty array
