@@ -1,3 +1,9 @@
+<!-- 
+* Author: Jamal Alkharrat - s82035@htw-dresden.de
+*
+* This is the createEventElement component, which is used to create events in Google Calendar
+*
+ -->
 <template>
     <div>
         <button @click="showModal()">Create event</button>
@@ -16,7 +22,7 @@
                     <input type="datetime-local" id="end" v-model="event.end" :placeholder="currentDateTime" required>
                 </div>
                 <div>
-                    <button type="submit" :disabled="!isFormValid()" @click="createEventButton()">Submit</button>
+                    <button type="submit" :disabled="!isFormValid()" @click="createEventClick()">Submit</button>
                     <button type="button" @click="closeModal()">Close</button>
                 </div>
             </div>
@@ -38,9 +44,7 @@ export default {
             end: '',
         });
 
-        const createEventButton = () => {
-            console.log(event.value);
-            console.log(store.state.accessToken);
+        const createEventClick = () => {
             if (isFormValid()) {
                 createEvent(store.state.accessToken, event.value);
                 createEventModal.value.close();
@@ -78,7 +82,7 @@ export default {
             createEventModal,
             event,
             currentDateTime,
-            createEventButton,
+            createEventClick,
             isFormValid,
             showModal,
             closeModal,

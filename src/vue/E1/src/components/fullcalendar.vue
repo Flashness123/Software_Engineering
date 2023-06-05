@@ -1,9 +1,16 @@
+<!-- 
+* Author: Jamal Alkharrat - s82035@htw-dresden.de
+*
+* This is the fullcalendar component, which is used to display the calendar
+* Also, it is used to display the modal, which is used to display event details and to edit or delete events
+*
+* For more information on how to use the fullcalendar component, see here:
+* https://fullcalendar.io/docs/vue
+ -->
 <template>
   <div id="fullcalendar_popup">
     <FullCalendar :options="calendarOptions" ref="fullCalendar" />
-    <button @click="isModalVisible = true">Open</button>
-    <modal :isModalVisible="isModalVisible" :event="selectedEvent"/>
-    <button @click="isModalVisible = false">Close</button>
+    <modal :event="selectedEvent"/>
   </div>
 </template>
 
@@ -36,13 +43,16 @@ export default {
           const start = info.startStr; // The start date of the current view
           const end = info.endStr; // The end date of the current view
           // Call a method to fetch events for this date range
-          const events = await fetchEvents(store.state.accessToken, start, end);
-          store.commit('setCalendarEvents', events); // commit events to store
+          if (store.state.accessToken) {
+            const events = await fetchEvents(store.state.accessToken, start, end);
+          }
         },
         eventClick: (info) => {
           this.selectedEvent = store.getters.getEventById(info.event._def.publicId);
-          this.isModalVisible = true;
-          console.log(this.selectedEvent);
+          if (store.state.isModalVisible === false) {
+            this.isModalVisible = true;
+            store.commit('setIsModalVisible', this.isModalVisible);
+          }
         }
       }
     }

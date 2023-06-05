@@ -1,6 +1,9 @@
-<!--This is the login component, which is used to sign in to Google
-    Author: Jamal Alkharrat
-    https://vue3-google-signin.syetalabs.io/composables/use-token-client.html -->
+<!--  
+  Author: Jamal Alkharrat
+  This is the login component, which is used to sign in to Google
+  It uses the useTokenClient composable function, which is defined here:
+  https://vue3-google-signin.syetalabs.io/composables/use-token-client.html 
+-->
 
 <script setup lang="ts">
 import {
@@ -11,18 +14,22 @@ import {
 import store from '../store/index.js';
 import { fetchEvents } from '../services/fetchEvents.js';
 
-
 // This function is called when the user successfully signs in, and the access token is returned
 const handleOnSuccess = async (response: AuthCodeFlowSuccessResponse) => {
-  console.log("Access Token: ", response.access_token);
-  store.commit('setAccessToken', response.access_token); // commit access token to store, so we can use it later
+  // commit access token to store, so we can use it later
+  store.commit('setAccessToken', response.access_token); 
+
+  // Display the events from Google Calendar after login
+
   // Start date is 8 weeks ago
   const startDate = new Date();
   startDate.setDate(startDate.getDate() - 56);
   // End date is 8 weeks from now
   const endDate = new Date();
   endDate.setDate(endDate.getDate() + 56);
-  const events = await fetchEvents(response.access_token, startDate, endDate); // fetch events after login, so we can display them
+  // Fetch events from Google Calendar, using the access token and the start and end dates as ISO strings
+  const events = await fetchEvents(response.access_token, startDate.toISOString(), endDate.toISOString());
+  // Commit the events to the store, so we can display them in the calendar
   store.commit('setCalendarEvents', events);
 };
 
